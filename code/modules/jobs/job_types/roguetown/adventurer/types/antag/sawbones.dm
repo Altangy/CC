@@ -8,13 +8,18 @@
 	cmode_music = 'sound/music/combat_physician.ogg'
 	traits_applied = list(TRAIT_MEDICINE_EXPERT, TRAIT_NOSTINK, TRAIT_EMPATH, TRAIT_DODGEEXPERT, TRAIT_DECEIVING_MEEKNESS, TRAIT_ALCHEMY_EXPERT)
 	subclass_stats = list(
+		//Cove edit
+		STATKEY_STR = -2, //Non-Combat class. I weep at Azure's 'balancing' and cannot be bothered otherwise
 		STATKEY_INT = 4,
 		STATKEY_SPD = 3,
-		STATKEY_LCK = 3
+		STATKEY_LCK = 1
+		//Cove edit end
 	)
 	subclass_skills = list(
 		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT,
+		//Cove edit
+		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
+		//Cove edit end
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/crafting = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/carpentry = SKILL_LEVEL_JOURNEYMAN,
@@ -57,7 +62,7 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 
 	if(!istype(H.patron, /datum/patron/inhumen/matthios))
-		var/inputty = input(H, "Would you like to change your patron to Matthios?", "The Transactor calls", "No") as anything in list("Yes", "No")
-		if(inputty == "Yes")
-			to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
-			H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove Edit
+		to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
+		H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove edit end

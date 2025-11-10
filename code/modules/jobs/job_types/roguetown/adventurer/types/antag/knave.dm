@@ -8,12 +8,12 @@
 	cmode_music = 'sound/music/cmode/antag/combat_cutpurse.ogg'
 	traits_applied = list(TRAIT_DODGEEXPERT)//gets dodge expert but no medium armor training - gotta stay light
 	subclass_stats = list(
+		//Cove edit
 		STATKEY_SPD = 3,//It's all about speed and perception
 		STATKEY_PER = 2,
-		STATKEY_LCK = 2,
-		STATKEY_STR = 1,
 		STATKEY_WIL = 1,
-		STATKEY_CON = 1
+		STATKEY_CON = -1
+		//Cove edit end
 	)
 	subclass_skills = list(
 		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
@@ -87,7 +87,7 @@
 				H.adjust_skillrank(/datum/skill/combat/bows, SKILL_LEVEL_EXPERT, TRUE)
 
 	if(!istype(H.patron, /datum/patron/inhumen/matthios))
-		var/inputty = input(H, "Would you like to change your patron to Matthios?", "The Transactor calls", "No") as anything in list("Yes", "No")
-		if(inputty == "Yes")
-			to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
-			H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove Edit
+		to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
+		H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove edit end

@@ -9,12 +9,12 @@
 	subclass_spellpoints = 21
 	traits_applied = list(TRAIT_MAGEARMOR, TRAIT_ARCYNE_T3, TRAIT_DODGEEXPERT, TRAIT_ALCHEMY_EXPERT)
 	subclass_stats = list(
-		STATKEY_INT = 3,
-		STATKEY_WIL = 3,
-		STATKEY_PER = 2, // Adv mage get 2 perception so whatever. It is useful for aiming body parts but have no direct synergy with spells. 
-		STATKEY_LCK = 2,
-		STATKEY_SPD = 1,
-		STATKEY_CON = 1,
+		//Cove edit
+		STATKEY_STR = -2,
+		STATKEY_INT = 2,
+		STATKEY_WIL = 2,
+		STATKEY_PER = 2 // Adv mage get 2 perception so whatever. It is useful for aiming body parts but have no direct synergy with spells. 
+		//Cove edit end
 	)
 	subclass_skills = list(
 		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN, // Jman Polearms, for better parrying without making them bandit level 
@@ -71,7 +71,7 @@
 		H.mind?.adjust_spellpoints(6)
 
 	if(!istype(H.patron, /datum/patron/inhumen/matthios))
-		var/inputty = input(H, "Would you like to change your patron to Matthios?", "The Transactor calls", "No") as anything in list("Yes", "No")
-		if(inputty == "Yes")
-			to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
-			H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove Edit
+		to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
+		H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove edit end

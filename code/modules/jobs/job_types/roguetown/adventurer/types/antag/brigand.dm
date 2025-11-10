@@ -8,12 +8,11 @@
 	cmode_music = 'sound/music/cmode/antag/combat_thewall.ogg'
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_STEELHEARTED)
 	subclass_stats = list(
-		STATKEY_STR = 4,//have you seen this idiot's starting gear and skill spread??
-		STATKEY_WIL = 2,
+		//Cove edit
+		STATKEY_STR = 2,
 		STATKEY_CON = 2,
-		STATKEY_SPD = 1,
-		STATKEY_LCK = 1,
 		STATKEY_INT = -1
+		//Cove edit end
 	)
 	subclass_skills = list(
 		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
@@ -67,7 +66,7 @@
 				beltr = /obj/item/rogueweapon/flail
 
 	if(!istype(H.patron, /datum/patron/inhumen/matthios))
-		var/inputty = input(H, "Would you like to change your patron to Matthios?", "The Transactor calls", "No") as anything in list("Yes", "No")
-		if(inputty == "Yes")
-			to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
-			H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove Edit
+		to_chat(H, span_warning("My former deity has abandoned me.. Matthios is my new master."))
+		H.set_patron(/datum/patron/inhumen/matthios)
+		//Cove edit end
