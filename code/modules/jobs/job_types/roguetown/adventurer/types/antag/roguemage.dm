@@ -13,7 +13,9 @@
 		STATKEY_STR = -2,
 		STATKEY_INT = 2,
 		STATKEY_WIL = 2,
-		STATKEY_PER = 2 // Adv mage get 2 perception so whatever. It is useful for aiming body parts but have no direct synergy with spells. 
+		STATKEY_PER = 2, // Adv mage get 2 perception so whatever. It is useful for aiming body parts but have no direct synergy with spells.
+		STATKEY_SPD = 1,
+		STATKEY_LCK = 1
 		//Cove edit end
 	)
 	subclass_skills = list(

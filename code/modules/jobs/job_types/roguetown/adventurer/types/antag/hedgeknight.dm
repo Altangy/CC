@@ -14,7 +14,8 @@
 		STATKEY_STR = 1,
 		STATKEY_WIL = 2,
 		STATKEY_INT = 1,
-		STATKEY_PER = -1
+		STATKEY_PER = -1,
+		STATKEY_LCK = 1
 		//Cove edit end
 	)
 	subclass_skills = list(
