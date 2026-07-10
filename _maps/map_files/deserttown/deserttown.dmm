@@ -7295,6 +7295,13 @@
 	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/town/bath/desert)
+"cpL" = (
+/obj/structure/chair/wood/zybantine,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = -32
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "cpQ" = (
 /obj/machinery/light/rogue/candle,
 /obj/item/roguebin/water,
@@ -11453,6 +11460,16 @@
 	},
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/indoors/town/magician/desert)
+"dGk" = (
+/obj/machinery/light/rogue/candle/l,
+/obj/structure/rack/rogue,
+/obj/item/candle/candlestick/gold,
+/obj/item/candle/candlestick/gold/single,
+/obj/effect/spawner/lootdrop/valuable_jewelry_spawner,
+/obj/effect/spawner/lootdrop/valuable_jewelry_spawner,
+/obj/effect/spawner/lootdrop/valuable_jewelry_spawner,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "dGz" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old{
@@ -16288,6 +16305,12 @@
 /obj/item/gun/ballistic/blackpowder/small/arquebus_pistol,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison/desert)
+"flJ" = (
+/obj/structure/rack/rogue,
+/obj/effect/spawner/lootdrop/armored_boots_spawner,
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "flP" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/darkpath,
@@ -16311,6 +16334,14 @@
 /obj/structure/ritualcircle/baotha,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/under/cave/desertminomaze)
+"fmO" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable_mid"
+	},
+/obj/item/candle/skull/lit,
+/turf/open/floor/carpet/purple,
+/area/rogue/indoors/town/church)
 "fmU" = (
 /obj/structure/fermentation_keg/fancypot/water,
 /obj/machinery/light/roguestreet/orange/walllamp{
@@ -16654,6 +16685,18 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/underdarker/undermire)
+"ftS" = (
+/obj/structure/closet/crate/chest/neu_iron{
+	name = "Secure Donations";
+	locked = 1;
+	lockid = "church"
+	},
+/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "ftX" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/debris/stony,
@@ -16789,6 +16832,18 @@
 	},
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/indoors/town/tavern/desert)
+"fwX" = (
+/obj/structure/closet/crate/chest/neu_iron{
+	name = "Secure Donations";
+	locked = 1;
+	lockid = "church"
+	},
+/obj/effect/spawner/lootdrop/cheap_jewelry_spawner,
+/obj/effect/spawner/lootdrop/roguegem/random,
+/obj/effect/spawner/lootdrop/cheap_tableware_spawner,
+/obj/effect/spawner/lootdrop/cheap_tableware_spawner,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "fxj" = (
 /obj/item/roguebin/water/gross,
 /obj/effect/decal/cleanable/dirt/cobweb{
@@ -17235,12 +17290,8 @@
 /turf/open/floor/rogue/carpet/lord/center/no_teleport,
 /area/rogue/under/cave/licharena/bossroom)
 "fEp" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable_mid"
-	},
-/obj/effect/spawner/lootdrop/valuable_candle_spawner,
-/turf/open/floor/carpet/purple,
+/obj/structure/bars/cemetery,
+/turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "fEs" = (
 /obj/machinery/light/rogue/candle/r,
@@ -17599,10 +17650,13 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/desert)
 "fKD" = (
-/obj/machinery/light/rogue/candle/l,
-/turf/closed/wall/mineral/rogue/decostone/end{
-	dir = 8
+/obj/structure/chair/wood/zybantine{
+	dir = 1
 	},
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
 "fKL" = (
 /obj/structure/table/wood/long_table,
@@ -19788,6 +19842,14 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/cave/desertdeep)
+"gyR" = (
+/obj/structure/mineral_door/bars{
+	locked = 1;
+	lockid = "church";
+	name = "Reliquary"
+	},
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "gyV" = (
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/twig,
@@ -21814,13 +21876,6 @@
 "hjb" = (
 /turf/open/floor/rogue/desert_grass,
 /area/rogue/indoors/town/church/basement)
-"hjo" = (
-/obj/structure/chair/wood/zybantine,
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = -32
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/church)
 "hjE" = (
 /obj/structure/roguemachine/ship_fulfillment,
 /turf/closed/wall/mineral/rogue/sandbrick,
@@ -24095,6 +24150,7 @@
 "iaG" = (
 /obj/machinery/light/rogue/candle/r,
 /obj/structure/bookcase/random/religion,
+/obj/item/book/rogue/bibble,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "iaP" = (
@@ -24290,6 +24346,11 @@
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor/desert)
+"iec" = (
+/obj/structure/bookcase/random/religion,
+/obj/item/book/rogue/bibble,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "ieu" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -27298,6 +27359,12 @@
 "jkD" = (
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/town/manor/desert)
+"jkE" = (
+/obj/structure/rack/rogue,
+/obj/effect/spawner/lootdrop/armored_gloves_spawner,
+/obj/machinery/light/rogue/candle/r,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "jkG" = (
 /obj/structure/roguemachine/scomm{
 	scom_tag = "Front Gatehouse"
@@ -29141,11 +29208,11 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor/desert)
 "jOj" = (
-/obj/structure/table/wood{
-	icon_state = "longtable"
-	},
-/obj/item/candle/skull/lit,
-/turf/open/floor/carpet/purple,
+/obj/structure/rack/rogue,
+/obj/effect/spawner/lootdrop/valuable_tableware_spawner,
+/obj/effect/spawner/lootdrop/valuable_tableware_spawner,
+/obj/effect/spawner/lootdrop/valuable_tableware_spawner,
+/turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "jOr" = (
 /turf/open/floor/rogue/concrete{
@@ -33056,6 +33123,12 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/desert)
+"ldU" = (
+/obj/machinery/light/rogue/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "ldX" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/transparent/openspace,
@@ -34205,6 +34278,10 @@
 /obj/machinery/light/rogue/candle/floorcandle,
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/town/steward)
+"lzc" = (
+/obj/structure/roguemachine/vaultbank/church,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "lzx" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -34979,6 +35056,11 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/town/basement/desert/town)
+"lOr" = (
+/obj/structure/bookcase/random,
+/obj/machinery/light/rogue/candle/r,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "lOy" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -35912,6 +35994,7 @@
 "mdW" = (
 /obj/machinery/light/rogue/candle/l,
 /obj/structure/bookcase/random,
+/obj/item/book/rogue/bibble,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "mec" = (
@@ -45607,6 +45690,11 @@
 "pqc" = (
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/town/manor/desert)
+"pqh" = (
+/obj/structure/bookcase/random/religion,
+/obj/machinery/light/rogue/candle/l,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "pqk" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -46820,6 +46908,16 @@
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/physician/desert)
+"pLp" = (
+/obj/structure/closet/crate/chest/neu_iron{
+	locked = 1;
+	lockid = "church";
+	name = "Ecclesiastical Silver"
+	},
+/obj/item/rogueore/silver,
+/obj/item/rogueore/silver,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "pLv" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
@@ -47906,6 +48004,13 @@
 /obj/item/reagent_containers/powder/moondust,
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/cave/desertdeep)
+"qei" = (
+/obj/item/cushion/desert1,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = -32
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "qej" = (
 /obj/machinery/light/rogue/candle/r,
 /obj/item/cushion/desert2,
@@ -48450,13 +48555,18 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/dwarfin/desert)
 "qoO" = (
-/obj/structure/chair/wood/zybantine{
-	dir = 1
+/obj/structure/closet/crate/chest/neu_fancy{
+	locked = 1;
+	lockid = "church";
+	name = "Church Tithes"
 	},
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = 32
-	},
-/turf/open/floor/carpet/royalblack,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/gold/pile,
+/obj/item/roguecoin/silver/pile,
+/obj/item/roguecoin/silver/pile,
+/obj/item/roguecoin/copper/pile,
+/obj/item/roguecoin/copper/pile,
+/turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "qoP" = (
 /obj/structure/roguewindow/harem3,
@@ -49945,11 +50055,6 @@
 	lockid = "keeper";
 	name = "Pestra's Sanctum";
 	locked = 1
-	},
-/obj/structure/mineral_door/bars{
-	lockid = "keeper2";
-	pixel_x = 0;
-	pixel_y = -8
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/church/basement)
@@ -55777,11 +55882,15 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church/chapel)
 "sOM" = (
-/obj/item/cushion/desert1,
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = -32
+/obj/structure/mineral_door/wood/donjon/stone/highsecurity{
+	name = "Holy Reliquaries";
+	locked = 1;
+	lockid = "church";
+	lock_strength = 400
 	},
-/turf/open/floor/rogue/wood,
+/turf/open/floor/rogue/concrete{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
 /area/rogue/indoors/town/church)
 "sOP" = (
 /obj/item/reagent_containers/glass/bucket,
@@ -63853,8 +63962,7 @@
 /area/rogue/under/underdarker/undercity)
 "vsG" = (
 /obj/machinery/light/rogue/candle/r,
-/obj/item/cushion/desert1,
-/turf/open/floor/carpet/purple,
+/turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "vsP" = (
 /obj/structure/stairs/ccw,
@@ -67740,7 +67848,6 @@
 	},
 /area/rogue/indoors/town/steward)
 "wIo" = (
-/obj/structure/roguemachine/vaultbank/church,
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/indoors/town/church)
 "wIp" = (
@@ -68912,6 +69019,13 @@
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/town/manor/desert)
+"xcp" = (
+/obj/item/cushion/zybantine,
+/obj/machinery/light/rogue/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/purple,
+/area/rogue/indoors/town/church)
 "xcy" = (
 /obj/item/rogueweapon/pick,
 /obj/effect/decal/cleanable/blood,
@@ -501746,7 +501860,7 @@ xPK
 tDJ
 xPK
 fOV
-hjo
+cpL
 nlB
 lDT
 ouX
@@ -503303,7 +503417,7 @@ vTa
 tYi
 qvg
 xif
-sOM
+qei
 xPK
 tDJ
 xPK
@@ -504861,8 +504975,8 @@ vTa
 vTa
 vTa
 xPK
-dAX
-pAl
+tDJ
+tDJ
 tDJ
 tDJ
 isJ
@@ -506108,9 +506222,9 @@ vTa
 vTa
 vTa
 vTa
-vTa
-dAX
-pAl
+xPK
+tDJ
+tDJ
 tDJ
 tDJ
 isJ
@@ -506420,11 +506534,11 @@ vTa
 vTa
 vTa
 vTa
-vTa
 dAX
-nwl
-nwl
-nwl
+iec
+pqh
+iec
+pqh
 nwl
 dAX
 tHr
@@ -506732,9 +506846,9 @@ vTa
 vTa
 vTa
 vTa
-xPK
-xPK
-nwl
+dAX
+kci
+btw
 btw
 btw
 btw
@@ -507045,10 +507159,10 @@ vTa
 vTa
 vTa
 cLA
-tpb
+kyU
 vLm
 btw
-nwl
+btw
 btw
 wHm
 tHr
@@ -507359,16 +507473,16 @@ vTa
 cLA
 dWS
 kyU
-btw
-nwl
-btw
+jXC
+vLm
+vWK
 xPK
-tDJ
+wHm
 koR
 tHr
 tHr
 tHr
-tHr
+fhX
 tHr
 tHr
 tHr
@@ -507671,16 +507785,16 @@ vTa
 dAX
 tpb
 vLm
-btw
+vLm
+jXC
 vWK
-btw
 mdW
-vWK
+btw
 dAX
-tHr
+fhX
 tHr
 pAl
-sjd
+tDJ
 isJ
 koR
 tDJ
@@ -507981,19 +508095,19 @@ vTa
 vTa
 vTa
 dAX
-nwl
-nwl
-nwl
-vWK
 btw
 btw
+jXC
+vLm
 btw
+btw
+ldU
 xPK
-isJ
-wHm
-fKD
-vWK
-nMv
+tDJ
+sOM
+xPK
+dGk
+jOj
 lDT
 sVR
 uSL
@@ -508297,15 +508411,15 @@ iaG
 ahX
 vLm
 hwC
-btw
-nMv
-btw
-btw
-btw
-btw
-btw
-btw
-vWK
+vLm
+dzp
+jXC
+dAX
+flJ
+fda
+fEp
+fda
+fda
 dAX
 ujf
 btw
@@ -508609,15 +508723,15 @@ xPK
 dsM
 ene
 vLm
-btw
-nMv
-vLm
-jOj
-vLm
 jXC
+fmO
 vLm
-jXC
-nMv
+dAX
+fwX
+fda
+gyR
+fda
+pLp
 dAX
 kci
 btw
@@ -508921,15 +509035,15 @@ xPK
 xPK
 pFO
 iBI
-btw
-vWK
-kyU
+vLm
+hxw
+xcp
+dAX
+ftS
+fda
 fEp
-vLm
-vLm
-jXC
-vLm
-vWK
+fda
+qoO
 dAX
 omH
 pWl
@@ -509234,19 +509348,19 @@ xPK
 tDJ
 xPK
 vWK
-vWK
-vLm
-hxw
-vLm
-jXC
-vLm
-vsG
+lOr
 nMv
+dAX
+jkE
+fda
+fEp
+vsG
+lzc
 msJ
 qSW
 pWl
 vpy
-qoO
+fKD
 btw
 lDT
 ilr
