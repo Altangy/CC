@@ -17852,9 +17852,6 @@
 /turf/open/water/swamp,
 /area/rogue/under/underdarker/pyramid)
 "fOV" = (
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = -32
-	},
 /obj/item/cushion/desert2,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
@@ -21817,6 +21814,13 @@
 "hjb" = (
 /turf/open/floor/rogue/desert_grass,
 /area/rogue/indoors/town/church/basement)
+"hjo" = (
+/obj/structure/chair/wood/zybantine,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = -32
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "hjE" = (
 /obj/structure/roguemachine/ship_fulfillment,
 /turf/closed/wall/mineral/rogue/sandbrick,
@@ -39463,6 +39467,9 @@
 /obj/item/candle/yellow,
 /obj/effect/spawner/lootdrop/valuable_candle_spawner,
 /obj/item/reformation_gem,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = -32
+	},
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/church)
 "nqR" = (
@@ -48443,11 +48450,13 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/dwarfin/desert)
 "qoO" = (
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = -32
+/obj/structure/chair/wood/zybantine{
+	dir = 1
 	},
-/obj/item/cushion/desert1,
-/turf/open/floor/rogue/wood,
+/obj/machinery/light/rogue/campfire/fireplace{
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
 "qoP" = (
 /obj/structure/roguewindow/harem3,
@@ -55768,13 +55777,11 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church/chapel)
 "sOM" = (
-/obj/structure/chair/wood/zybantine{
-	dir = 1
-	},
+/obj/item/cushion/desert1,
 /obj/machinery/light/rogue/campfire/fireplace{
 	pixel_x = -32
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "sOP" = (
 /obj/item/reagent_containers/glass/bucket,
@@ -63659,9 +63666,6 @@
 	icon_state = "longtable"
 	},
 /obj/item/rogueweapon/woodstaff/aries,
-/obj/machinery/light/rogue/campfire/fireplace{
-	pixel_x = 32
-	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
 "vpT" = (
@@ -501742,7 +501746,7 @@ xPK
 tDJ
 xPK
 fOV
-aIY
+hjo
 nlB
 lDT
 ouX
@@ -501752,7 +501756,7 @@ pAl
 isJ
 xPK
 cpQ
-veZ
+btw
 nqM
 ocm
 ghN
@@ -502060,8 +502064,8 @@ dAX
 tmR
 tjd
 cFH
-qoO
-btw
+qUA
+veZ
 xPK
 uAo
 btw
@@ -503298,8 +503302,8 @@ vTa
 vTa
 tYi
 qvg
+xif
 sOM
-qUA
 xPK
 tDJ
 xPK
@@ -509242,7 +509246,7 @@ msJ
 qSW
 pWl
 vpy
-xif
+qoO
 btw
 lDT
 ilr
