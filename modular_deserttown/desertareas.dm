@@ -1,6 +1,7 @@
 
-//desert areas
+//Desert Areas
 
+//Inner Dunes Area
 /area/rogue/outdoors/desert
 	name = "Inner Dunes"
 	icon_state = "desert"
@@ -34,6 +35,7 @@
 	spookynight = SPOOKY_FOREST
 	threat_region = THREAT_REGION_FRESH_RIVER
 
+//Deep Dunes Area
 /area/rogue/outdoors/desertdeep
 	name = "Deep Dunes"
 	icon_state = "desertdeep"
@@ -113,8 +115,8 @@
 	deathsight_message = "caves near unwelcoming sands"
 	threat_region = THREAT_REGION_DEEP_DUNES
 
-//
 
+//Town Area's start here
 /area/rogue/outdoors/town/desert
 	name = "Desert Town Outdoors"
 	icon_state = "town"
@@ -489,16 +491,10 @@
 	first_time_text = "Something feels off..." //Just a warning for players to know that this place is dangerous.
 	safe = FALSE //Using an unused var for Teleportation as a means to play a different area entry sound.
 
-//Underground caves for the town.
-/area/rogue/under/cavewet/bogcaves/desert
-	name = "The Lower Caverns"
-	first_time_text = "The Lower Caverns"
-	threat_region = THREAT_REGION_DESERT_TOWN_CAVES
-
 /area/rogue/underworld/desert
 	first_time_text = "wayfarer's dream"
 
-//CC Edit - Area Refactor Placeholder Note - Making the entire underground its own damn areas in this file instead of relying underdarker and let more of it be condensed to this file
+// Undergound caves useable for under the town and closeby
 /area/rogue/under/desertcavewet
 	name = "The Lower Caverns"
 	loot_budget = LOOT_BUDGET_UNDERGROVE
@@ -525,6 +521,7 @@
 	deathsight_message = "caves beneath the sands"
 	threat_region = THREAT_REGION_DESERT_TOWN_CAVES
 
+// Desert Underdark Area, If its not part of the WasteMire, use this area
 /area/rogue/under/desertunderdark 
 	name = "The Underdark"
 	icon_state = "cavewet"
@@ -567,6 +564,7 @@
 	first_time_text = "The Condemned Pyramid"
 	deathsight_message = "a sunken pyramid"
 
+//Desert Towns Bog Biome, shares Threat Region with rest of Underdark.
 /area/rogue/under/desertbog
 	name = "The Wastemire"
 	icon_state = "bog"
@@ -638,42 +636,6 @@
 		return
 
 	GLOB.bogged_players -= L.real_name
-
-// Undercity, UnderMire And Pyramid Segments - All of these use underdarker from roguetownareas.dm for now since they share the same level with it
-/area/rogue/under/underdarker/undercity
-	name = "City Beneath The Sands"
-	first_time_text = "City Beneath The Sands"
-	deathsight_message = "dark roads under the sands"
-
-/area/rogue/under/underdarker/pyramid
-	name = "The Condemned Pyramid"	
-	first_time_text = "The Condemned Pyramid"
-	deathsight_message = "a sunken pyramid"
-
-/area/rogue/under/underdarker/undermire
-	name = "The WasteMire"
-	first_time_text = "The WasteMire"
-	deathsight_message = "a filthy swamp, far beneath the dunes"
-	var/list/recent_intruders = list()
-
-/area/rogue/under/underdarker/undermire/Entered(atom/movable/AM)
-	..()
-	if(!GLOB.active_hags.len)
-		return
-
-	var/mob/living/L = AM
-	if(!istype(L) || !L.client || L.stat == DEAD)
-		return
-
-	if(L in GLOB.active_hags)
-		return
-
-	if(recent_intruders[L] && recent_intruders[L] > world.time)
-		return
-
-	recent_intruders[L] = world.time + 1 MINUTES
-	for(var/mob/living/H in GLOB.active_hags)
-		to_chat(H, span_boldwarning("The roots of your sanctum shiver... a soul named [L.name] has stepped within [src.name]."))
 
 // CC - Dungeon Additions
 /area/rogue/under/cave/desertminomaze
