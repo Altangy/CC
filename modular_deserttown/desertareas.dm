@@ -498,6 +498,147 @@
 /area/rogue/underworld/desert
 	first_time_text = "wayfarer's dream"
 
+//CC Edit - Area Refactor Placeholder Note - Making the entire underground its own damn areas in this file instead of relying underdarker and let more of it be condensed to this file
+/area/rogue/under/desertcavewet
+	name = "The Lower Caverns"
+	loot_budget = LOOT_BUDGET_UNDERGROVE
+	loot_pool_key = "undergrove"
+	icon_state = "cavewet"
+	warden_area = TRUE
+	first_time_text = "The Lower Caverns"
+	ambientsounds = AMB_CAVEWATER
+	ambientnight = AMB_CAVEWATER
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_mobs = list(
+				/mob/living/carbon/human/species/skeleton/npc/easy = 10,
+				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
+				/mob/living/carbon/human/species/goblin/npc/sea = 20,
+				/mob/living/carbon/human/species/human/northern/highwayman/ambush = 15,
+				/mob/living/carbon/human/species/human/northern/bum/ambush = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 10)
+	converted_type = /area/rogue/outdoors/caves
+	deathsight_message = "caves beneath the sands"
+	threat_region = THREAT_REGION_DESERT_TOWN_CAVES
+
+/area/rogue/under/desertunderdark 
+	name = "The Underdark"
+	icon_state = "cavewet"
+	warden_area = FALSE
+	drow_area = TRUE
+	first_time_text = "The Underdark"
+	ambientsounds = AMB_CAVEWATER
+	ambientnight = AMB_CAVEWATER
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/underdark.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_mobs = list(
+				/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated = 20,
+				/mob/living/carbon/human/species/elf/dark/drowraider/ambush = 10,
+				/mob/living/simple_animal/hostile/retaliate/rogue/minotaur = 25,
+				/mob/living/carbon/human/species/goblin/npc/ambush/moon = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 15,
+				/mob/living/simple_animal/hostile/retaliate/rogue/drider = 10,
+				/mob/living/carbon/human/species/skeleton/npc/mediumspread = 30,
+				/mob/living/carbon/human/species/skeleton/npc/hardspread = 5)
+	converted_type = /area/rogue/outdoors/caves
+	deathsight_message = "depths far below the sands"
+	detail_text = DETAIL_TEXT_UNDERDARK
+	threat_region = THREAT_REGION_DESERT_UNDERDARK
+
+/area/rogue/under/desertunderdark/undercity
+	name = "City Beneath The Sands"
+	icon_state = "basement"
+	first_time_text = "City Beneath The Sands"
+	deathsight_message = "dark roads under the sands"
+
+/area/rogue/under/desertunderdark/pyramid
+	name = "The Condemned Pyramid"	
+	icon_state = "basement"
+	ambush_times = null 
+	ambush_mobs = null
+	first_time_text = "The Condemned Pyramid"
+	deathsight_message = "a sunken pyramid"
+
+/area/rogue/under/desertbog
+	name = "The Wastemire"
+	icon_state = "bog"
+	warden_area = TRUE
+	drow_area = TRUE
+	first_time_text = "The WasteMire"
+	ambientsounds = AMB_CAVEWATER
+	ambientnight = AMB_CAVEWATER
+	spookysounds = SPOOKY_CAVE
+	spookynight = SPOOKY_CAVE
+	droning_sound = 'sound/music/area/underdark.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_mobs = list(
+// Singles — budget filler across all factions present in the bog
+				/mob/living/simple_animal/hostile/retaliate/rogue/troll/bog = 20,
+				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 40,
+				/mob/living/carbon/human/species/skeleton/npc/bogguard = 20,
+				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
+				/mob/living/carbon/human/species/elf/dark/drowraider/ambush = 10,
+				/mob/living/carbon/human/species/human/northern/bog_deserters/ambush = 15,
+				/mob/living/carbon/human/species/human/northern/bog_deserters/better_gear/ambush = 10,
+				/mob/living/simple_animal/hostile/retaliate/rogue/ooze_blob = 5,
+				// Packs — big-ticket purchases for high budgets
+				new /datum/ambush_config/bog_guard_deserters = 50,
+				new /datum/ambush_config/bog_guard_deserters/hard = 25,
+				new /datum/ambush_config/mirespiders_ambush = 110,
+				new /datum/ambush_config/mirespiders_crawlers = 25,
+				new /datum/ambush_config/mirespiders_aragn = 10,
+				new /datum/ambush_config/mirespiders_unfair = 5)
+	converted_type = /area/rogue/outdoors/caves
+	deathsight_message = "a filthy swamp, far beneath the dunes"
+	detail_text = DETAIL_TEXT_UNDERDARK
+	threat_region = THREAT_REGION_DESERT_UNDERDARK
+	var/list/recent_intruders = list()
+
+/area/rogue/under/desertbog/Entered(atom/movable/AM)
+	..()
+	if(!GLOB.active_hags.len)
+		return
+
+	var/mob/living/L = AM
+	if(!istype(L) || !L.client || L.stat == DEAD)
+		return
+
+	if(L in GLOB.active_hags)
+		return
+	
+	GLOB.bogged_players += L.real_name
+
+	if(recent_intruders[L] && recent_intruders[L] > world.time)
+		return
+
+	recent_intruders[L] = world.time + 1 MINUTES
+	for(var/mob/living/H in GLOB.active_hags)
+		to_chat(H, span_boldwarning("The roots of your sanctum shiver... a soul named [L.name] has stepped within [src.name]."))
+
+/area/rogue/under/desertbog/Exited(atom/movable/AM)
+	. = ..()
+	if(!GLOB.active_hags.len)
+		return
+
+	var/mob/living/L = AM
+	if(!istype(L) || !L.client || L.stat == DEAD)
+		return
+
+	if(L in GLOB.active_hags)
+		return
+
+	GLOB.bogged_players -= L.real_name
+
 // Undercity, UnderMire And Pyramid Segments - All of these use underdarker from roguetownareas.dm for now since they share the same level with it
 /area/rogue/under/underdarker/undercity
 	name = "City Beneath The Sands"
