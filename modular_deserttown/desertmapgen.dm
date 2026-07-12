@@ -49,6 +49,7 @@
 							/obj/item/magic/manacrystal = 0.05,
 							/obj/structure/flora/roguegrass/herb/random = 0.25,
 							/obj/effect/decal/remains/bear = 0.5,
+							/obj/effect/hunting_track = 1,
 							/obj/effect/decal/remains/human = 0.3,)
 	// spawnableTurfs = list()
 	allowed_areas = list(/area/rogue/outdoors/desert, /area/rogue/outdoors/desertdeep)
@@ -79,6 +80,7 @@
 							/obj/structure/flora/roguegrass/herb/random = 2,
 							/obj/effect/decal/remains/bear = 0.5,
 							/obj/effect/decal/remains/human = 0.3,
+							/obj/effect/hunting_track = 1,
 							/obj/structure/zizo_bane = 0.5,
 						)
 	// spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=2,
