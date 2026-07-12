@@ -15101,7 +15101,7 @@
 	},
 /area/rogue/indoors/town/magician/desert)
 "eQc" = (
-/obj/effect/landmark/mapGenerator/rogue/underdarkrat,
+/obj/effect/landmark/mapGenerator/rogue/desert,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cave)
 "eQi" = (
@@ -21218,10 +21218,6 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/desert)
-"gYs" = (
-/obj/effect/landmark/mapGenerator/rogue/underdarkrat,
-/turf/closed/mineral/rogue/bedrock/sandstone,
-/area/rogue/under/cave/desertdeep)
 "gYu" = (
 /obj/structure/table/wood/large_table/north_east,
 /obj/item/cooking/platter/copper,
@@ -191777,7 +191773,7 @@ obK
 obK
 obK
 obK
-gYs
+ygz
 "}
 (2,1,2) = {"
 rsN
