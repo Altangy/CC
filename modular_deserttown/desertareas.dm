@@ -331,9 +331,11 @@
 /area/rogue/under/town/basement/desert
 	name = "Basement"
 
-/area/rogue/under/town/basement/desert/keep
+/area/rogue/under/town/basement/keep/desert
 	name = "Palace Basement"
-	keep_area = TRUE
+	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
 
 /area/rogue/indoors/town/desert/arenaview
 	name = "Grand Arena"
