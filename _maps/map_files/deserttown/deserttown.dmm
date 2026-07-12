@@ -29954,6 +29954,10 @@
 /area/rogue/outdoors/desert)
 "jXV" = (
 /obj/structure/closet/crate/chest,
+/obj/item/roguecoin/copper/pile,
+/obj/item/roguecoin/silver/pile,
+/obj/item/roguecoin/silver/pile,
+/obj/item/roguecoin/copper/pile,
 /turf/open/floor/rogue/concrete{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -34085,6 +34089,14 @@
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
+/obj/item/natural/cloth{
+	pixel_y = 37;
+	pixel_x = 2
+	},
+/obj/item/natural/cloth{
+	pixel_y = 37;
+	pixel_x = -5
+	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern/desert)
 "lvm" = (
@@ -55228,13 +55240,13 @@
 /area/rogue/outdoors/desert)
 "sBB" = (
 /obj/structure/rack/rogue/shelf,
-/obj/item/soap{
-	pixel_x = 2;
-	pixel_y = 36
+/obj/item/natural/bundle/fibers{
+	pixel_x = -4;
+	pixel_y = 34
 	},
-/obj/item/soap{
-	pixel_x = -5;
-	pixel_y = 36
+/obj/item/natural/bundle/fibers{
+	pixel_x = 6;
+	pixel_y = 35
 	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/town/tavern/desert)
@@ -56703,6 +56715,14 @@
 /obj/item/kitchen/fork,
 /obj/item/kitchen/fork,
 /obj/item/kitchen/fork,
+/obj/item/soap{
+	pixel_x = 2;
+	pixel_y = 36
+	},
+/obj/item/soap{
+	pixel_x = -5;
+	pixel_y = 36
+	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern/desert)
 "taz" = (
@@ -69556,13 +69576,8 @@
 /area/rogue/indoors/town/steward)
 "xiy" = (
 /obj/structure/rack/rogue/shelf,
-/obj/item/natural/cloth{
-	pixel_y = 37;
-	pixel_x = 2
-	},
-/obj/item/natural/cloth{
-	pixel_y = 37;
-	pixel_x = -5
+/obj/item/needle/thorn{
+	pixel_y = 30
 	},
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
@@ -134938,7 +134953,7 @@ amV
 amV
 amV
 cey
-cey
+tDY
 cey
 amV
 amV
@@ -135246,14 +135261,14 @@ avC
 avC
 avC
 avC
-cey
+tDY
 cey
 avC
 iyP
 iyP
 iyP
-cey
 amV
+tDY
 avC
 meh
 iyP
@@ -136187,7 +136202,7 @@ mGu
 fIN
 mGu
 meh
-cey
+tDY
 amV
 amV
 meh
@@ -137067,7 +137082,7 @@ eTt
 eTt
 eTt
 eTt
-eTt
+tDY
 cey
 dIh
 fIN
@@ -138002,7 +138017,7 @@ eTt
 eTt
 eTt
 eTt
-eTt
+tDY
 cey
 iyP
 fIN
@@ -138313,7 +138328,7 @@ eTt
 eTt
 eTt
 eTt
-eTt
+tDY
 cey
 cey
 meh
@@ -138665,7 +138680,7 @@ fIN
 dIh
 cey
 xgm
-cey
+tDY
 cey
 dIh
 mGu
@@ -138932,8 +138947,8 @@ cey
 cey
 eTt
 eTt
-eTt
-eTt
+tDY
+tDY
 cey
 cey
 cey
@@ -138975,7 +138990,7 @@ mGu
 mGu
 fIN
 iyP
-cey
+tDY
 cey
 cey
 cey
@@ -139902,7 +139917,7 @@ fIN
 fIN
 fIN
 iyP
-cey
+tDY
 meh
 fIN
 fIN
@@ -140215,7 +140230,7 @@ fIN
 meh
 eTt
 eTt
-cey
+tDY
 meh
 fIN
 fIN
@@ -140525,10 +140540,10 @@ mGu
 mGu
 fIN
 meh
-cey
+tDY
 eTt
 eTt
-cey
+tDY
 iyP
 fIN
 fIN
@@ -140838,8 +140853,8 @@ mGu
 fIN
 fIN
 iyP
-cey
-cey
+tDY
+tDY
 iyP
 fIN
 fIN
@@ -141124,8 +141139,8 @@ mGu
 fIN
 fIN
 meh
-cey
-cey
+tDY
+tDY
 iyP
 fIN
 dIh
@@ -141170,8 +141185,8 @@ fIN
 fIN
 iyP
 cey
-cey
-eTt
+tDY
+tDY
 eTt
 eTt
 eTt
@@ -141481,9 +141496,9 @@ fIN
 mGu
 mGu
 iyP
-cey
-eTt
-eTt
+tDY
+tDY
+tDY
 eTt
 eTt
 eTt
@@ -141748,7 +141763,7 @@ mGu
 mGu
 meh
 cey
-eTt
+tDY
 cey
 cey
 dIh
@@ -141793,9 +141808,9 @@ fIN
 mGu
 mGu
 iyP
-cey
-cey
-eTt
+tDY
+tDY
+tDY
 eTt
 eTt
 eTt
@@ -142058,7 +142073,7 @@ fIN
 fIN
 fIN
 iyP
-cey
+tDY
 cey
 eTt
 eTt
@@ -142106,7 +142121,7 @@ fIN
 mGu
 fIN
 meh
-cey
+tDY
 cey
 eTt
 eTt
@@ -142374,7 +142389,7 @@ cey
 xgm
 eTt
 cey
-cey
+tDY
 iyP
 fIN
 fIN
@@ -142682,7 +142697,7 @@ fIN
 fIN
 mGu
 iyP
-cey
+tDY
 cey
 cey
 cey
@@ -143037,7 +143052,7 @@ fIN
 fIN
 fIN
 meh
-cey
+tDY
 meh
 fIN
 mGu
@@ -143348,9 +143363,9 @@ mGu
 fIN
 mGu
 iyP
-cey
+tDY
 eTt
-cey
+tDY
 iyP
 mGu
 fIN
@@ -143661,7 +143676,7 @@ mGu
 fIN
 fIN
 meh
-cey
+tDY
 eTt
 iyP
 fIN
@@ -155150,7 +155165,7 @@ cbk
 avC
 amV
 amV
-avC
+tDY
 iyP
 mGu
 mGu
@@ -155521,7 +155536,7 @@ fIN
 fIN
 fIN
 meh
-cey
+tDY
 eTt
 iyP
 fIN
@@ -156457,7 +156472,7 @@ fIN
 mGu
 fIN
 meh
-cey
+tDY
 iyP
 fIN
 fIN
@@ -156708,7 +156723,7 @@ bck
 bck
 cbk
 avC
-amV
+tDY
 dIh
 meh
 iyP
@@ -157019,7 +157034,7 @@ bck
 bck
 bck
 cbk
-avC
+tDY
 meh
 dIh
 meh
@@ -158307,7 +158322,7 @@ cey
 cey
 cey
 eTt
-eTt
+tDY
 cey
 dIh
 dIh
@@ -158582,7 +158597,7 @@ cbk
 avC
 amV
 amV
-avC
+tDY
 iyP
 iyP
 fIN
@@ -158616,7 +158631,7 @@ dIh
 dIh
 dIh
 cey
-eTt
+tDY
 eTt
 eTt
 eTt
@@ -161122,7 +161137,7 @@ fIN
 mGu
 mGu
 dIh
-fIN
+dIh
 fIN
 fIN
 mGu
@@ -161443,8 +161458,8 @@ fIN
 fIN
 fIN
 meh
-cey
-cey
+tDY
+tDY
 iyP
 fIN
 fIN
@@ -161738,7 +161753,7 @@ mGu
 fIN
 iyP
 cey
-eTt
+tDY
 cey
 iyP
 fIN
@@ -161755,9 +161770,9 @@ mGu
 mGu
 fIN
 iyP
-cey
+tDY
 eTt
-cey
+tDY
 iyP
 mGu
 fIN
@@ -162020,8 +162035,8 @@ eTt
 eTt
 eTt
 eTt
-cey
-cey
+tDY
+tDY
 iyP
 fIN
 mGu
@@ -162068,8 +162083,8 @@ mGu
 fIN
 fIN
 meh
-cey
-cey
+tDY
+tDY
 iyP
 fIN
 fIN
@@ -162332,9 +162347,9 @@ eTt
 eTt
 eTt
 eTt
-eTt
-cey
-cey
+tDY
+tDY
+tDY
 iyP
 fIN
 fIN
@@ -162645,8 +162660,8 @@ eTt
 eTt
 eTt
 eTt
-eTt
-cey
+tDY
+tDY
 cey
 iyP
 fIN
@@ -162676,7 +162691,7 @@ cey
 eTt
 eTt
 eTt
-eTt
+tDY
 cey
 iyP
 fIN
@@ -162983,7 +162998,7 @@ fIN
 mGu
 meh
 cey
-eTt
+tDY
 eTt
 eTt
 eTt
@@ -165178,22 +165193,22 @@ meh
 fIN
 iyP
 cey
-eTt
-eTt
-eTt
-cbk
+tDY
 eTt
 eTt
 cbk
-cey
-cey
-cbk
-eTt
 eTt
 eTt
 cbk
 cey
 cey
+cbk
+eTt
+eTt
+eTt
+cbk
+cey
+tDY
 iyP
 meh
 meh
@@ -165804,7 +165819,7 @@ fIN
 iyP
 cey
 cey
-eTt
+tDY
 eTt
 eTt
 eTt
@@ -166748,7 +166763,7 @@ iyP
 cey
 cey
 cey
-eTt
+tDY
 cey
 cey
 iyP
@@ -167071,7 +167086,7 @@ fIN
 iyP
 cnY
 cey
-eTt
+tDY
 eTt
 eTt
 eTt
@@ -167383,8 +167398,8 @@ fIN
 iyP
 cey
 cey
-eTt
-eTt
+tDY
+tDY
 eTt
 eTt
 eTt
@@ -173572,8 +173587,8 @@ cey
 avC
 cey
 cey
-cey
-cey
+tDY
+tDY
 avC
 adl
 iyP

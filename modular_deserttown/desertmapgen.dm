@@ -160,7 +160,7 @@
 							/turf/open/floor/rogue/sandbrick)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	allowed_areas = list(/area/rogue/under/desertbog)
-	spawnableTurfs = list(/turf/open/floor/rogue/dirt = 10)
+	spawnableTurfs = list(/turf/open/floor/rogue/dirt/desert = 5)
 	spawnableAtoms = list(/obj/item/natural/stone = 5,
 							/obj/item/natural/rock = 4,
 							/obj/structure/glowshroom = 1,
