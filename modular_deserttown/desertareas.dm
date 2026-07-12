@@ -116,7 +116,7 @@
 	threat_region = THREAT_REGION_DEEP_DUNES
 
 
-//Town Area's start here
+//Town Area and Keep Area's start here
 /area/rogue/outdoors/town/desert
 	name = "Desert Town Outdoors"
 	icon_state = "town"
@@ -136,7 +136,6 @@
 	spookynight = SPOOKY_GEN
 	soundenv = 17
 	first_time_text = null
-
 
 /area/rogue/indoors/shelter/town/desert
 	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
@@ -161,7 +160,6 @@
 	spookynight = SPOOKY_GEN
 	soundenv = 17
 	first_time_text = null
-///
 
 /area/rogue/indoors/town/desert
 	name = "Desert Town Indoors"
@@ -232,16 +230,6 @@
 	spookynight = SPOOKY_GEN
 	soundenv = 17
 	first_time_text = null
-///
-
-/area/rogue/indoors/town/desert
-	name = "Desert Town Indoors"
-	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
-	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
-	converted_type = /area/rogue/outdoors/exposed/town
-	town_area = TRUE
-	deathsight_message = "the city of Al-Ashur and all its bustling souls"
 
 /area/rogue/indoors/town/manor/desert
 	name = "Al-Ashur Palace interior"
@@ -342,20 +330,17 @@
 
 /area/rogue/under/town/basement/desert
 	name = "Basement"
-	town_area = FALSE
-	ceiling_protected = TRUE
-
-/area/rogue/under/town/basement/desert/town
-	town_area = TRUE
 
 /area/rogue/under/town/basement/desert/keep
 	name = "Palace Basement"
 	keep_area = TRUE
-	town_area = TRUE
 
 /area/rogue/indoors/town/desert/arenaview
 	name = "Grand Arena"
-	//viewing_area = TRUE
+
+/area/rogue/under/town/basement/desert/arenapit
+	name = "Grand Arena Pit"
+	town_area = FALSE
 
 /area/rogue/indoors/town/church/cavebasement
 	icon_state = "church"
