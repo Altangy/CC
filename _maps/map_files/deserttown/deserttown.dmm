@@ -535,7 +535,8 @@
 	lock_strength = 400;
 	lockdifficulty = 2;
 	lockid = "warden";
-	name = "Warden Fort"
+	name = "Warden Fort";
+	max_integrity = 4000
 	},
 /turf/open/floor/rogue/herringbone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
@@ -3196,6 +3197,11 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/desertunderdark/undercity)
+"baB" = (
+/turf/open/floor/rogue/concrete{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/desert/warden)
 "baJ" = (
 /obj/structure/drape/zybantine,
 /obj/structure/mineral_door/wood/violet{
@@ -7454,6 +7460,10 @@
 	},
 /turf/open/floor/rogue/citybrick,
 /area/rogue/under/cave/dungeon1)
+"cqX" = (
+/obj/structure/bars/tough,
+/turf/closed/wall/mineral/rogue/wooddark/window,
+/area/rogue/indoors/town/desert/warden)
 "crg" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -11009,6 +11019,15 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/bath/desert)
+"dxV" = (
+/obj/structure/rack/rogue,
+/obj/item/rogueweapon/shield/wood,
+/obj/item/rogueweapon/mace/woodclub,
+/obj/item/rogueweapon/woodstaff,
+/turf/open/floor/rogue/herringbone{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/desert/warden)
 "dxX" = (
 /turf/open/floor/rogue/citybrick/citybrick4,
 /area/rogue/indoors/inq/basement)
@@ -34996,6 +35015,14 @@
 	},
 /turf/open/floor/rogue/dunes,
 /area/rogue/outdoors/town/desertvilla)
+"lKH" = (
+/obj/item/quiver/arrows,
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/herringbone{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/desert/warden)
 "lKT" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/lightpath{
@@ -37160,7 +37187,8 @@
 	lock_strength = 400;
 	lockdifficulty = 2;
 	lockid = "warden";
-	name = "Warden Fort"
+	name = "Warden Fort";
+	max_integrity = 4000
 	},
 /turf/open/floor/rogue/herringbone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
@@ -47264,6 +47292,14 @@
 /obj/item/rogueweapon/mace/woodclub/crafted,
 /turf/open/floor/rogue/citybrick/citybrick2,
 /area/rogue/indoors/town/manor/desert)
+"pOr" = (
+/obj/structure/gate/preopen{
+	redstone_id = "wardengatebelow"
+	},
+/turf/open/floor/rogue/concrete{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/desert/warden)
 "pOB" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -62796,6 +62832,15 @@
 	},
 /turf/open/floor/rogue/dirt/desert,
 /area/rogue/outdoors/desertdeep)
+"uSY" = (
+/obj/structure/winch{
+	redstone_id = "wardengatebelow";
+	dir = 4
+	},
+/turf/open/floor/rogue/herringbone{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/desert/warden)
 "uTa" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/sandbrick,
@@ -144691,7 +144736,7 @@ cMg
 wNI
 bck
 bck
-tud
+bck
 tud
 tud
 tud
@@ -145003,9 +145048,9 @@ bgn
 wNI
 bck
 bck
+bck
 tud
 kIo
-gDI
 gDI
 cey
 cey
@@ -145315,9 +145360,9 @@ wNI
 wNI
 bck
 bck
+bck
 tud
 kIo
-gDI
 gDI
 cey
 cey
@@ -145627,9 +145672,9 @@ bgn
 wNI
 bck
 bck
+bck
 tud
 kIo
-gDI
 gDI
 cey
 amV
@@ -145939,7 +145984,7 @@ cMg
 wNI
 bck
 bck
-tud
+bck
 tud
 tud
 tud
@@ -263250,12 +263295,12 @@ sOm
 sOm
 sOm
 tud
-tud
-tud
-tud
-tud
-tud
 avK
+tud
+tud
+tud
+tud
+tud
 avK
 iZp
 iZp
@@ -263562,12 +263607,12 @@ sOm
 sOm
 sOm
 tud
+avK
 tud
 eCJ
 eCJ
 sOm
 tud
-avK
 avK
 iZp
 iZp
@@ -263874,12 +263919,12 @@ sOm
 sOm
 sOm
 tud
+avK
 tud
 eCJ
 eCJ
 lye
 tud
-avK
 avK
 iZp
 iZp
@@ -264186,12 +264231,12 @@ sOm
 sOm
 sOm
 tud
+avK
 tud
 eCJ
 eCJ
 sOm
 tud
-avK
 avK
 iZp
 iZp
@@ -264498,12 +264543,12 @@ sOm
 sOm
 sOm
 tud
-tud
-tud
-tud
-tud
-tud
 avK
+tud
+tud
+tud
+tud
+tud
 avK
 iZp
 kap
@@ -380877,7 +380922,7 @@ ubn
 ubn
 ubn
 ubn
-ubn
+lKH
 tud
 vTa
 vTa
@@ -381189,7 +381234,7 @@ ubn
 ubn
 ubn
 ubn
-ubn
+dxV
 tud
 vTa
 vTa
@@ -381497,11 +381542,11 @@ cCI
 oLE
 tud
 sFP
-ubn
-ubn
 uUm
 ubn
+uSY
 ubn
+uUm
 tud
 vTa
 vTa
@@ -381810,9 +381855,9 @@ cCI
 tud
 tud
 tud
-cwN
+cqX
 tud
-cwN
+cqX
 tud
 tud
 vTa
@@ -382123,10 +382168,10 @@ vEG
 spn
 vkQ
 ahU
+pOr
 eCJ
 sOm
 tud
-vTa
 vTa
 vTa
 vTa
@@ -382435,10 +382480,10 @@ ahU
 vkQ
 ahU
 ahU
+baB
 eCJ
 lye
 tud
-vTa
 vTa
 vTa
 vTa
@@ -382747,10 +382792,10 @@ cfG
 spn
 vkQ
 ahU
+baB
 eCJ
 sOm
 tud
-vTa
 vTa
 vTa
 vTa
@@ -383062,7 +383107,7 @@ tud
 tud
 tud
 tud
-vTa
+tud
 vTa
 vTa
 vTa
@@ -501296,7 +501341,7 @@ jWC
 cCI
 cCI
 bmz
-cwN
+bhx
 kFh
 kFh
 kFh
@@ -504417,7 +504462,7 @@ kFh
 kFh
 cwN
 els
-cCI
+kpD
 tud
 nUv
 vPu
