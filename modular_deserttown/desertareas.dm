@@ -133,6 +133,22 @@
 	soundenv = 17
 	first_time_text = null
 
+//Outdoor Town Villa - Made seperate since while its part of town, its also... "not". Prevents Random ambushes and Mapgen from happing in the space primarily, or from spilling in from the Dunes.
+/area/rogue/outdoors/town/desertvilla
+	name = "Desert Outdoors"
+	icon_state = "town"
+	soundenv = 16
+	ambientsounds = AMB_TOWNDAY
+	ambientnight = AMB_TOWNNIGHT
+	spookysounds = SPOOKY_GEN
+	spookynight = SPOOKY_GEN
+	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
+	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
+	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
+	first_time_text = null
+	town_area = FALSE //Because its not actually the main town, Garrison has less power here
+	warden_area = TRUE //Inversely Wardens get to have fun acting as proper watch here
+
 //Indoor Town Areas here
 /area/rogue/indoors/town/desert
 	name = "Desert Town Indoors"
