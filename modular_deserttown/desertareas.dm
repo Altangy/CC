@@ -70,11 +70,6 @@
 	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
 	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
 
-/area/rogue/outdoors/desertdeep/safe
-	name = "Desert Pass"
-	ambush_times = null
-	ambush_mobs = null
-
 /area/rogue/outdoors/desertdeep/above
 	name = "Deep Desert Above"
 	ambientsounds = AMB_MOUNTAIN
@@ -138,10 +133,80 @@
 	soundenv = 17
 	first_time_text = null
 
+//Indoor Town Areas here
+/area/rogue/indoors/town/desert
+	name = "Desert Town Indoors"
+	icon_state = "town"
+	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
+	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
+	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
+	converted_type = /area/rogue/outdoors/exposed/town
+	town_area = TRUE
+	deathsight_message = "the city of Al-Ashur and all its bustling souls"
+	
+/area/rogue/indoors/town/shop/desert
+	name = "Bazaar"
+	droning_sound = 'sound/music/area/desert/Caravan.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/indoors/town/dwarfin/desert
+	name = "Guild Smithy"
+	droning_sound = 'sound/music/area/desert/Sandal.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/indoors/town/physician/desert
+	name = "Physician"
+	droning_sound = 'sound/music/area/academy.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/indoors/town/bath/desert
+	name = "Baths"
+	droning_sound = 'sound/music/area/desert/TenThousandDelights.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/indoors/town/tavern/desert
+	name = "tavern"
+	icon_state = "tavern"
+	ambientsounds = AMB_INGEN
+	ambientnight = AMB_INGEN
+	droning_sound = 'sound/silence.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	tavern_area = TRUE
+
 /area/rogue/indoors/shelter/town/desert
 	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
 	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
 	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
+
+/area/rogue/under/town/basement/desert
+	name = "Basement"
+
+/area/rogue/indoors/town/desert/arenaview
+	name = "Grand Arena"
+
+/area/rogue/under/town/basement/desert/arenapit
+	name = "Grand Arena Pit"
+	town_area = FALSE
+
+//Keep Areas Here
+/area/rogue/indoors/town/manor/desert
+	name = "Al-Ashur Palace interior"
+	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
+	first_time_text = "Al-Ashur Palace"
+	keep_area = TRUE
+
+/area/rogue/under/town/basement/keep/desert
+	name = "Palace Basement"
+	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
 
 /area/rogue/outdoors/town/manor/desert
 	name = "Al-Ashur Palace exterior"
@@ -165,98 +230,17 @@
 	soundenv = 17
 	first_time_text = null
 
-/area/rogue/indoors/town/desert
-	name = "Desert Town Indoors"
-	icon_state = "town"
-	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
-	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
-	converted_type = /area/rogue/outdoors/exposed/town
-	town_area = TRUE
-	deathsight_message = "the city of Al-Ashur and all its bustling souls"
-	
-/area/rogue/outdoors/banditcamp/desert
-	name = "Bandit Camp"
-	droning_sound = 'sound/music/area/desert/stronghold.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/stronghold.ogg'
-	droning_sound_night = 'sound/music/area/desert/stronghold.ogg'
-	first_time_text = "A Gathering of Thieves"
-	deathsight_message = "hidden among thieves, in the hoard of a dragon"
-
-/area/rogue/indoors/banditcamp/desert
-	name = "Bandit Camp"
-	droning_sound = 'sound/music/area/desert/stronghold.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/stronghold.ogg'
-	droning_sound_night = 'sound/music/area/desert/stronghold.ogg'
-	deathsight_message = "hidden among thieves, in the hoard of a dragon"
-
-//////////////////////////////////////////////////////////////////
-
-/area/rogue/outdoors/town/manor/desert
-	name = "Al-Ashur Palace exterior"
-	icon_state = "manor"
-	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
-	first_time_text = "Al-Ashur Palace"
-	keep_area = TRUE
-
-/area/rogue/indoors/town/manor/desert
-	name = "Al-Ashur Palace interior"
-	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
-	first_time_text = "Al-Ashur Palace"
-	keep_area = TRUE
-
+//University Areas (Also considered Keep)
 /area/rogue/indoors/town/magician/desert
 	name = "University Wizard's Tower"
-	// spookysounds = SPOOKY_MYSTICAL
-	// spookynight = SPOOKY_MYSTICAL
-	// droning_sound = 'sound/music/area/magiciantower.ogg'
-	// droning_sound_dusk = null
-	// droning_sound_night = null
-	// keep_area = TRUE
-
-// Caustic Edit - To Make the Academy Part of the University properly
+	
 /area/rogue/indoors/town/magician/desertacademy
 	name = "University Academy"
 	droning_sound = 'sound/music/area/academy.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 
-/area/rogue/indoors/town/shop/desert
-	name = "Bazaar"
-	droning_sound = 'sound/music/area/desert/Caravan.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-
-/area/rogue/indoors/town/dwarfin/desert
-	name = "Guild Smithy"
-	droning_sound = 'sound/music/area/desert/Sandal.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-
-/area/rogue/indoors/town/physician/desert
-	name = "Physician"
-	droning_sound = 'sound/music/area/academy.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-	keep_area = TRUE
-
-/area/rogue/indoors/town/academy/desert
-	name = "Academy"
-	icon_state = "academy"
-	droning_sound = 'sound/music/area/academy.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-
-/area/rogue/indoors/town/bath/desert
-	name = "Baths"
-	droning_sound = 'sound/music/area/desert/TenThousandDelights.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-
+//Garrison Spaces - Wardens fort gets special treatment and does not use the Garrison path
 /area/rogue/indoors/town/garrison/desert
 	name = "Al-Ashur Garrison"
 	droning_sound = 'sound/music/area/desert/DarMeshq.ogg'
@@ -272,48 +256,11 @@
 	droning_sound_dusk = null
 	droning_sound_night = null
 
-/area/rogue/indoors/town/garrison/desert/cell/outdoor
-	name = "Dungeon Cell"
-	icon_state = "cell"
-	spookysounds = SPOOKY_DUNGEON
-	spookynight = SPOOKY_DUNGEON
-	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
-	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
-	ceiling_protected = FALSE
-	keep_area = TRUE
-	cell_area = TRUE
-
-/area/rogue/indoors/town/tavern/desert
-	name = "tavern"
-	icon_state = "tavern"
-	ambientsounds = AMB_INGEN
-	ambientnight = AMB_INGEN
-	droning_sound = 'sound/silence.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = null
-	tavern_area = TRUE
-
 /area/rogue/indoors/town/desert/warden
 	name = "Azeb Fort"
 	warden_area = TRUE
 
-/area/rogue/under/town/basement/desert
-	name = "Basement"
-
-/area/rogue/under/town/basement/keep/desert
-	name = "Palace Basement"
-	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
-	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
-
-/area/rogue/indoors/town/desert/arenaview
-	name = "Grand Arena"
-
-/area/rogue/under/town/basement/desert/arenapit
-	name = "Grand Arena Pit"
-	town_area = FALSE
-
+//Church Areas Here
 /area/rogue/indoors/town/church/cavebasement
 	icon_state = "church"
 	first_time_text = "THE CRYPT OF THE TEN"
@@ -335,7 +282,28 @@
 	deathsight_message = "a hallowed place, sworn to the One"
 	first_time_text = "THE HOUSE OF THE ONE"
 
-//Unqiue quest area for the indoor quest locations.
+//Bandit Camp Areas
+/area/rogue/outdoors/banditcamp/desert
+	name = "Bandit Camp"
+	droning_sound = 'sound/music/area/desert/stronghold.ogg'
+	droning_sound_dusk = 'sound/music/area/desert/stronghold.ogg'
+	droning_sound_night = 'sound/music/area/desert/stronghold.ogg'
+	first_time_text = "A Gathering of Thieves"
+	deathsight_message = "hidden among thieves, in the hoard of a dragon"
+
+/area/rogue/indoors/banditcamp/desert
+	name = "Bandit Camp"
+	droning_sound = 'sound/music/area/desert/stronghold.ogg'
+	droning_sound_dusk = 'sound/music/area/desert/stronghold.ogg'
+	droning_sound_night = 'sound/music/area/desert/stronghold.ogg'
+	deathsight_message = "hidden among thieves, in the hoard of a dragon"
+
+/area/rogue/outdoors/desertdeep/safe
+	name = "Desert Pass"
+	ambush_times = null
+	ambush_mobs = null
+
+//Unique quest area for the Town Indoor quest locations.
 /area/rogue/indoors/town/desert/quest
 	name = "Desert Town Indoors"
 	icon_state = "town"
@@ -349,6 +317,7 @@
 	first_time_text = "Something feels off..." //Just a warning for players to know that this place is dangerous.
 	safe = FALSE //Using an unused var for Teleportation as a means to play a different area entry sound.
 
+//Wayfarers Dream for the SINGLE area in the advdesertspawn that some classes use
 /area/rogue/underworld/desert
 	first_time_text = "wayfarer's dream"
 
@@ -422,7 +391,7 @@
 	first_time_text = "The Condemned Pyramid"
 	deathsight_message = "a sunken pyramid"
 
-//Desert Towns Bog Biome, shares Threat Region with rest of Underdark.
+//Desert Towns Bog Biome, shares Threat Region with rest of Underdark. Hag gets notified of people in this area.
 /area/rogue/under/desertbog
 	name = "The Wastemire"
 	icon_state = "bog"
@@ -460,6 +429,7 @@
 	threat_region = THREAT_REGION_DESERT_UNDERDARK
 	var/list/recent_intruders = list()
 
+// DO NOT PLACE ANY AREAS INBETWEEN THIS SPACE
 /area/rogue/under/desertbog/Entered(atom/movable/AM)
 	..()
 	if(!GLOB.active_hags.len)
