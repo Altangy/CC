@@ -273,7 +273,7 @@
 	droning_sound_night = null
 
 /area/rogue/indoors/town/desert/warden
-	name = "Azeb Fort"
+	name = "Warden Fort Azeb"
 	warden_area = TRUE
 
 //Church Areas Here
