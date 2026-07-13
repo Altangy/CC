@@ -35962,6 +35962,10 @@
 /obj/structure/fluff/statue/gargoyle/moss/candles,
 /turf/closed/wall/mineral/rogue/decostone/mossy/end,
 /area/rogue/under/cave/skeletoncrypt)
+"mbp" = (
+/obj/structure/flora/roguegrass/herb/wild/random/desertvillaplant,
+/turf/open/floor/rogue/dirt/desert,
+/area/rogue/outdoors/town/desertvilla)
 "mbs" = (
 /obj/structure/mineral_door/wood,
 /turf/open/floor/rogue/tile/brownbrick{
@@ -42996,6 +43000,10 @@
 	icon_state = "tiledrab2"
 	},
 /area/rogue/under/town/basement/desert)
+"ovJ" = (
+/obj/structure/flora/roguegrass/herb/wild/random/desertvillaplant,
+/turf/open/floor/rogue/desert_grass,
+/area/rogue/outdoors/town/desertvilla)
 "ovK" = (
 /obj/structure/roguemachine/atm{
 	location_tag = "Stewardry exterior south";
@@ -60900,6 +60908,10 @@
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/citybrick/citybrick2,
 /area/rogue/outdoors/town/desert)
+"uoc" = (
+/obj/structure/flora/roguegrass/herb/wild/random/desertdirtngrass,
+/turf/open/floor/rogue/dirt/desert,
+/area/rogue/outdoors/desert/river)
 "uof" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
 /turf/open/floor/rogue/sandbrick,
@@ -390842,7 +390854,7 @@ vkQ
 ahU
 pde
 qLU
-qOx
+mbp
 qOx
 vTa
 vTa
@@ -392404,7 +392416,7 @@ pGT
 qLU
 vBG
 qOx
-qOx
+mbp
 vTa
 vTa
 vTa
@@ -397053,7 +397065,7 @@ hPM
 hPM
 hPM
 hPM
-qLU
+ovJ
 hPM
 hPM
 atX
@@ -397102,7 +397114,7 @@ qLU
 evF
 qLU
 qLU
-qOx
+mbp
 qLU
 qLU
 qLU
@@ -397406,7 +397418,7 @@ kBD
 qLU
 qLU
 qOx
-qOx
+mbp
 qLU
 qLU
 qLU
@@ -398038,7 +398050,7 @@ rTz
 avK
 avK
 avK
-qOx
+mbp
 qOx
 rSz
 rSz
@@ -398300,7 +398312,7 @@ hPM
 hPM
 ccd
 qLU
-qLU
+ovJ
 hPM
 hPM
 hPM
@@ -398967,7 +398979,7 @@ qLU
 kBD
 dJZ
 qOx
-qOx
+mbp
 avK
 avK
 avK
@@ -399894,7 +399906,7 @@ hPM
 qLU
 hPM
 hPM
-qOx
+mbp
 fWC
 atX
 lSp
@@ -400243,7 +400255,7 @@ kLV
 jOM
 fCW
 fCW
-fCW
+uoc
 fCW
 ubS
 oAn
@@ -403943,7 +403955,7 @@ hPM
 qLU
 qLU
 qLU
-qLU
+ovJ
 kBD
 qLU
 qLU
@@ -406740,7 +406752,7 @@ hPM
 qLU
 qLU
 qLU
-qLU
+ovJ
 qLU
 dJZ
 qOx
@@ -410485,7 +410497,7 @@ qLU
 qLU
 qLU
 qLU
-qOx
+mbp
 qLU
 qLU
 qLU
@@ -416404,7 +416416,7 @@ vNc
 qOx
 qOx
 qOx
-qOx
+mbp
 kCh
 kCh
 qOx
