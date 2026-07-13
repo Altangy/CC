@@ -152,13 +152,16 @@
 	first_time_text = "Al-Ashur Palace"
 	keep_area = TRUE
 
-/area/rogue/outdoors/town/manor/roofs/desert
+/area/rogue/outdoors/town/roofs/keep/desert
 	name = "Palace Roofs"
 	icon_state = "roofs"
 	ambientsounds = AMB_MOUNTAIN
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
+	droning_sound = 'sound/music/area/desert/Iberia1.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
 	soundenv = 17
 	first_time_text = null
 
@@ -187,15 +190,6 @@
 	droning_sound_night = 'sound/music/area/desert/stronghold.ogg'
 	deathsight_message = "hidden among thieves, in the hoard of a dragon"
 
-/area/rogue/outdoors/town/roofs/desert
-	name = "Desert Roofs"
-	icon_state = "roofs"
-	ambientsounds = AMB_MOUNTAIN
-	ambientnight = AMB_MOUNTAIN
-	spookysounds = SPOOKY_GEN
-	spookynight = SPOOKY_GEN
-	soundenv = 17
-	first_time_text = null
 //////////////////////////////////////////////////////////////////
 
 /area/rogue/outdoors/town/manor/desert
