@@ -117,6 +117,7 @@
 
 
 //Town Area and Keep Area's start here
+//Outdoor Town Areas here
 /area/rogue/outdoors/town/desert
 	name = "Desert Town Outdoors"
 	icon_state = "town"
@@ -186,16 +187,6 @@
 	droning_sound_night = 'sound/music/area/desert/stronghold.ogg'
 	deathsight_message = "hidden among thieves, in the hoard of a dragon"
 
-/area/rogue/outdoors/town/desert
-	name = "Desert Town Outdoors"
-	icon_state = "town"
-	soundenv = 16
-	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
-	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
-	first_time_text = "The City of Al-Ashur"
-	town_area = TRUE
-
 /area/rogue/outdoors/town/roofs/desert
 	name = "Desert Roofs"
 	icon_state = "roofs"
@@ -207,11 +198,6 @@
 	first_time_text = null
 //////////////////////////////////////////////////////////////////
 
-/area/rogue/indoors/shelter/town/desert
-	droning_sound = 'sound/music/area/desert/TheRoad.ogg'
-	droning_sound_dusk = 'sound/music/area/desert/NightPrayer.ogg'
-	droning_sound_night = 'sound/music/area/desert/Moonrise.ogg'
-
 /area/rogue/outdoors/town/manor/desert
 	name = "Al-Ashur Palace exterior"
 	icon_state = "manor"
@@ -220,16 +206,6 @@
 	droning_sound_night = 'sound/music/area/desert/Iberia2.ogg'
 	first_time_text = "Al-Ashur Palace"
 	keep_area = TRUE
-
-/area/rogue/outdoors/town/manor/desert/roofs
-	name = "Palace Roofs"
-	icon_state = "roofs"
-	ambientsounds = AMB_MOUNTAIN
-	ambientnight = AMB_MOUNTAIN
-	spookysounds = SPOOKY_GEN
-	spookynight = SPOOKY_GEN
-	soundenv = 17
-	first_time_text = null
 
 /area/rogue/indoors/town/manor/desert
 	name = "Al-Ashur Palace interior"
