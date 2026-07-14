@@ -810,11 +810,11 @@
 //Caustic Edit - Desert Town Mapgen stuffs
 
 /datum/mapGeneratorModule/desertsand/place()
-	spawnableAtoms |= list(/obj/structure/flora/roguegrass/herb/wild/random/desertsands = 0.6)
+	spawnableAtoms |= list(/obj/structure/flora/roguegrass/herb/wild/random/desertsands = 0.8)
 	. = ..()
 
 /datum/mapGeneratorModule/desertgrass/place()
-	spawnableAtoms |= list(/obj/structure/flora/roguegrass/herb/wild/random/desertdirtngrass = 15)
+	spawnableAtoms |= list(/obj/structure/flora/roguegrass/herb/wild/random/desertdirtngrass = 20)
 	. = ..()
 
 // End Caustic Edit
