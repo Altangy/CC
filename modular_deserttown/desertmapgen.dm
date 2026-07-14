@@ -40,9 +40,8 @@
 							/obj/item/natural/stone = 1,
 							/obj/item/natural/rock = 1,
 							/obj/item/magic/artifact = 0.1,
-							/obj/structure/leyline/normal/coast = 0.1,
-							/obj/structure/leyline/normal/decap = 0.1,
-							/obj/structure/leyline/normal/grove = 0.1,
+							/obj/structure/leyline/normal/coast = 0.05,
+							/obj/structure/leyline/normal/decap = 0.05,
 							/obj/structure/leyline/powerful = 0.05,
 							/obj/structure/voidstoneobelisk = 0.05,
 							/obj/structure/flora/roguegrass/herb/manabloom = 0.05,
@@ -71,7 +70,7 @@
 							/obj/item/natural/stone = 1,
 							/obj/item/natural/rock = 1,
 							/obj/item/magic/artifact = 0.2,
-							/obj/structure/leyline = 0.1,
+							/obj/structure/leyline/normal/grove = 0.8,
 							/obj/structure/voidstoneobelisk = 0.1,
 							/obj/structure/flora/roguegrass/herb/manabloom = 0.1,
 							/obj/item/magic/manacrystal = 0.1,
@@ -125,6 +124,7 @@
 							/obj/structure/flora/tinymushrooms = 5,
 							/obj/structure/flora/roguegrass = 10,
 							/obj/structure/flora/roguegrass/herb/random = 5,
+							/obj/item/magic/artifact = 1,
 							/obj/structure/zizo_bane = 2)
 
 /datum/mapGeneratorModule/desertbogdirt
@@ -140,7 +140,7 @@
 							/obj/item/natural/stone = 10,
 							/obj/item/natural/rock = 6,
 							/obj/item/magic/artifact = 4,
-							/obj/structure/leyline/powerful = 2, //Caustic Edit
+							/obj/structure/leyline/powerful = 2,
 							/obj/structure/voidstoneobelisk = 0.5,
 							/obj/structure/flora/roguegrass/herb/manabloom = 2,
 							/obj/item/magic/manacrystal = 1,
