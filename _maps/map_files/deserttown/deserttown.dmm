@@ -26046,6 +26046,14 @@
 /obj/structure/roguemachine/mossmother/travel,
 /turf/open/floor/rogue/dirt/desert,
 /area/rogue/under/desertbog)
+"iEW" = (
+/obj/machinery/light/roguestreet/orange/walllamp{
+	dir = 8
+	},
+/turf/open/floor/rogue/hexstone{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/dwarfin/desert)
 "iEX" = (
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/carpet/stellar,
@@ -35597,7 +35605,11 @@
 	},
 /area/rogue/under/cave/desertdeep)
 "lSx" = (
-/obj/structure/rack/rogue/shelf/biggest,
+/obj/structure/closet/crate/chest/neu,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
+/obj/item/ingot/copper,
 /turf/open/floor/rogue/hexstone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -45113,6 +45125,13 @@
 /area/rogue/indoors/town/church)
 "oXx" = (
 /obj/structure/fluff/railing/border/west,
+/obj/structure/closet/crate/chest/neu,
+/obj/item/ingot/copper,
+/obj/item/ingot/bronze,
+/obj/item/ingot/bronze,
+/obj/item/ingot/bronze,
+/obj/item/ingot/bronze,
+/obj/item/ingot/bronze,
 /turf/open/floor/rogue/hexstone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -53992,18 +54011,7 @@
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/cave/desertdeep)
 "rYx" = (
-/obj/machinery/light/roguestreet/orange/walllamp{
-	dir = 8
-	},
-/obj/item/ingot/copper,
-/obj/item/ingot/copper,
-/obj/item/ingot/copper,
-/obj/item/ingot/copper,
-/obj/item/ingot/copper,
-/obj/structure/closet/crate/chest/neu,
-/turf/open/floor/rogue/hexstone{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
+/turf/open/floor/rogue/greenstone/runed,
 /area/rogue/indoors/town/dwarfin/desert)
 "rYz" = (
 /obj/structure/roguemachine/scomm{
@@ -64988,13 +64996,8 @@
 	},
 /area/rogue/outdoors/desert)
 "vAQ" = (
-/obj/structure/closet/crate/chest/neu,
-/obj/item/ingot/bronze,
-/obj/item/ingot/bronze,
-/obj/item/ingot/bronze,
-/obj/item/ingot/bronze,
-/obj/item/ingot/bronze,
-/turf/open/floor/rogue/hexstone{
+/obj/structure/leyline/tamed,
+/turf/open/floor/rogue/concrete{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/indoors/town/dwarfin/desert)
@@ -413594,9 +413597,9 @@ kaj
 kaj
 eSl
 uKs
-xuj
+dKd
 rHG
-rHG
+rYx
 rHG
 kaj
 kaj
@@ -413906,10 +413909,10 @@ wXf
 qrC
 fKw
 uKs
-qsn
+aAZ
 rYx
 vAQ
-rHG
+rYx
 kaj
 kaj
 kaj
@@ -414218,10 +414221,10 @@ gDE
 uKs
 uKs
 uKs
-uKs
-uKs
-uKs
 dKd
+rHG
+rYx
+rHG
 kaj
 epE
 kaj
@@ -414526,14 +414529,14 @@ bep
 bep
 bep
 bep
-bep
-bep
-bep
-hRJ
+buP
 bep
 bep
 uKs
-dKd
+xuj
+rHG
+rHG
+rHG
 kaj
 kaj
 kaj
@@ -414840,12 +414843,12 @@ icQ
 bep
 icQ
 icQ
-icQ
-hRJ
-icQ
 bep
 uKs
-dKd
+qsn
+rHG
+iEW
+rHG
 tdu
 hEd
 xKO
@@ -415152,12 +415155,12 @@ icQ
 rJC
 icQ
 icQ
-icQ
-rJC
-icQ
 bep
 gDE
 uKs
+uKs
+uKs
+gDE
 uKs
 uKs
 uKs
@@ -532779,9 +532782,9 @@ uKs
 qSY
 uKs
 uKs
-ijZ
-ijZ
-ijZ
+vBS
+vBS
+vBS
 vBS
 vBS
 vBS
@@ -533091,9 +533094,9 @@ tyc
 tyc
 tyc
 ijZ
-tyc
-tyc
-ijZ
+vBS
+vBS
+vBS
 vBS
 vBS
 vBS
@@ -533403,9 +533406,9 @@ tyc
 tyc
 tyc
 ijZ
-tyc
-tyc
-ijZ
+vBS
+vBS
+vBS
 vBS
 vBS
 vBS
@@ -533715,8 +533718,8 @@ tyc
 tyc
 tyc
 ijZ
-tyc
-tyc
+ijZ
+ijZ
 ijZ
 ijZ
 ijZ
