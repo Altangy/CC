@@ -8154,6 +8154,7 @@
 	pixel_y = 0
 	},
 /obj/structure/table/wood/poor,
+/obj/item/flint,
 /turf/open/floor/rogue/hexstone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -12670,10 +12671,18 @@
 /area/rogue/indoors/town/church)
 "dXc" = (
 /obj/structure/rack/rogue,
-/obj/item/reagent_containers/glass/bottle,
-/obj/item/reagent_containers/glass/bottle,
-/obj/item/reagent_containers/glass/bottle,
-/obj/item/reagent_containers/glass/bottle,
+/obj/item/reagent_containers/glass/bottle/rogue/elfred{
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/elfred{
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/elfblue{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/elfblue{
+	pixel_x = -4
+	},
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/town/basement/keep/desert)
 "dXf" = (
@@ -15002,10 +15011,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/church)
-"eMa" = (
-/obj/structure/fermentation_keg/fancypot/random/beer,
-/turf/open/floor/rogue/sandbrick,
-/area/rogue/under/town/basement/keep/desert)
 "eMj" = (
 /obj/item/reagent_containers/food/snacks/crow,
 /turf/open/floor/rogue/sandbrick,
@@ -19249,6 +19254,7 @@
 	},
 /obj/item/rogueweapon/tongs,
 /obj/item/rogueweapon/hammer/iron,
+/obj/item/flint,
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/dwarfin/desert)
 "gkZ" = (
@@ -25202,6 +25208,9 @@
 "ipD" = (
 /obj/structure/fluff/railing/border/east,
 /obj/structure/rack/rogue/shelf,
+/obj/item/flint{
+	pixel_y = 37
+	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin/desert)
 "ipP" = (
@@ -31407,6 +31416,12 @@
 	pixel_x = 7;
 	pixel_y = 0
 	},
+/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve{
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve{
+	pixel_x = -3
+	},
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/town/basement/keep/desert)
 "ksw" = (
@@ -32682,7 +32697,7 @@
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/cave/rhgoblinencampment)
 "kQR" = (
-/obj/structure/fermentation_keg/fancypot/random,
+/obj/structure/fermentation_keg/fancypot/random/beer,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/town/basement/keep/desert)
 "kQY" = (
@@ -48068,6 +48083,10 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat_rotten,
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/cave/desertdeep)
+"pVG" = (
+/obj/structure/fermentation_keg/fancypot/random,
+/turf/open/floor/rogue/sandbrick,
+/area/rogue/under/town/basement/keep/desert)
 "pVJ" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -50982,6 +51001,7 @@
 /obj/item/roguekey/crafterguild,
 /obj/item/rogueweapon/hammer/iron,
 /obj/item/rogueweapon/tongs,
+/obj/item/flint,
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/dwarfin/desert)
 "qWf" = (
@@ -57162,6 +57182,7 @@
 /obj/item/rogueweapon/tongs,
 /obj/item/rogueweapon/hammer/iron,
 /obj/item/roguekey/crafterguild,
+/obj/item/flint,
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/dwarfin/desert)
 "sZR" = (
@@ -285442,7 +285463,7 @@ vQT
 aaR
 aaR
 aaR
-eMa
+kQR
 smX
 smX
 smX
@@ -285754,7 +285775,7 @@ lXQ
 aaR
 cVZ
 aaR
-eMa
+kQR
 smX
 smX
 kvr
@@ -286067,7 +286088,7 @@ aaR
 efp
 aaR
 aaR
-eMa
+kQR
 smX
 kvr
 kvr
@@ -286379,7 +286400,7 @@ aaR
 sjG
 aaR
 aaR
-kQR
+pVG
 smX
 kvr
 kvr
