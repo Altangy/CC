@@ -742,6 +742,8 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/noc,
 /obj/item/clothing/suit/roguetown/shirt/robe/noc,
 /obj/machinery/light/rogue/candle/r,
+/obj/item/clothing/head/roguetown/roguehood/nochood,
+/obj/item/clothing/head/roguetown/roguehood/nochood,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "amV" = (
@@ -1616,6 +1618,12 @@
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
 /obj/item/clothing/suit/roguetown/shirt/robe/necra,
+/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/necrahood,
+/obj/item/clothing/head/roguetown/necramask,
+/obj/item/clothing/head/roguetown/necramask,
+/obj/item/clothing/cloak/templar/necran,
+/obj/item/clothing/cloak/templar/necran,
 /turf/open/floor/rogue/deserttile{
 	icon_state = "tilegreeny"
 	},
@@ -5311,7 +5319,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 1
 	},
-/obj/structure/fermentation_keg/sandpot/beer,
+/obj/structure/fermentation_keg/fancypot/wine,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/town/basement/keep/desert)
 "bJe" = (
@@ -5632,6 +5640,9 @@
 /area/rogue/under/cave/desertdeep)
 "bOw" = (
 /obj/structure/table/wood/poor,
+/obj/item/mini_flagpole/artificer{
+	pixel_y = 13
+	},
 /turf/open/floor/rogue/hexstone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -5821,6 +5832,9 @@
 /area/rogue/indoors/town/magician/desert)
 "bQS" = (
 /obj/structure/closet/crate/chest,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/indoors/town/magician/desert)
 "bQT" = (
@@ -6301,6 +6315,10 @@
 "bXk" = (
 /obj/structure/table/wood/long_table,
 /obj/item/candle/silver/lit,
+/obj/item/mini_flagpole/duke{
+	pixel_x = 10;
+	pixel_y = 22
+	},
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor/desert)
 "bXo" = (
@@ -12681,6 +12699,10 @@
 /obj/item/clothing/cloak/templar/ravox,
 /obj/item/clothing/head/roguetown/roguehood/ravoxgorget,
 /obj/structure/rack/rogue/shelf,
+/obj/item/rogueweapon/huntingknife/bronze{
+	pixel_x = -1;
+	pixel_y = 36
+	},
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "dXx" = (
@@ -13834,7 +13856,7 @@
 /area/rogue/indoors/town/desert)
 "erX" = (
 /obj/structure/table/church,
-/obj/item/clothing/neck/roguetown/psicross/eora,
+/obj/item/clothing/neck/roguetown/psicross/xylix,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
 "esb" = (
@@ -13846,6 +13868,9 @@
 /obj/structure/table/wood{
 	dir = 1;
 	icon_state = "longtable"
+	},
+/obj/item/mini_flagpole/bathhouse{
+	pixel_y = 14
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/bath/desert)
@@ -13880,7 +13905,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/desert/warden)
 "esN" = (
-/obj/structure/fermentation_keg/fancypot,
+/obj/structure/fermentation_keg/fancypot/water,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/town/basement/keep/desert)
 "eti" = (
@@ -14977,6 +15002,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/church)
+"eMa" = (
+/obj/structure/fermentation_keg/fancypot/random/beer,
+/turf/open/floor/rogue/sandbrick,
+/area/rogue/under/town/basement/keep/desert)
 "eMj" = (
 /obj/item/reagent_containers/food/snacks/crow,
 /turf/open/floor/rogue/sandbrick,
@@ -18779,6 +18808,10 @@
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/clothing/suit/roguetown/shirt/robe/abyssor,
 /obj/item/clothing/suit/roguetown/shirt/robe/abyssor,
+/obj/item/clothing/cloak/tabard/abyssorite,
+/obj/item/clothing/cloak/tabard/abyssorite,
+/obj/item/clothing/head/roguetown/roguehood/abyssor,
+/obj/item/clothing/head/roguetown/roguehood/abyssor,
 /turf/open/floor/rogue/deserttile{
 	icon_state = "tilegreeny"
 	},
@@ -21756,7 +21789,7 @@
 /obj/structure/table/church/m{
 	icon_state = "churchtable_mid_alt"
 	},
-/obj/item/clothing/neck/roguetown/psicross,
+/obj/item/clothing/neck/roguetown/psicross/eora,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
 "heV" = (
@@ -25634,6 +25667,9 @@
 	pixel_x = 9;
 	pixel_y = 8
 	},
+/obj/item/mini_flagpole/steward{
+	pixel_y = 13
+	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/steward)
 "iyt" = (
@@ -27144,8 +27180,12 @@
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/clothing/suit/roguetown/shirt/robe/eora,
 /obj/item/clothing/suit/roguetown/shirt/robe/eora,
-/obj/item/clothing/head/peaceflower,
 /obj/item/clothing/head/roguetown/eoramask,
+/obj/item/clothing/suit/roguetown/shirt/robe/eora/alt,
+/obj/item/clothing/suit/roguetown/shirt/robe/eora/alt,
+/obj/item/clothing/head/roguetown/eoramask,
+/obj/item/clothing/cloak/templar/eoran,
+/obj/item/clothing/cloak/templar/eoran,
 /turf/open/floor/rogue/deserttile{
 	icon_state = "tilegreeny"
 	},
@@ -30167,7 +30207,9 @@
 /turf/open/floor/rogue/dirt/road/desert,
 /area/rogue/outdoors/town/desertvilla)
 "jXV" = (
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest{
+	name = "Inn Funding Supply"
+	},
 /obj/item/roguecoin/copper/pile,
 /obj/item/roguecoin/silver/pile,
 /obj/item/roguecoin/silver/pile,
@@ -32280,6 +32322,9 @@
 /area/rogue/outdoors/town/desert)
 "kKD" = (
 /obj/structure/table/wood/poor,
+/obj/item/mini_flagpole/blacksmith{
+	pixel_y = 17
+	},
 /turf/open/floor/rogue/concrete{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -32637,7 +32682,7 @@
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/cave/rhgoblinencampment)
 "kQR" = (
-/obj/structure/fermentation_keg/sandpot/beer,
+/obj/structure/fermentation_keg/fancypot/random,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/town/basement/keep/desert)
 "kQY" = (
@@ -33540,6 +33585,9 @@
 /obj/item/clothing/cloak/templar/xylixian,
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/structure/rack/rogue/shelf,
+/obj/item/rope/chain{
+	pixel_y = 37
+	},
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "lgK" = (
@@ -34596,8 +34644,10 @@
 /area/rogue/indoors/inq/basement)
 "lzK" = (
 /obj/structure/rack/rogue,
-/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
-/obj/item/reagent_containers/glass/bottle/rogue/poison,
+/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine,
+/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine,
+/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine,
+/obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/town/basement/keep/desert)
 "lzW" = (
@@ -38290,9 +38340,13 @@
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/cave/desertdeep)
 "mOD" = (
-/obj/structure/fermentation_keg/sandpot,
 /obj/machinery/light/rogue/candle/l,
 /obj/machinery/light/rogue/candle,
+/obj/structure/rack/rogue/shelf/biggest,
+/obj/item/flashlight/flare/torch/lantern,
+/obj/item/flashlight/flare/torch/lantern,
+/obj/item/flashlight/flare/torch/lantern,
+/obj/item/flashlight/flare/torch/lantern,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "mOE" = (
@@ -38431,6 +38485,10 @@
 /obj/item/perfume/random{
 	pixel_x = 5;
 	pixel_y = 32
+	},
+/obj/item/mini_flagpole/bathhouse{
+	pixel_x = 10;
+	pixel_y = 14
 	},
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/bath/desert)
@@ -42569,6 +42627,11 @@
 /area/rogue/outdoors/town/desert)
 "okN" = (
 /obj/machinery/tanningrack,
+/obj/structure/rack/rogue/shelf,
+/obj/item/mini_flagpole/innkeeper{
+	pixel_x = 6;
+	pixel_y = 49
+	},
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -44407,6 +44470,10 @@
 /obj/effect/spawner/lootdrop/potion_ingredient/herb,
 /obj/effect/spawner/lootdrop/potion_ingredient/herb,
 /obj/effect/spawner/lootdrop/potion_ingredient/herb,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/physician/desert)
 "oNi" = (
@@ -44715,6 +44782,9 @@
 /obj/structure/roguemachine/atm{
 	pixel_y = -32;
 	location_tag = "Wizards Tower"
+	},
+/obj/item/mini_flagpole/university{
+	pixel_y = 18
 	},
 /turf/open/floor/rogue/deserttile{
 	icon_state = "tilegreeny"
@@ -55455,7 +55525,11 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/desertunderdark/undercity)
 "syf" = (
-/obj/structure/fermentation_keg/sandpot,
+/obj/structure/rack/rogue/shelf/biggest,
+/obj/item/clothing/cloak/templar/undivided,
+/obj/item/clothing/cloak/templar/undivided,
+/obj/item/clothing/cloak/undivided,
+/obj/item/clothing/cloak/undivided,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "syq" = (
@@ -58209,6 +58283,8 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed,
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed,
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
 /turf/open/floor/rogue/ruinedwood/spiral{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -58230,6 +58306,8 @@
 	},
 /obj/item/clothing/head/roguetown/roguehood/astrata,
 /obj/item/clothing/head/roguetown/roguehood/astrata,
+/obj/item/clothing/suit/roguetown/shirt/robe/astrata,
+/obj/item/clothing/suit/roguetown/shirt/robe/astrata,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "tql" = (
@@ -64215,13 +64293,13 @@
 /obj/structure/closet/crate/chest{
 	lockid = "armory"
 	},
-/obj/item/needle,
-/obj/item/needle,
-/obj/item/needle,
-/obj/item/reagent_containers/glass/bottle/alchemical/healthpot,
-/obj/item/reagent_containers/glass/bottle/alchemical/healthpot,
-/obj/item/reagent_containers/glass/bottle/alchemical/healthpot,
 /obj/machinery/light/rogue/candle/l,
+/obj/item/mini_flagpole/church,
+/obj/item/mini_flagpole/church,
+/obj/item/mini_flagpole/church,
+/obj/item/mini_flagpole/church,
+/obj/item/soap,
+/obj/item/soap,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "vlU" = (
@@ -65690,14 +65768,29 @@
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/desertunderdark/pyramid)
 "vNs" = (
-/obj/structure/closet/crate/chest{
-	lockid = "armory"
-	},
-/obj/item/flashlight/flare/torch/lantern,
-/obj/item/flashlight/flare/torch/lantern,
-/obj/item/flashlight/flare/torch/metal,
-/obj/item/flashlight/flare/torch/metal,
 /obj/machinery/light/rogue/candle/l,
+/obj/structure/closet/crate/chest/neu_fancy{
+	locked = 1;
+	lockid = "church"
+	},
+/obj/item/clothing/neck/roguetown/psicross/malum,
+/obj/item/clothing/neck/roguetown/psicross/malum,
+/obj/item/clothing/neck/roguetown/psicross/dendor,
+/obj/item/clothing/neck/roguetown/psicross/dendor,
+/obj/item/clothing/neck/roguetown/psicross/ravox,
+/obj/item/clothing/neck/roguetown/psicross/ravox,
+/obj/item/clothing/neck/roguetown/psicross/eora,
+/obj/item/clothing/neck/roguetown/psicross/eora,
+/obj/item/clothing/neck/roguetown/psicross/pestra,
+/obj/item/clothing/neck/roguetown/psicross/pestra,
+/obj/item/clothing/neck/roguetown/psicross/necra,
+/obj/item/clothing/neck/roguetown/psicross/necra,
+/obj/item/clothing/neck/roguetown/psicross/noc,
+/obj/item/clothing/neck/roguetown/psicross/noc,
+/obj/item/clothing/neck/roguetown/psicross/astrata,
+/obj/item/clothing/neck/roguetown/psicross/astrata,
+/obj/item/clothing/neck/roguetown/psicross/xylix,
+/obj/item/clothing/neck/roguetown/psicross/xylix,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "vNG" = (
@@ -65933,7 +66026,7 @@
 /area/rogue/outdoors/town/grove)
 "vQT" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
-/obj/structure/fermentation_keg/sandpot/beer,
+/obj/structure/fermentation_keg/fancypot/beer,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/town/basement/keep/desert)
 "vRf" = (
@@ -66249,7 +66342,6 @@
 /obj/item/natural/cloth,
 /obj/item/natural/cloth,
 /obj/item/natural/cloth,
-/obj/item/reagent_containers/powder/ozium,
 /obj/item/needle,
 /obj/item/needle,
 /turf/open/floor/rogue/churchbrick,
@@ -67497,6 +67589,9 @@
 	pixel_x = 10;
 	pixel_y = 6
 	},
+/obj/item/mini_flagpole/apothecary{
+	pixel_y = 56
+	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/physician/desert)
 "wqJ" = (
@@ -67613,6 +67708,10 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/needle/thorn,
+/obj/item/mini_flagpole/tailor{
+	pixel_x = 8;
+	pixel_y = 15
+	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/town/desert)
 "wsz" = (
@@ -68218,7 +68317,7 @@
 /turf/open/water/bath,
 /area/rogue/indoors/town/manor/desert)
 "wDx" = (
-/obj/structure/fermentation_keg/sandpot,
+/obj/structure/fermentation_keg/fancypot/random/wine,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/town/basement/keep/desert)
 "wDA" = (
@@ -68442,6 +68541,8 @@
 	},
 /area/rogue/indoors/town/steward)
 "wIo" = (
+/obj/item/clothing/neck/roguetown/psicross/undivided,
+/obj/structure/table/finestone,
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/indoors/town/church)
 "wIp" = (
@@ -71202,6 +71303,10 @@
 	icon_state = "tablewood1"
 	},
 /obj/structure/roguemachine/noticeboard/wall,
+/obj/item/mini_flagpole/merchant{
+	pixel_x = 3;
+	pixel_y = 13
+	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/shop/desert)
 "xBp" = (
@@ -72287,6 +72392,18 @@
 /obj/item/clothing/cloak/templar/malumite,
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/machinery/light/rogue/candle,
+/obj/item/clothing/suit/roguetown/shirt/undershirt/priest{
+	pixel_x = 5
+	},
+/obj/item/clothing/suit/roguetown/shirt/undershirt/priest{
+	pixel_x = 5
+	},
+/obj/item/clothing/suit/roguetown/shirt/undershirt/priest{
+	pixel_x = 5
+	},
+/obj/item/clothing/suit/roguetown/shirt/undershirt/priest{
+	pixel_x = 5
+	},
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church)
 "xTC" = (
@@ -285325,7 +285442,7 @@ vQT
 aaR
 aaR
 aaR
-lXQ
+eMa
 smX
 smX
 smX
@@ -285637,7 +285754,7 @@ lXQ
 aaR
 cVZ
 aaR
-kQR
+eMa
 smX
 smX
 kvr
@@ -285950,7 +286067,7 @@ aaR
 efp
 aaR
 aaR
-wDx
+eMa
 smX
 kvr
 kvr
@@ -286574,7 +286691,7 @@ aaR
 fuS
 aaR
 aaR
-lXQ
+wDx
 smX
 kvr
 kvr
@@ -286881,7 +286998,7 @@ uRR
 goh
 aaR
 nLG
-kQR
+eyH
 aaR
 uHM
 aaR
@@ -287197,7 +287314,7 @@ bIV
 aaR
 aaR
 aaR
-eyH
+wDx
 smX
 kvr
 kvr
