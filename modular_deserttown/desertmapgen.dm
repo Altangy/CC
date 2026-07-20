@@ -128,7 +128,7 @@
 							/obj/structure/zizo_bane = 2)
 
 /datum/mapGeneratorModule/desertbogdirt
-	clusterCheckFlags = CLUSTER_CHECK_ALL
+	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	allowed_areas = list(/area/rogue/under/desertbog)
