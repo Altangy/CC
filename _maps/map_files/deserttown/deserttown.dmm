@@ -60919,7 +60919,6 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/desert)
 "ugm" = (
-/obj/structure/chair/wood/rogue/throne/zybantine,
 /obj/machinery/light/roguestreet/orange/walllamp{
 	pixel_x = -13
 	},
@@ -60928,6 +60927,12 @@
 	},
 /obj/structure/roguemachine/titan{
 	pixel_y = 32
+	},
+/obj/structure/roguethrone{
+	icon = 'modular_deserttown/icons/throne.dmi';
+	icon_state = "zybantinethrone";
+	pixel_x = -16;
+	name = "throne of Al-Ashur"
 	},
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor/desert)
