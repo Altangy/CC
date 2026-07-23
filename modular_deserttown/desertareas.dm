@@ -481,7 +481,56 @@
 
 	GLOB.bogged_players -= L.real_name
 
-// CC - Dungeon Additions
+// Lava Biome and vicinity in top left of map, Shares threat region with rest of Underdark Zones for Simplicity
+/area/rogue/under/desertcaldera
+	name = "Caldera Pass"
+	icon_state = "decap"
+	warden_area = TRUE
+	first_time_text = "Caldera Passage"
+	ambush_mobs = list(
+				// Singles — budget filler across all factions
+				/mob/living/carbon/human/species/human/northern/highwayman/ambush = 15,
+				/mob/living/carbon/human/species/human/northern/highwayman/mount_reaver = 15,
+				/mob/living/carbon/human/species/skeleton/npc/medium = 15,
+				/mob/living/carbon/human/species/skeleton/npc/hard = 10,
+				// Packs
+				new /datum/ambush_config/trio_of_highwaymen = 10,
+				new /datum/ambush_config/singular_minotaur = 10,
+				new /datum/ambush_config/duo_minotaur = 5,
+				new /datum/ambush_config/solo_treasure_hunter = 15,
+				new /datum/ambush_config/duo_treasure_hunter = 2,
+				new /datum/ambush_config/medium_skeleton_party = 10,
+				new /datum/ambush_config/heavy_skeleton_party = 5,
+				)
+	converted_type = /area/rogue/outdoors/caves
+	ambush_times = list("night","dawn","dusk","day")
+	droning_sound = 'sound/music/area/decap_deeper.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	threat_region = THREAT_REGION_DESERT_UNDERDARK
+	deathsight_message = "an expanse of life, near volcanic flows"
+
+/area/rogue/under/desertcaldera/upper
+	name = "Upper Caldera Pass"
+
+/area/rogue/under/desertcaldera/middle 
+	name = "Middle Caldera Pass"
+	drow_area = TRUE
+
+/area/rogue/under/desertcaldera/lower
+	name = "Lower Caldera Pass"
+	drow_area = TRUE
+
+/area/rogue/under/desertcaldera/outlawsvillage
+	name = "Outlaws Retreat"
+	first_time_text = "Outlaws Retreat"
+	drow_area = TRUE
+	ceiling_protected = TRUE
+	ambush_times = null 
+	ambush_mobs = null 
+	deathsight_message = "an outlaws paradise, along a caldera ridge"
+
+// CC - Dungeon or special area Additions
 /area/rogue/under/cave/desertminomaze
 	name = "Labyrinth of Penance"
 	loot_budget = LOOT_BUDGET_DESERTMINOMAZE
@@ -500,6 +549,13 @@
 	ambush_mobs = null 
 	deathsight_message = "the dunelords retreat"
 
+/area/rogue/under/cave/deserthotsprings
+	name = "Abandoned Hotsprings"
+	first_time_text = "Abandoned Hotsprings"
+	ambush_times = null 
+	ambush_mobs = null 
+	deathsight_message = "an abandoned hotspring under the sands"
+
 // desert_wretch_oasis Special Areas. Bandit zone uses areas earlier in code
 /area/rogue/indoors/vampire_manor/desert 
 	name = "Vampire Hideaway"
@@ -515,3 +571,4 @@
 	ambush_times = null 
 	ambush_mobs = null 
 	deathsight_message = "a paradise under a wretched presence"
+
