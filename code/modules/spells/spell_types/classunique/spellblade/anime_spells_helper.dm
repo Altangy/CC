@@ -23,6 +23,9 @@ without going through the click pipeline, so spells can deliver weapon-style str
 		if(BCLASS_STAB, BCLASS_PICK)
 			blade_class = BCLASS_STAB
 			attack_flag = "stab"
+		if(BCLASS_PIERCE)
+			blade_class = BCLASS_PIERCE
+			attack_flag = "piercing"
 		if(BCLASS_BURN)
 			attack_flag = "fire"
 		else
@@ -76,7 +79,7 @@ without going through the click pipeline, so spells can deliver weapon-style str
 	if(npc_simple_damage_mult != 1 && istype(target, /mob/living/simple_animal))
 		damage = round(damage * npc_simple_damage_mult)
 
-	// Default intdamage factor: blunt gets 1.6x (same as melee blunt), others get 1.0
+	// Default intdamage factor: blunt gets 1.6x; everything else gets 1.0
 	if(isnull(intdamage_factor))
 		intdamage_factor = (blade_class == BCLASS_BLUNT) ? BLUNT_DEFAULT_INT_DAMAGEFACTOR : 1
 	var/armor_block = target.run_armor_check(def_zone, attack_flag, blade_dulling = blade_class, armor_penetration = armor_penetration, damage = damage, intdamfactor = intdamage_factor, flat_integ = flat_integ)
@@ -92,6 +95,9 @@ without going through the click pipeline, so spells can deliver weapon-style str
 				var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(def_zone))
 				if(affecting)
 					affecting.bodypart_attacked_by(blade_class, wound_damage, user, def_zone, crit_message = TRUE, weapon = weapon)
+					var/dismember_chance = affecting.get_spell_dismemberment_chance(damage, blade_class, def_zone)
+					if(dismember_chance && prob(dismember_chance))
+						affecting.dismember(damage_type, blade_class, user, def_zone)
 			else
 				target.simple_woundcritroll(blade_class, wound_damage, user, def_zone, crit_message = TRUE)
 

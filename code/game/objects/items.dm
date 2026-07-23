@@ -1258,31 +1258,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		else
 			return 0
 
-	if(nuforce < 10)
-		return 0
-
-	var/probability = nuforce * (total_dam / affecting.max_damage)
-	var/hard_dismember = HAS_TRAIT(affecting, TRAIT_HARDDISMEMBER)
-	var/easy_dismember = affecting.rotted || affecting.skeletonized || HAS_TRAIT(affecting, TRAIT_EASYDISMEMBER)
-	var/easy_decapitation = HAS_TRAIT(affecting, TRAIT_EASYDECAPITATION)
-	if(affecting.owner)
-		if(!hard_dismember)
-			hard_dismember = HAS_TRAIT(affecting.owner, TRAIT_HARDDISMEMBER)
-		if(!easy_dismember)
-			easy_dismember = HAS_TRAIT(affecting.owner, TRAIT_EASYDISMEMBER)
-		if(!easy_decapitation)
-			easy_decapitation = HAS_TRAIT(affecting.owner, TRAIT_EASYDECAPITATION)
-	// If you don't have easy dismember, then you must hit 90% damage or more to dismember a limb.
-	if((affecting.get_damage() <= (affecting.max_damage * CRIT_DISMEMBER_DAMAGE_THRESHOLD)) && !easy_dismember)
-		return FALSE
-	if(easy_decapitation && zone_sel == BODY_ZONE_PRECISE_NECK)
-		// May want to include hard dismember compatibility.
-		return probability * 1.5
-	if(hard_dismember)
-		return min(probability, 5)
-	else if(easy_dismember)
-		return probability * 1.5
-	return probability
+	return affecting.dismemberment_chance_from_force(nuforce, zone_sel)
 
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)
@@ -1665,7 +1641,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 				var/defense = "[SPAN_TOOLTIP("Each tier increases effective HP of the armor by 20%. Absorbed attacks never reach HP. The armor must be broken first.", "<u><b>ABSORB:</b></u>")] [colorgrade_rating("BLUNT", def_armor.blunt, elaborate = TRUE, max_tier = 5)]"
 				defense += "<br>"
 				defense += "[SPAN_TOOLTIP("Each tier reduces damage by 20% of base. Reduced damage still reaches HP. Armor absorbs what was blocked.", "<u><b>REDUCE:</b></u>")] [colorgrade_rating("BURN", def_armor.fire, elaborate = TRUE, max_tier = 5)]"
-				defense += " | [colorgrade_rating("ACID", def_armor.acid, elaborate = TRUE, max_tier = 5)]"
 				defense += "<br>"
 				defense += "[SPAN_TOOLTIP("Blocks attacks below this tier (Armor takes all damage). Same tier penetrates 20% (80% goes to armor). Exceeding tier penetrates fully.", "<u><b>BLOCK:</b></u>")] "
 				defense += "[colorgrade_rating("SLASH", def_armor.slash, elaborate = TRUE)] | "

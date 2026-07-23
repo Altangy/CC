@@ -171,7 +171,6 @@ UNDER NO CIRCUMSTANCE SHOULD ANY OF THE BOOKS BE GIVEN OUT INTO SPAWNERS OR TO B
 		/datum/crafting_recipe/roguetown/sewing/tailor/otavangambeson,
 		/datum/crafting_recipe/roguetown/leather/unique/otavanleatherpants,
 		/datum/crafting_recipe/roguetown/leather/unique/otavanboots,
-		/datum/crafting_recipe/roguetown/sewing/tailor/hgambeson/fencer,
 		/datum/crafting_recipe/roguetown/leather/unique/fencingbreeches,
 		/datum/crafting_recipe/roguetown/sewing/tailor/grenzelhat,
 		/datum/crafting_recipe/roguetown/sewing/tailor/grenzelshirt,
@@ -211,7 +210,6 @@ UNDER NO CIRCUMSTANCE SHOULD ANY OF THE BOOKS BE GIVEN OUT INTO SPAWNERS OR TO B
 		/datum/crafting_recipe/roguetown/leather/unique/monkleather,
 		/datum/crafting_recipe/roguetown/sewing/tailor/desertgown,
 		/datum/crafting_recipe/roguetown/leather/unique/baggyleatherpants,//Naledi
-		/datum/crafting_recipe/roguetown/sewing/tailor/hgambeson/fencer,
 		/datum/crafting_recipe/roguetown/leather/unique/fencingbreeches,//Aanvr
 		/datum/crafting_recipe/roguetown/leather/unique/openrobes,
 		/datum/crafting_recipe/roguetown/leather/unique/gronngloves,
@@ -327,12 +325,6 @@ UNDER NO CIRCUMSTANCE SHOULD ANY OF THE BOOKS BE GIVEN OUT INTO SPAWNERS OR TO B
 	desc = "Teaches you how to cast Lighting Bolt."
 	spell = /datum/action/cooldown/spell/projectile/lightning_bolt
 	spellname = "Lightning Bolt"
-
-/obj/item/book/granter/spell/noc/boulderstrike
-	name = "Scroll of Boulder Strike"
-	desc = "Teaches you how to cast Boulder Strike."
-	spell = /datum/action/cooldown/spell/projectile/boulder_strike
-	spellname = "Boulder Strike"
 
 /obj/item/book/granter/spell/noc/message
 	name = "Scroll of Message"

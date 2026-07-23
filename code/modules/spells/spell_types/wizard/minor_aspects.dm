@@ -70,12 +70,37 @@
 	choice_spells = list(
 		/datum/action/cooldown/spell/conjure_arcyne_ward/dragonhide,
 		/datum/action/cooldown/spell/conjure_arcyne_ward/crystalhide,
+		/datum/action/cooldown/spell/conjure_arcyne_ward/ironhide,
 	)
+
+//Caustic Edit - Re-add Lesser Kinesis Minor Aspect!
+/datum/magic_aspect/lesser_kinesis
+	name = "Lesser Kinesis"
+	latin_name = "Minor Aspectus Vis"
+	desc = "TODO"
+	aspect_type = ASPECT_MINOR
+	school_color = GLOW_COLOR_KINESIS
+	binding_chants = list(
+		"Let me push and pull at the threads of force.",
+		"Vis Minor, mihi adesse!",
+	)
+	unbinding_chants = list(
+		"I release the threads of force.",
+		"Vis Minor, me relinquere!",
+	)
+	fixed_spells = list(
+		/datum/action/cooldown/spell/projectile/fetch,
+		/datum/action/cooldown/spell/projectile/repel,
+	)
+//Caustic Edit End
 
 /datum/magic_aspect/lesser_augmentation
 	name = "Lesser Augmentation"
 	latin_name = "Minor Aspectus Augmenti"
-	desc = "TODO"
+	desc = "Scholars debate whether Augmentation is a first, second, or even third-order school. Its adherents consider themselves third-order - \
+	with the honor of imitating the divine by augmenting the boundless potential of the humen form. Its spells are focused on enhancing the body, \
+	never the mind directly - for the mind is the true province of the divine, and one cannot use magycks to enhance one's own ability to wield magycks so bluntly. \
+	Woe betides those who face a warrior sharpened by the arcyne."
 	aspect_type = ASPECT_MINOR
 	school_color = GLOW_COLOR_BUFF
 	binding_chants = list(
@@ -86,7 +111,7 @@
 		"I calm the potent within.",
 		"Augmentum, me relinquere!",
 	)
-	pointbuy_budget = 3
+	pointbuy_budget = 6
 	pointbuy_spells = list(
 		/datum/action/cooldown/spell/darkvision,
 		/datum/action/cooldown/spell/augment_buff/blood_rush,
@@ -119,7 +144,7 @@
 		"Illusio, me relinquere!",
 	)
 	fixed_spells = list(
-		/obj/effect/proc_holder/spell/invoked/invisibility,
+		/datum/action/cooldown/spell/invisibility,
 	)
 
 /datum/magic_aspect/hearthcraft

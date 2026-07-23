@@ -309,7 +309,8 @@ GLOBAL_LIST_INIT(primordial_wounds, init_primordial_wounds())
 			return FALSE
 
 	if(HAS_TRAIT(owner, TRAIT_PSYDONITE) && !passive_healing)
-		heal_wound(0.6)
+		if(!istype(src, /datum/wound/slash/incision))
+			heal_wound(0.6)
 		if(!owner || QDELETED(owner) || QDELETED(src))
 			return FALSE
 
@@ -329,7 +330,8 @@ GLOBAL_LIST_INIT(primordial_wounds, init_primordial_wounds())
 		set_bleed_rate(0)
 
 	if (HAS_TRAIT(owner, TRAIT_PSYDONITE) && !passive_healing)
-		heal_wound(0.6) // psydonites are supposed to apparently slightly heal wounds whether dead or alive
+		if(!istype(src, /datum/wound/slash/incision))
+			heal_wound(0.6) // psydonites are supposed to apparently slightly heal wounds whether dead or alive
 
 	return TRUE
 
@@ -448,6 +450,9 @@ GLOBAL_LIST_INIT(primordial_wounds, init_primordial_wounds())
 				checkval = bleed_rate
 			if(SEVERITY_TYPE_WHP)
 				checkval = whp
+			if(SEVERITY_TYPE_BURN)
+				if(bodypart_owner && bodypart_owner.max_damage > 0)
+					checkval = round((bodypart_owner.burn_dam / bodypart_owner.max_damage) * 100)
 		for(var/sevname in severity_stages)
 			if(severity_stages[sevname] <= checkval)
 				newname = sevname

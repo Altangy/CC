@@ -696,8 +696,16 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			if(rotstuff)
 				head_quality = -1
 			head.scale_butchering_quality(head_quality)
+			if(no_head_bounty)
+				head.sellprice = 0
 		to_chat(user, "<span class='notice'>I finish butchering: [butcher_summary(botch_count, normal_count, perfect_count, botch_chance, perfect_chance)].</span>")
-		clean_gib(dna_to_add)
+		if(user.mind)
+			user.mind.add_sleep_experience(/datum/skill/labor/butchering, user.STAINT * BUTCHERING_EXP_FINISH)
+		gib()
+
+/mob/living/simple_animal/mark_contract_spawned()
+	. = ..()
+	head_butcher = null
 
 // This will choose a random adjacent tile to spawn a gib on, and then edit it's offset accordingly so it's closer to the body
 /mob/living/simple_animal/proc/botched_gib(list/dna_to_add)
@@ -746,6 +754,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	qdel(src)
 
 // Caustic Edit End
+
+/mob/living/simple_animal/mark_contract_spawned()
+	. = ..()
+	head_butcher = null
 
 /mob/living/proc/butcher_summary(botch_count, normal_count, perfect_count, botch_chance, perfect_chance)
     var/list/parts = list()
@@ -1351,7 +1363,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 //Flight related procs foy flying simple_animals
 /mob/living/simple_animal/proc/fly_up()
-	set category = "RoleUnique.Winged Form"
+	set category = "IC.Actions"
 	set name = "Fly Up"
 
 	if(src.pulledby != null)
@@ -1366,7 +1378,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			to_chat(src, span_notice("I can't fly away while being grabbed!"))
 
 /mob/living/simple_animal/proc/fly_down()
-	set category = "RoleUnique.Winged Form"
+	set category = "IC.Actions"
 	set name = "Fly Down"
 
 	if(src.pulledby != null)

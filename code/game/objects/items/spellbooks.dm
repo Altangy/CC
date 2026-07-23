@@ -27,7 +27,7 @@ Intended to be a reward or a goal for pure mage, allowing them to rebind their a
 	sewrepair = TRUE
 	anvilrepair = null
 	associated_skill = /datum/skill/combat/arcyne
-	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/tome/aegis)
+	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood, /datum/intent/tome/aegis)
 	name = "\improper lesser tome of the arcyne"
 	desc = "A crackling, glowing book, filled with runes and symbols that hurt the mind to stare at. It can rebind aspect spells and project an arcyne aegis."
 	special = /datum/special_intent/arcyne_descent
@@ -210,11 +210,9 @@ Intended to be a reward or a goal for pure mage, allowing them to rebind their a
 		name = "\improper [design] tome"
 		return
 	if(!open)
-		slot_flags &= ~ITEM_SLOT_HIP
 		open = TRUE
 		playsound(loc, 'sound/items/book_open.ogg', 100, FALSE, -1)
 	else
-		slot_flags |= ITEM_SLOT_HIP
 		open = FALSE
 		playsound(loc, 'sound/items/book_close.ogg', 100, FALSE, -1)
 	curpage = 1

@@ -91,7 +91,8 @@
 	R.max_integrity = round(R.max_integrity * 0.5)
 	R.obj_integrity = R.max_integrity
 
-	// Mark as conjured — no salvage, no smelting
+	// Mark as conjured — no salvage, no smelting, and use Arcyne Armament
+	R.associated_skill = /datum/skill/combat/arcyne
 	R.smeltresult = null
 	R.salvage_result = null
 	R.fiber_salvage = FALSE
@@ -124,7 +125,7 @@
 
 	charge_required = TRUE
 	charge_time = 4 SECONDS
-	charge_drain = 1
+	hold_drain = 1
 	charge_slowdown = CHARGING_SLOWDOWN_MEDIUM
 	charge_sound = 'sound/magic/charging.ogg'
 	cooldown_time = 2 MINUTES

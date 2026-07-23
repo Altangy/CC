@@ -529,6 +529,11 @@
 	AddComponent(/datum/component/cursed_item, TRAIT_DEPRAVED, "BOOTS")
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
+/obj/item/clothing/shoes/roguetown/boots/armor/baotha/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_HEELS, 2)
+	stepnoise_flag = STEPNOISE_HEELS // This will prevent default footstep noise from being made by the heels (sounds odd)
+
 /obj/item/clothing/shoes/roguetown/boots/armor/baotha/dropped(mob/living/carbon/human/user)
 	. = ..()
 	if(QDELETED(src))
@@ -779,7 +784,7 @@
 	sewrepair = FALSE
 	smeltresult = /obj/item/ingot/bronze
 
-/obj/item/clothing/shoes/courtphysician
+/obj/item/clothing/shoes/roguetown/courtphysician //Caustic Edit - Fix this path to actually have the Roguetown part added
 	name = "sanguine shoes"
 	desc = "Leather shoes, the solemn tap of these bears grim news, or salvation."
 	icon_state = "docshoes"
@@ -805,6 +810,12 @@
 /obj/item/clothing/shoes/roguetown/courtphysician/female/Initialize()
 	. = ..()
 	update_icon()
+
+
+/obj/item/clothing/shoes/roguetown/courtphysician/female/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_HEELS, 2)
+	stepnoise_flag = STEPNOISE_HEELS // This will prevent default footstep noise from being made by the heels (sounds odd)
 
 /obj/item/clothing/shoes/roguetown/courtphysician/female/update_icon()
 	cut_overlays()
