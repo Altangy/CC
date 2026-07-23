@@ -16,7 +16,10 @@
 		/datum/mapGeneratorModule/desertunderdarkmud, 
 		/datum/mapGeneratorModule/desertbogwater,
 		/datum/mapGeneratorModule/desertbogdirt,
-		/datum/mapGeneratorModule/desertbogstoneandroads)
+		/datum/mapGeneratorModule/desertbogstoneandroads,
+		/datum/mapGeneratorModule/desertlavadirt,
+		/datum/mapGeneratorModule/desertlavastone
+		)
 
 //Randomly placed mobs across the world, very rare spawns only in the deep desert.
 /datum/mapGeneratorModule/desertmobs
@@ -41,7 +44,6 @@
 							/obj/item/natural/rock = 1,
 							/obj/item/magic/artifact = 0.1,
 							/obj/structure/leyline/normal/coast = 0.05,
-							/obj/structure/leyline/normal/decap = 0.05,
 							/obj/structure/leyline/powerful = 0.05,
 							/obj/structure/voidstoneobelisk = 0.05,
 							/obj/structure/flora/roguegrass/herb/manabloom = 0.05,
@@ -177,3 +179,36 @@
 							/obj/structure/flora/roguegrass/water = 10,
 							/obj/structure/flora/roguegrass/water/reeds = 5)
 
+/datum/mapGeneratorModule/desertlavadirt
+	clusterCheckFlags = CLUSTER_CHECK_NONE
+	allowed_turfs = list(/turf/open/floor/rogue/dirt)
+	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
+	allowed_areas = list(/area/rogue/under/desertcaldera)
+	excluded_areas = list(/area/rogue/under/desertcaldera/outlawsvillage)
+	spawnableAtoms = list(/obj/structure/flora/mushroomcluster = 20,
+							/obj/structure/flora/roguegrass/thorn_bush = 15,
+							/obj/effect/spawner/lootdrop/rogueshroom/happy/random = 20,
+							/obj/effer/spawner/lootdrop/rogueshroom = 10,
+							/obj/structure/flora/rogueshroom = 20,
+							/obj/structure/flora/tinymushrooms = 20,
+							/obj/structure/flora/roguegrass = 10,
+							/obj/structure/flora/roguegrass/herb/random = 5,
+							/obj/item/magic/artifact = 1,
+							/obj/structure/leyline/powerful = 1,
+							/obj/structure/leyline/normal/decap = 1,
+							/obj/structure/voidstoneobelisk = 0.1,
+							/obj/structure/zizo_bane = 1)
+	spawnableTurfs = list(/turf/open/water/swamp = 0.5)
+
+/datum/mapGeneratorModule/desertlavastone
+	clusterCheckFlags = CLUSTER_CHECK_ALL
+	allowed_turfs = list(/turf/open/floor/rogue/naturalstone)
+	allowed_areas = list(/area/rogue/under/desertcaldera)
+	excluded_areas = list(/area/rogue/under/desertcaldera/outlawsvillage)
+	spawnableAtoms = list(/obj/effect/spawner/lootdrop/rogueshroom/happy/random = 5,
+							/obj/structure/flora/mushroomcluster = 5,
+							/obj/structure/flora/tinymushrooms = 5,
+							/obj/structure/roguerock = 20,
+							/obj/item/natural/rock = 3,
+							/obj/item/natural/stone = 5,
+							/obj/structure/vine = 5)
