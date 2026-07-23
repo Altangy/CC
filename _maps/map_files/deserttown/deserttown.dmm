@@ -109,6 +109,10 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/outdoors/desertdeep)
+"aco" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "acv" = (
 /obj/machinery/light/rogue/smelter/hiron{
 	pixel_x = 0;
@@ -10477,6 +10481,11 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/desertbog)
+"dfv" = (
+/obj/effect/landmark/mapGenerator/rogue/desert,
+/obj/effect/landmark/mapGenerator/rogue/calderadesert,
+/turf/closed/mineral/rogue/bedrock/sandstone,
+/area/rogue/under/cave/desertdeep)
 "dfz" = (
 /obj/structure/stairs/desert{
 	dir = 1
@@ -19192,6 +19201,10 @@
 /obj/machinery/light/rogue/candle/l,
 /turf/open/water/swamp,
 /area/rogue/under/desertunderdark/pyramid)
+"fOo" = (
+/obj/structure/roguerock,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "fOV" = (
 /obj/item/cushion/desert2,
 /turf/open/floor/rogue/wood,
@@ -35015,6 +35028,10 @@
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/bath/desert)
+"kVA" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "kVR" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
@@ -60689,8 +60706,10 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/desertcaldera/upper)
 "taf" = (
-/obj/machinery/light/rogue/firebowl/off,
-/turf/open/floor/rogue/dunes,
+/obj/machinery/light/rogue/firebowl,
+/turf/open/floor/rogue/lightpath{
+	color = "#b3acbf"
+	},
 /area/rogue/outdoors/desert)
 "tag" = (
 /obj/structure/chair/wood/zybantine,
@@ -69677,6 +69696,10 @@
 	color = "#d4ffcf"
 	},
 /area/rogue/under/cave/skeletoncrypt)
+"vLC" = (
+/obj/effect/spawner/lootdrop/rogueshroom/happy/random,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "vLJ" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -73327,10 +73350,6 @@
 /turf/open/floor/rogue/carpet/lord/center/no_teleport,
 /area/rogue/under/cave/licharena/bossroom)
 "wQC" = (
-/obj/structure/bars{
-	color = "#755f48";
-	name = "rusted bars"
-	},
 /obj/structure/bars/passage{
 	density = 0;
 	icon_state = "passage1"
@@ -74786,11 +74805,6 @@
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor/desert)
-"xmL" = (
-/obj/effect/landmark/mapGenerator/rogue/desert,
-/obj/effect/landmark/mapGenerator/rogue/calderadesert,
-/turf/closed/mineral/rogue/bedrock/sandstone,
-/area/rogue/under/cave/desertdeep)
 "xmN" = (
 /obj/structure/stairs/desert{
 	dir = 8
@@ -196921,7 +196935,7 @@ obK
 obK
 obK
 obK
-xmL
+dfv
 "}
 (2,1,2) = {"
 rsN
@@ -315482,7 +315496,7 @@ obK
 obK
 obK
 obK
-xmL
+dfv
 "}
 (2,1,3) = {"
 rsN
@@ -367024,11 +367038,11 @@ qjH
 qjH
 qjH
 qjH
-rDj
+vLC
 xzw
 xzw
 rDj
-rDj
+vLC
 qjH
 qjH
 qjH
@@ -367340,7 +367354,7 @@ qjH
 rDj
 rDj
 rDj
-rDj
+kVA
 qjH
 qjH
 qjH
@@ -367652,7 +367666,7 @@ qjH
 rDj
 rDj
 rDj
-rDj
+fOo
 qjH
 qjH
 qjH
@@ -367961,7 +367975,7 @@ qjH
 qjH
 qjH
 qjH
-rDj
+kVA
 rDj
 rDj
 rDj
@@ -368278,7 +368292,7 @@ rDj
 rDj
 rDj
 rDj
-rDj
+aco
 qjH
 qjH
 qjH
@@ -368584,7 +368598,7 @@ qjH
 qjH
 qjH
 qjH
-rDj
+kVA
 rDj
 rDj
 rDj
@@ -369207,13 +369221,13 @@ avK
 avK
 qjH
 qjH
+aco
 rDj
 rDj
 rDj
 rDj
 rDj
-rDj
-rDj
+fOo
 rDj
 rDj
 qjH
@@ -369527,7 +369541,7 @@ rDj
 rDj
 rDj
 rDj
-rDj
+kVA
 qjH
 qjH
 qjH
@@ -369831,14 +369845,14 @@ avK
 qjH
 qjH
 rDj
+vLC
 rDj
 rDj
 rDj
 rDj
 rDj
 rDj
-rDj
-rDj
+vLC
 rDj
 qjH
 qjH
@@ -370142,9 +370156,9 @@ avK
 avK
 qjH
 qjH
+aco
 rDj
-rDj
-rDj
+fOo
 rDj
 rDj
 rDj
@@ -370463,7 +370477,7 @@ rDj
 rDj
 rDj
 rDj
-rDj
+kVA
 qjH
 qjH
 avK
@@ -370766,7 +370780,7 @@ avK
 avK
 qjH
 qjH
-rDj
+kVA
 rDj
 rDj
 rDj
@@ -371078,15 +371092,15 @@ avK
 avK
 qjH
 qjH
+vLC
 rDj
 rDj
 rDj
 rDj
 rDj
+fOo
 rDj
-rDj
-rDj
-rDj
+aco
 qjH
 qjH
 avK
@@ -371391,8 +371405,8 @@ avK
 avK
 qjH
 qjH
-rDj
-rDj
+aco
+fOo
 rDj
 rDj
 rDj
@@ -372020,7 +372034,7 @@ qjH
 rDj
 rDj
 rDj
-rDj
+kVA
 qjH
 qjH
 qjH
@@ -373269,7 +373283,7 @@ alf
 jTP
 jTP
 alf
-alf
+taf
 mGA
 alf
 alf
@@ -373579,7 +373593,7 @@ alf
 mGA
 alf
 jTP
-cRY
+adk
 alf
 alf
 alf
@@ -373888,7 +373902,7 @@ eMy
 eMy
 alf
 alf
-alf
+taf
 eMy
 adk
 cRY
@@ -376073,7 +376087,7 @@ eMy
 eMy
 eMy
 eMy
-eMy
+eFt
 adk
 cRY
 cRY
@@ -379197,7 +379211,7 @@ eMy
 eMy
 cRY
 isx
-qsZ
+qcM
 cRY
 adk
 cRY
@@ -380454,7 +380468,7 @@ cRY
 adk
 cRY
 cRY
-taf
+eFt
 eMy
 eMy
 eMy
@@ -382961,7 +382975,7 @@ cRY
 cRY
 cRY
 adk
-eMy
+eFt
 eMy
 eMy
 eMy
