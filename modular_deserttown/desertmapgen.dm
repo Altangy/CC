@@ -5,6 +5,12 @@
 	startTurfX = 1
 	startTurfY = 1
 
+/obj/effect/landmark/mapGenerator/rogue/calderadesert
+	mapGeneratorType = /datum/mapGenerator/desertcaldera
+	endTurfX = 380
+	endTurfY = 310
+	startTurfX = 1
+	startTurfY = 1
 
 /datum/mapGenerator/desert
 	modules = list(/datum/mapGeneratorModule/desertmobs, 
@@ -16,8 +22,11 @@
 		/datum/mapGeneratorModule/desertunderdarkmud, 
 		/datum/mapGeneratorModule/desertbogwater,
 		/datum/mapGeneratorModule/desertbogdirt,
-		/datum/mapGeneratorModule/desertbogstoneandroads,
-		/datum/mapGeneratorModule/desertlavadirt,
+		/datum/mapGeneratorModule/desertbogstoneandroads
+		)
+
+/datum/mapGenerator/desertcaldera
+	modules = list(/datum/mapGeneratorModule/desertlavadirt,
 		/datum/mapGeneratorModule/desertlavastone
 		)
 
@@ -180,7 +189,7 @@
 							/obj/structure/flora/roguegrass/water/reeds = 5)
 
 /datum/mapGeneratorModule/desertlavadirt
-	clusterCheckFlags = CLUSTER_CHECK_NONE
+	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	allowed_areas = list(/area/rogue/under/desertcaldera)
@@ -188,7 +197,6 @@
 	spawnableAtoms = list(/obj/structure/flora/mushroomcluster = 20,
 							/obj/structure/flora/roguegrass/thorn_bush = 15,
 							/obj/effect/spawner/lootdrop/rogueshroom/happy/random = 20,
-							/obj/effer/spawner/lootdrop/rogueshroom = 10,
 							/obj/structure/flora/rogueshroom = 20,
 							/obj/structure/flora/tinymushrooms = 20,
 							/obj/structure/flora/roguegrass = 10,

@@ -16086,6 +16086,7 @@
 /area/rogue/indoors/town/magician/desert)
 "eQc" = (
 /obj/effect/landmark/mapGenerator/rogue/desert,
+/obj/effect/landmark/mapGenerator/rogue/calderadesert,
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/cave)
 "eQh" = (
@@ -74785,6 +74786,11 @@
 /obj/machinery/light/rogue/candle/r,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor/desert)
+"xmL" = (
+/obj/effect/landmark/mapGenerator/rogue/desert,
+/obj/effect/landmark/mapGenerator/rogue/calderadesert,
+/turf/closed/mineral/rogue/bedrock/sandstone,
+/area/rogue/under/cave/desertdeep)
 "xmN" = (
 /obj/structure/stairs/desert{
 	dir = 8
@@ -196915,7 +196921,7 @@ obK
 obK
 obK
 obK
-ygz
+xmL
 "}
 (2,1,2) = {"
 rsN
@@ -315476,7 +315482,7 @@ obK
 obK
 obK
 obK
-ygz
+xmL
 "}
 (2,1,3) = {"
 rsN
