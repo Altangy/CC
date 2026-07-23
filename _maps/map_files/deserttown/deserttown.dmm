@@ -14795,9 +14795,10 @@
 /turf/open/floor/rogue/citybrick/citybrick1,
 /area/rogue/under/desertcavewet)
 "evj" = (
-/obj/structure/roguerock,
-/turf/open/floor/rogue/naturalstone/sandstone,
-/area/rogue/under/cave/desert)
+/obj/effect/landmark/mapGenerator/rogue/desert,
+/obj/effect/landmark/mapGenerator/rogue/calderadesert,
+/turf/closed/mineral/rogue/bedrock/sandstone,
+/area/rogue/under/cave/desertdeep)
 "evm" = (
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/desertunderdark/undercity)
@@ -17549,15 +17550,6 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/cave/rhgoblinencampment)
-"fos" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 1
-	},
-/turf/open/floor/rogue/naturalstone,
-/turf/open/floor/rogue/tile/brownbrick{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
-/area/rogue/under/desertcaldera/outlawsvillage)
 "fow" = (
 /obj/structure/sandrock/sandrock4,
 /turf/open/floor/rogue/dunes,
@@ -34067,6 +34059,10 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/desertcaldera/outlawsvillage)
+"kGi" = (
+/obj/effect/spawner/lootdrop/rogueshroom/happy/random,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "kGo" = (
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/church/basement)
@@ -40920,10 +40916,6 @@
 /mob/living/carbon/human/species/human/northern/highwayman/ambush,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/desertcaldera/outlawsvillage)
-"mSg" = (
-/obj/item/natural/rock,
-/turf/open/floor/rogue/naturalstone/sandstone,
-/area/rogue/under/cave/desert)
 "mSr" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -57341,10 +57333,6 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/indoors/town/manor/desert)
-"rYT" = (
-/obj/item/natural/stone,
-/turf/open/floor/rogue/naturalstone/sandstone,
-/area/rogue/under/cave/desert)
 "rYU" = (
 /obj/structure/well/fountain,
 /turf/open/floor/rogue/dirt/road/desert,
@@ -60616,11 +60604,6 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/desertcaldera/upper)
-"taf" = (
-/obj/effect/landmark/mapGenerator/rogue/desert,
-/obj/effect/landmark/mapGenerator/rogue/calderadesert,
-/turf/closed/mineral/rogue/bedrock/sandstone,
-/area/rogue/under/cave/desertdeep)
 "tag" = (
 /obj/structure/chair/wood/zybantine,
 /obj/effect/landmark/start/marshal,
@@ -69146,6 +69129,10 @@
 	},
 /turf/open/floor/rogue/citybrick/citybrick1,
 /area/rogue/outdoors/town/desert)
+"vDE" = (
+/obj/structure/roguerock,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "vDG" = (
 /obj/item/reagent_containers/powder/ozium{
 	pixel_x = 0;
@@ -70298,7 +70285,7 @@
 /turf/closed/wall/mineral/rogue/sandbrick,
 /area/rogue/indoors/town/magician/desertacademy)
 "vWG" = (
-/obj/effect/spawner/lootdrop/rogueshroom/happy/random,
+/obj/item/natural/rock,
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/cave/desert)
 "vWK" = (
@@ -73945,6 +73932,10 @@
 /obj/item/clothing/head/roguetown/helmet/goblin,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/under/cave/rhgoblinencampment)
+"xcU" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/naturalstone/sandstone,
+/area/rogue/under/cave/desert)
 "xdc" = (
 /obj/structure/fluff/railing/border,
 /turf/closed/wall/mineral/rogue/sandstone,
@@ -105175,7 +105166,7 @@ hYR
 azA
 tyJ
 xxg
-fos
+xmY
 mQx
 mQx
 oSn
@@ -196821,7 +196812,7 @@ obK
 obK
 obK
 obK
-taf
+evj
 "}
 (2,1,2) = {"
 rsN
@@ -315382,7 +315373,7 @@ obK
 obK
 obK
 obK
-taf
+evj
 "}
 (2,1,3) = {"
 rsN
@@ -366924,11 +366915,11 @@ qjH
 qjH
 qjH
 qjH
-vWG
+kGi
 xzw
 xzw
 rDj
-vWG
+kGi
 qjH
 qjH
 qjH
@@ -367240,7 +367231,7 @@ qjH
 rDj
 rDj
 rDj
-rYT
+xcU
 qjH
 qjH
 qjH
@@ -367552,7 +367543,7 @@ qjH
 rDj
 rDj
 rDj
-evj
+vDE
 qjH
 qjH
 qjH
@@ -367861,7 +367852,7 @@ qjH
 qjH
 qjH
 qjH
-rYT
+xcU
 rDj
 rDj
 rDj
@@ -368178,7 +368169,7 @@ rDj
 rDj
 rDj
 rDj
-mSg
+vWG
 qjH
 qjH
 qjH
@@ -368484,7 +368475,7 @@ qjH
 qjH
 qjH
 qjH
-rYT
+xcU
 rDj
 rDj
 rDj
@@ -369107,13 +369098,13 @@ avK
 avK
 qjH
 qjH
-mSg
+vWG
 rDj
 rDj
 rDj
 rDj
 rDj
-evj
+vDE
 rDj
 rDj
 qjH
@@ -369427,7 +369418,7 @@ rDj
 rDj
 rDj
 rDj
-rYT
+xcU
 qjH
 qjH
 qjH
@@ -369731,14 +369722,14 @@ avK
 qjH
 qjH
 rDj
-vWG
+kGi
 rDj
 rDj
 rDj
 rDj
 rDj
 rDj
-vWG
+kGi
 rDj
 qjH
 qjH
@@ -370042,9 +370033,9 @@ avK
 avK
 qjH
 qjH
-mSg
+vWG
 rDj
-evj
+vDE
 rDj
 rDj
 rDj
@@ -370363,7 +370354,7 @@ rDj
 rDj
 rDj
 rDj
-rYT
+xcU
 qjH
 qjH
 avK
@@ -370666,7 +370657,7 @@ avK
 avK
 qjH
 qjH
-rYT
+xcU
 rDj
 rDj
 rDj
@@ -370978,15 +370969,15 @@ avK
 avK
 qjH
 qjH
+kGi
+rDj
+rDj
+rDj
+rDj
+rDj
+vDE
+rDj
 vWG
-rDj
-rDj
-rDj
-rDj
-rDj
-evj
-rDj
-mSg
 qjH
 qjH
 avK
@@ -371291,8 +371282,8 @@ avK
 avK
 qjH
 qjH
-mSg
-evj
+vWG
+vDE
 rDj
 rDj
 rDj
@@ -371920,7 +371911,7 @@ qjH
 rDj
 rDj
 rDj
-rYT
+xcU
 qjH
 qjH
 qjH

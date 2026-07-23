@@ -551,9 +551,14 @@
 
 /area/rogue/under/cave/deserthotsprings
 	name = "Abandoned Hotsprings"
+	icon_state = "eora"
 	first_time_text = "Abandoned Hotsprings"
 	ambush_times = null 
 	ambush_mobs = null 
+	soundenv = 6
+	droning_sound = 'sound/newmusic/lovecraft2.ogg'
+	droning_sound_dusk = 'sound/newmusic/lovecraft2.ogg'
+	droning_sound_night = 'sound/newmusic/lovecraft2.ogg'
 	deathsight_message = "an abandoned hotspring under the sands"
 
 // desert_wretch_oasis Special Areas. Bandit zone uses areas earlier in code
