@@ -2588,6 +2588,10 @@
 /obj/effect/spawner/lootdrop/roguetown/sewers,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/desertcavewet)
+"aQw" = (
+/obj/structure/fermentation_keg/fancypot/water,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "aQB" = (
 /turf/open/rebound,
 /area/rogue/under/cave/abyssor/inner)
@@ -2845,6 +2849,10 @@
 /obj/machinery/light/rogue/candle,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/outdoors/town/roofs/desert)
+"aSJ" = (
+/obj/machinery/light/rogue/candle/r,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "aSS" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 1
@@ -7977,6 +7985,20 @@
 "csY" = (
 /turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/under/desertcaldera/outlawsvillage)
+"ctc" = (
+/obj/structure/table/wood/poor,
+/obj/item/rogueweapon/huntingknife/chefknife{
+	pixel_y = -2;
+	pixel_x = 2
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = -4
+	},
+/obj/machinery/light/rogue/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "cti" = (
 /obj/machinery/light/rogue/candle/blue,
 /obj/structure/closet/crate/chest{
@@ -8420,9 +8442,7 @@
 /obj/machinery/light/rogue/hearth,
 /obj/item/reagent_containers/glass/bucket/pot,
 /obj/machinery/light/rogue/oven/south,
-/turf/open/floor/rogue/tile{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
+/turf/closed/basic,
 /area/rogue/indoors/town/desert)
 "czV" = (
 /obj/structure/chair/stool/rogue,
@@ -12558,6 +12578,13 @@
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave/deserthotsprings)
+"dKN" = (
+/obj/structure/roguemachine/withdraw{
+	pixel_y = -32
+	},
+/obj/structure/fluff/railing/border/east,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "dKO" = (
 /obj/machinery/anvil,
 /turf/open/floor/rogue/metal{
@@ -13890,6 +13917,12 @@
 /obj/machinery/light/rogue/firebowl/church,
 /turf/open/floor/rogue/citybrick/citybrick6,
 /area/rogue/outdoors/desert/above)
+"eeT" = (
+/obj/structure/chair/wood/zybantine{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "efb" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/shirt/tunic/white,
@@ -16546,6 +16579,10 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/desertunderdark/undercity)
+"eVK" = (
+/obj/structure/fluff/statue/small,
+/turf/closed/wall/mineral/rogue/sandbrick,
+/area/rogue/indoors/town/steward)
 "eVU" = (
 /obj/effect/decal/cleanable/debris/stony,
 /obj/item/natural/rock,
@@ -21105,6 +21142,17 @@
 /obj/structure/fermentation_keg/sandpot/water,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/bath/desert)
+"gtj" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/reagent_containers/glass/bowl/carved/porcelain,
+/obj/item/reagent_containers/glass/bowl/carved/porcelain,
+/obj/item/reagent_containers/glass/cup/ceramic/fancy,
+/obj/item/reagent_containers/glass/cup/ceramic/fancy,
+/obj/item/reagent_containers/glass/bucket/pot/teapot/fancy,
+/obj/item/reagent_containers/glass/cup/silver,
+/obj/item/reagent_containers/glass/cup/silver,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "gtk" = (
 /obj/structure/table/wood/poor,
 /obj/item/rogueweapon/hammer/iron,
@@ -21238,6 +21286,14 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/desertbog)
+"gvB" = (
+/obj/structure/table/wood/poor,
+/obj/item/millstone,
+/obj/machinery/light/rogue/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "gvC" = (
 /obj/machinery/light/rogue/candle/red{
 	pixel_y = -32
@@ -24409,6 +24465,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
+/obj/machinery/gear_painter,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/steward)
 "hxw" = (
@@ -37342,8 +37399,13 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave/abyssor/inner)
 "lEy" = (
-/obj/structure/table/wood/fancy,
-/turf/open/floor/rogue/ruinedwood,
+/obj/machinery/light/rogue/oven/north,
+/obj/machinery/light/rogue/hearth,
+/obj/structure/fluff/railing/border/north,
+/obj/item/cooking/pan,
+/turf/open/floor/rogue/tile{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
 /area/rogue/indoors/town/steward)
 "lEA" = (
 /turf/closed/wall/mineral/rogue/sandstone,
@@ -39938,6 +40000,20 @@
 	icon_state = "tilegreywhite"
 	},
 /area/rogue/indoors/town/church)
+"mvU" = (
+/obj/structure/rack/rogue/shelf,
+/obj/item/reagent_containers/glass/cup/wooden{
+	pixel_y = 39;
+	pixel_x = 7
+	},
+/obj/structure/table/wood/poor,
+/obj/item/reagent_containers/glass/bucket/pot,
+/obj/item/reagent_containers/glass/cup/wooden{
+	pixel_y = 38;
+	pixel_x = -5
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "mwe" = (
 /obj/structure/ladder,
 /turf/open/floor/rogue/tile/brownbrick{
@@ -46745,10 +46821,8 @@
 /turf/open/water/bath,
 /area/rogue/under/town/basement/keep/desert)
 "oBU" = (
-/obj/structure/table/wood/fancy,
-/obj/item/candle/candlestick/gold/lit{
-	pixel_x = 0;
-	pixel_y = 21
+/obj/structure/chair/wood/zybantine{
+	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/steward)
@@ -47872,6 +47946,18 @@
 	},
 /turf/open/floor/rogue/dirt/road/desert,
 /area/rogue/indoors/town/physician/desert)
+"oRU" = (
+/obj/structure/table/wood/fancy,
+/obj/item/kitchen/fork/gold{
+	pixel_x = -6
+	},
+/obj/item/kitchen/spoon/gold{
+	pixel_x = 5
+	},
+/obj/item/cooking/platter/carved/porcelain,
+/obj/machinery/light/rogue/candle,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "oRV" = (
 /obj/structure/stationary_bell,
 /obj/structure/bars/grille,
@@ -51682,7 +51768,6 @@
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
-/obj/machinery/light/rogue/candle/l,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/steward)
 "qbK" = (
@@ -57728,6 +57813,10 @@
 	},
 /turf/open/floor/rogue/deserttile,
 /area/rogue/indoors/town/garrison/desert)
+"rYF" = (
+/obj/structure/roguewindow/openclose/reinforced,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "rYJ" = (
 /obj/structure/table/church,
 /obj/machinery/light/rogue/candle/floorcandle/alt,
@@ -59240,6 +59329,9 @@
 	},
 /obj/structure/fluff/railing/border{
 	dir = 5
+	},
+/obj/machinery/light/rogue/candle{
+	pixel_y = -32
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/steward)
@@ -71581,7 +71673,6 @@
 /obj/structure/fluff/railing/border{
 	dir = 6
 	},
-/obj/machinery/light/rogue/candle/l,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/steward)
 "whS" = (
@@ -72792,6 +72883,17 @@
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/town/garrison/desert)
+"wCj" = (
+/obj/structure/table/wood/fancy,
+/obj/item/kitchen/fork/gold{
+	pixel_x = -8
+	},
+/obj/item/kitchen/spoon/gold{
+	pixel_x = 7
+	},
+/obj/item/cooking/platter/carved/porcelain,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/steward)
 "wCp" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/desert,
@@ -331903,7 +332005,7 @@ iZp
 iZp
 iZp
 iZp
-mVA
+dVY
 vmB
 ezD
 vmB
@@ -335957,7 +336059,7 @@ iZp
 iZp
 iZp
 iZp
-mVA
+dVY
 mVA
 mVA
 mVA
@@ -377715,7 +377817,7 @@ eMy
 cRY
 adk
 cRY
-eMy
+eFt
 eMy
 eMy
 eMy
@@ -379903,7 +380005,7 @@ adk
 cRY
 adk
 cRY
-eMy
+eFt
 eMy
 eMy
 eMy
@@ -380843,7 +380945,7 @@ cRY
 adk
 cRY
 cRY
-eFt
+eMy
 eMy
 eMy
 eMy
@@ -381157,7 +381259,7 @@ adk
 adk
 cRY
 cRY
-eMy
+eFt
 eMy
 eMy
 eMy
@@ -383344,7 +383446,7 @@ eMy
 eMy
 eMy
 eMy
-cRY
+qcM
 adk
 cRY
 cRY
@@ -525898,11 +526000,11 @@ rlI
 rlI
 rlI
 rlI
-vTa
-vTa
-vTa
-vTa
-vTa
+nJm
+nJm
+nJm
+nJm
+nJm
 vTa
 vTa
 vTa
@@ -526210,11 +526312,11 @@ rlI
 rlI
 rlI
 rlI
-vTa
-vTa
-vTa
-vTa
-vTa
+nJm
+gtj
+hUd
+aQw
+nJm
 vTa
 vTa
 vTa
@@ -526521,12 +526623,12 @@ rlI
 rlI
 rlI
 rlI
-vTa
-vTa
-vTa
-vTa
-vTa
-vTa
+nJm
+nJm
+mvU
+hUd
+gvB
+nJm
 vTa
 vTa
 vTa
@@ -526833,12 +526935,12 @@ rlI
 rlI
 rlI
 rlI
-vTa
-vTa
-vTa
-vTa
-vTa
-vTa
+rYF
+eeT
+eeT
+hUd
+lEy
+eVk
 vTa
 vTa
 vTa
@@ -527146,11 +527248,11 @@ rlI
 rlI
 rlI
 nJm
-nJm
-nJm
-nJm
-vTa
-vTa
+oRU
+wCj
+hUd
+ctc
+eVk
 tyc
 tyc
 tyc
@@ -527458,11 +527560,11 @@ rlI
 rlI
 nJm
 nJm
-lEy
 oBU
-nJm
-nJm
-nJm
+oBU
+hUd
+dKN
+eVk
 tyc
 tyc
 tyc
@@ -528082,7 +528184,7 @@ rlI
 rlI
 jkI
 hUd
-hUd
+aSJ
 hUd
 pXO
 jTc
@@ -645710,7 +645812,7 @@ nJm
 iSi
 eoM
 rUK
-rUK
+tys
 eVk
 tyc
 tyc
@@ -646022,7 +646124,7 @@ nJm
 dMZ
 nJm
 rUK
-tys
+rUK
 eVk
 tyc
 tyc
@@ -646956,7 +647058,7 @@ nJm
 nJm
 nJm
 dMZ
-nJm
+eVK
 nJm
 bjF
 eVk
