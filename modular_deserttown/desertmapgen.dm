@@ -13,13 +13,13 @@
 	startTurfY = 1
 
 /datum/mapGenerator/desert
-	modules = list(/datum/mapGeneratorModule/desertmobs, 
-		/datum/mapGeneratorModule/desertsand, 
+	modules = list(/datum/mapGeneratorModule/desertmobs,
+		/datum/mapGeneratorModule/desertsand,
 		/datum/mapGeneratorModule/desertgrass,
-		/datum/mapGeneratorModule/desertroad, 
-		/datum/mapGeneratorModule/desertwater, 
-		/datum/mapGeneratorModule/desertunderdarkstone, 
-		/datum/mapGeneratorModule/desertunderdarkmud, 
+		/datum/mapGeneratorModule/desertroad,
+		/datum/mapGeneratorModule/desertwater,
+		/datum/mapGeneratorModule/desertunderdarkstone,
+		/datum/mapGeneratorModule/desertunderdarkmud,
 		/datum/mapGeneratorModule/desertbogwater,
 		/datum/mapGeneratorModule/desertbogdirt,
 		/datum/mapGeneratorModule/desertbogstoneandroads
@@ -166,8 +166,8 @@
 
 /datum/mapGeneratorModule/desertbogstoneandroads
 	clusterCheckFlags = CLUSTER_CHECK_NONE
-	allowed_turfs = list(/turf/open/floor/rogue/naturalstone, 
-							/turf/open/floor/rogue/lightpath, 
+	allowed_turfs = list(/turf/open/floor/rogue/naturalstone,
+							/turf/open/floor/rogue/lightpath,
 							/turf/open/floor/rogue/sandbrick)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	allowed_areas = list(/area/rogue/under/desertbog)
@@ -194,16 +194,16 @@
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 	allowed_areas = list(/area/rogue/under/desertcaldera)
 	excluded_areas = list(/area/rogue/under/desertcaldera/outlawsvillage)
-	spawnableAtoms = list(/obj/structure/flora/mushroomcluster = 20,
+	spawnableAtoms = list(/obj/structure/flora/mushroomcluster = 15,
 							/obj/structure/flora/roguegrass/thorn_bush = 15,
 							/obj/effect/spawner/lootdrop/rogueshroom/happy/random = 20,
-							/obj/structure/flora/rogueshroom = 20,
-							/obj/structure/flora/tinymushrooms = 20,
+							/obj/structure/flora/rogueshroom = 15,
+							/obj/structure/flora/tinymushrooms = 15,
 							/obj/structure/flora/roguegrass = 10,
 							/obj/structure/flora/roguegrass/herb/random = 5,
 							/obj/item/magic/artifact = 1,
-							/obj/structure/leyline/powerful = 1,
-							/obj/structure/leyline/normal/decap = 1,
+							/obj/structure/leyline/powerful = 0.1,
+							/obj/structure/leyline/normal/decap = 0.2,
 							/obj/structure/voidstoneobelisk = 0.1,
 							/obj/structure/zizo_bane = 1)
 	spawnableTurfs = list(/turf/open/water/swamp = 0.5)
