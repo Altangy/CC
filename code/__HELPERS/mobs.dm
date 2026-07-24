@@ -199,7 +199,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(!can_move && (!user.Adjacent(target)))
 			. = 0
 			break
-			
+
 		if(user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
 			. = 0
 			break
@@ -237,17 +237,17 @@ GLOBAL_LIST_EMPTY(species_list)
  * mob/user - The mob performing the action.
  *
  * delay = the time in deciseconds. Use time defines (SECONDS, MINUTES) for readability.
- * 
+ *
  * needhand - check for an empty hand
- * 
+ *
  * target - the target of the action
  *
  * progress - whether to display a progress bar
- * 
+ *
  * datum/callback/extra_checks - additional check callbacks to perform during do_after
- * 
+ *
  * same_direction - whether the mob performing the action may switch directions or not
- * 
+ *
  * interrupt - whether to interrupt a prior do_after or not
 */
 
@@ -649,6 +649,11 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/mob/dead/observer/observer	// Transfer safety to observer spawning proc.
 	if(check_rights(R_WATCH, FALSE))
 		observer = new /mob/dead/observer/admin(src)
+		//Caustic Edit - Add in the ability for Observer Admins to go invis!
+		if (client.aghost_toggle)
+			observer.invisibility = INVISIBILITY_MAXIMUM
+			observer.density = 0
+		//Caustic Edit End
 	else
 		observer = new /mob/dead/observer/nodraw(src)
 	if(!existing)
