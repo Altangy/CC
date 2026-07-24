@@ -158,7 +158,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	/// Original values for vars overridden by the active alt grip state.
 	var/list/alt_grip_restore_vars
 	///intents while gripped, replacing main intents. if list != null, will allow the weapon to be wielded. set to null to remove wielding.
-	var/list/gripped_intents 
+	var/list/gripped_intents
 	var/force_wielded = 0
 	var/gripsprite = FALSE //use alternate grip sprite for inhand
 	var/wieldsound = FALSE
@@ -836,7 +836,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	else
 		if(twohands_required)
 			wield(user)
-	
+
 	//Caustic Edit - Ported over from Chompers/Virgo! This handles possessed items.
 	if(src.possessed_voice && src.possessed_voice.len > 1 && !(user.ckey in warned_of_possession)) // CHOMPEdit Is this item possessed?
 		warned_of_possession |= user.ckey
@@ -1628,6 +1628,15 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/proc/on_embed(obj/item/bodypart/bp)
 	return
+
+/obj/item/proc/has_armor_value()
+	if(istype(src, /obj/item/clothing))
+		var/obj/item/clothing/C = src
+		if(C.armor)
+			var/datum/armor/def_armor = C.armor
+			return def_armor.blunt || def_armor.slash || def_armor.stab || def_armor.piercing
+
+	return FALSE
 
 /obj/item/proc/defense_examine()
 	var/list/str = list()
