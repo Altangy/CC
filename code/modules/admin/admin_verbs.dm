@@ -427,15 +427,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		return
 	aghost_toggle = !aghost_toggle
 	to_chat(src, aghost_toggle ? "Aghosting will now turn your mob invisible." : "Aghost will no longer turn your mob invisible.")
-	//Caustic Edit - Let this button toggle between the two states as well.
-	if (isAdminObserver(mob))
-		if (aghost_toggle)
-			mob.invisibility = INVISIBILITY_MAXIMUM
-			mob.density = 0
-		else
-			mob.invisibility = INVISIBILITY_OBSERVER
-			mob.density = 0
-	//Caustic Edit End
 
 /client/proc/admin_ghost()
 	set category = "ADMIN.Movement"

@@ -649,11 +649,6 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/mob/dead/observer/observer	// Transfer safety to observer spawning proc.
 	if(check_rights(R_WATCH, FALSE))
 		observer = new /mob/dead/observer/admin(src)
-		//Caustic Edit - Add in the ability for Observer Admins to go invis!
-		if (client.aghost_toggle)
-			observer.invisibility = INVISIBILITY_MAXIMUM
-			observer.density = 0
-		//Caustic Edit End
 	else
 		observer = new /mob/dead/observer/nodraw(src)
 	if(!existing)
