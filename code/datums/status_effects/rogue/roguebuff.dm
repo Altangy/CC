@@ -718,7 +718,7 @@
 		return
 	if(HAS_TRAIT(owner, TRAIT_IRONMAN))
 		return
-		
+
 	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal_rogue/campfire(get_turf(owner))
 	H.color = "#c7aa5c"
 
@@ -866,7 +866,7 @@
 	return TRUE
 
 /datum/status_effect/buff/psyhealing/tick()
-	if(HAS_TRAIT(owner, TRAIT_IRONMAN)) 
+	if(HAS_TRAIT(owner, TRAIT_IRONMAN))
 		return
 	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/psyheal_rogue(get_turf(owner))
 	H.color = "#d3d3d3"
@@ -912,7 +912,7 @@
 	name = "Processing: Refined"
 	desc = "I am currently processing refined minerals, greatly regenerating my shell's integrity."
 	icon_state = "buff"
-	
+
 /atom/movable/screen/alert/status_effect/buff/gemmuncher
 	name = "Processing: Gem"
 	desc = "I am currently processing an arcyne conduit, efficiently regenerating my shell's integrity and reinvigorating my core."
@@ -1389,6 +1389,26 @@
 	to_chat(owner, span_warning("I feel Dendor's blessing leave my body..."))
 	REMOVE_TRAIT(owner, TRAIT_LONGSTRIDER, id)
 	REMOVE_TRAIT(owner, TRAIT_STRONGBITE, id)
+
+/atom/movable/screen/alert/status_effect/buff/malumritual
+	name = "Blessing of Malum"
+	desc = "Tiredness and failure is not an option I must finish my work..."
+	icon_state = "buff"
+
+/datum/status_effect/buff/malumritual
+	id = "malumritual"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/malumritual
+	duration = 20 MINUTES
+
+/datum/status_effect/buff/malumritual/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("I feel Malum's persistance envelop me..."))
+	ADD_TRAIT(owner, TRAIT_MALUMCHOSEN , id)
+
+/datum/status_effect/buff/malumritual/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("I feel Malum's blessing fade away..."))
+	REMOVE_TRAIT(owner, TRAIT_MALUMCHOSEN , id)
 
 /atom/movable/screen/alert/status_effect/buff/pacify
 	name = "Blessing of Eora"
@@ -2072,7 +2092,7 @@
 /datum/status_effect/buff/celerity/New(list/arguments)
 	effectedstats[STATKEY_SPD] = arguments[2]
 	. = ..()
-	
+
 /datum/status_effect/buff/auspex
 	id = "auspex"
 	alert_type = /atom/movable/screen/alert/status_effect/buff
@@ -2365,7 +2385,7 @@
 	id = "Stagehand"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/stagehands_silence
 	duration = 20 MINUTES
-	// this was supposed to only apply if you had less than 12 speed but it broke whenever other spd mods applied. 
+	// this was supposed to only apply if you had less than 12 speed but it broke whenever other spd mods applied.
 	// i couldnt fix it, unfortunately.
 	// IF people use it to game just fucking remove it we cant have shiut in thjis codebase anymore
 	effectedstats = list(STATKEY_SPD = 1)
@@ -2380,7 +2400,7 @@
 	to_chat(owner, span_warning("My footsteps feel lighter and quieter. What is that droning sound in my head...?"))
 	// inspired by matthiosmuffle
 	ADD_TRAIT(owner, TRAIT_SILENT_FOOTSTEPS, "xylixboon")
-	ADD_TRAIT(owner, TRAIT_LIGHT_STEP, "xylixboon") 
+	ADD_TRAIT(owner, TRAIT_LIGHT_STEP, "xylixboon")
 
 
 /datum/status_effect/buff/stagehands_silence/on_remove()
@@ -2418,7 +2438,7 @@
 	var/gave_buff = FALSE
 
 /atom/movable/screen/alert/status_effect/buff/hermes_trismegistus
-	name = "Hermetick Blessing" // yes, hermetick. with a k. 
+	name = "Hermetick Blessing" // yes, hermetick. with a k.
 	desc = "Looking at HERMES has given me a blessing of the Stars... written words begin to make more sense." // dont ask how this works its magic biyatch
 
 /datum/status_effect/buff/hermes_trismegistus/on_apply()
