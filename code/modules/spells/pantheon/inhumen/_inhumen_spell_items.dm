@@ -1784,6 +1784,14 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		user.remove_language(/datum/language/thievescant)
 		grant_chant = FALSE
 
+/obj/item/clothing/neck/roguetown/psicross/inhumen/matthios/gilded/get_examine_highlight_status()
+	// If we have stolen fyre, it looks like an ornate Astratan amulet. Disguised...
+	if(stolen_fyre)
+		return null
+	// Otherwise, it's an undisguised and GAUDY Matthiosian amulet. Very obvious.
+	else
+		return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_MATTHIOS_ICON)
+
 /obj/item/clothing/gloves/roguetown/fingerless_leather/muffle_matthios
 	name = "gilded fingerless gloves"
 	desc = "Those who grasp at Fyre, are bount to be burned."
@@ -1833,6 +1841,9 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 				user.apply_status_effect(/datum/status_effect/buff/matthios_vision)
 		else
 			to_chat(user, span_warning("You look ridiculous and stupid. You are an amateur and a fool!"))
+
+/obj/item/clothing/mask/rogue/spectacles/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_RELIC)
 
 /obj/item/clothing/mask/rogue/spectacles/matthios/dropped(mob/living/carbon/human/user)
 	. = ..()
@@ -2185,6 +2196,9 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 	. = ..()
 	AddComponent(/datum/component/cursed_item, (TRAIT_FREEMAN||TRAIT_XYLIX), "BLESSED POUCH")
 
+/obj/item/storage/belt/rogue/pouch/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_MATTHIOS_MISC)
+
 /obj/item/storage/backpack/rogue/backpack/matthios
 	name = "smuggling bag"
 	desc = "A sack tied with some 'blessed' rope. There is a carving of a grinning symbol within the side of it. It has a strange, gilded glow to it."
@@ -2198,6 +2212,9 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 	. = ..()
 	AddComponent(/datum/component/cursed_item, (TRAIT_FREEMAN||TRAIT_XYLIX), "BLESSED RUCKSACK")
 
+/obj/item/storage/backpack/rogue/backpack/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_MATTHIOS_MISC)
+
 /obj/item/rope/chain/matthios
 	name = "gilded chain"
 	desc = "A heavy, gilded chain that thrums with latent divine power. It resonates negatively with the essence of nobility, as if stirred by divine rebuke."
@@ -2205,6 +2222,9 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 	aura_color = "#fff385"
 	matthios_chains = TRUE
 	smeltresult = /obj/item/ash
+
+/obj/item/rope/chain/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_RELIC)
 
 /obj/item/melee/touch_attack/lesserknock/matthios
 	name = "Gilded Lockpick"
@@ -2221,3 +2241,6 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 
 /obj/item/melee/touch_attack/lesserknock/attack_self()
 	qdel(src)
+
+/obj/item/melee/touch_attack/lesserknock/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_RELIC)

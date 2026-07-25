@@ -166,7 +166,7 @@
 /obj/item/clothing/cloak/sleevedtabard
 	name = "sleeved tabard"
 	desc = "A tabard with a light sleeve and pauldron sewn on, it lacks the explicit detailing of other tabards in exchange."
-	color = null 
+	color = null
 	boobed = TRUE
 	icon_state = "halfsurcoat"
 	item_state = "halfsurcoat"
@@ -1408,6 +1408,9 @@
 	smeltresult = /obj/item/riddleofsteel
 	anvilrepair = /datum/skill/craft/armorsmithing
 	var/active_item = FALSE
+
+/obj/item/clothing/neck/roguetown/blkknight/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_ICON)
 
 /obj/item/clothing/neck/roguetown/blkknight/equipped(mob/living/user, slot)
 	. = ..()

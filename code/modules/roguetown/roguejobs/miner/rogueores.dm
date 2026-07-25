@@ -27,7 +27,7 @@
 			return
 	else
 		return ..()
-		
+
 	return ..()
 
 /obj/item/rogueore/gold
@@ -372,31 +372,31 @@
 
 /obj/item/ingot/bsslag
 	name = "blacksteel-speckled slag"
-	desc = "A mass of smoldered blacksteel, rendered lame from the forge's heat. It has taken its secrets to the grave." 
+	desc = "A mass of smoldered blacksteel, rendered lame from the forge's heat. It has taken its secrets to the grave."
 	icon_state = "blacksteelslag"
 	sellprice = 7
 
 /obj/item/ingot/jadeslag
 	name = "jade-speckled slag"
-	desc = "A mass of smoldered jade, rendered lame from the forge's heat. Heavenly beauty, left barely recognizable." 
+	desc = "A mass of smoldered jade, rendered lame from the forge's heat. Heavenly beauty, left barely recognizable."
 	icon_state = "jadeslag"
 	sellprice = 9
 
 /obj/item/ingot/silverslag
 	name = "silver-speckled slag"
-	desc = "A mass of smoldered silver, rendered lame from the forge's heat. Holy might, marred and tarnished." 
+	desc = "A mass of smoldered silver, rendered lame from the forge's heat. Holy might, marred and tarnished."
 	icon_state = "silverslag"
 	sellprice = 9
 
 /obj/item/ingot/goldslag
 	name = "gold-speckled slag"
-	desc = "A mass of smoldered gold, rendered lame from the forge's heat. Haughty dreams, brought lower than low." 
+	desc = "A mass of smoldered gold, rendered lame from the forge's heat. Haughty dreams, brought lower than low."
 	icon_state = "goldslag"
 	sellprice = 12
 
 /obj/item/ingot/copperslag
 	name = "copper-speckled slag"
-	desc = "A mass of smoldered copper, rendered lame from the forge's heat. Primeval innovation, gnarled into rubble." 
+	desc = "A mass of smoldered copper, rendered lame from the forge's heat. Primeval innovation, gnarled into rubble."
 	icon_state = "copperslag"
 	sellprice = 3
 
@@ -543,6 +543,9 @@
 	desc = "Glimmering fragments of an otherworldly alloy. </br>Wealth drags even the noblest souls down to perdition."
 	icon_state = "component_matthios"
 	dropshrink = 0.7
+
+/obj/item/ingot/component/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_MATTHIOS_MISC)
 
 /obj/item/ingot/component/baotha
 	name = "saccharine fragment"
