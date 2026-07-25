@@ -544,6 +544,10 @@
 	icon_state = "component_graggar"
 	dropshrink = 0.7
 
+/obj/item/ingot/component/graggar/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_GRAGGAR_MISC)
+
+
 /obj/item/ingot/component/matthios
 	name = "gilded fragment"
 	desc = "Glimmering fragments of an otherworldly alloy. </br>Wealth drags even the noblest souls down to perdition."

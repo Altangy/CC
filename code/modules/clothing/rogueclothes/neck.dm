@@ -747,6 +747,9 @@
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS|ITEM_SLOT_RING
 	smeltresult = null
 
+/obj/item/clothing/neck/roguetown/psicross/inhumen/graggar/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_GRAGGAR_ICON)
+
 /obj/item/clothing/neck/roguetown/psicross/inhumen/graggar/g
 	name = "golden amulet of Graggar"
 	desc = "Might makes right."
@@ -1557,6 +1560,9 @@
 /obj/item/clothing/neck/roguetown/psicross/weeping/Initialize()
   ..()
   add_filter(FORCE_FILTER, 2, list("type" = "outline", "color" = GLOW_COLOR_VAMPIRIC, "alpha" = 200, "size" = 1))
+
+/obj/item/clothing/neck/roguetown/psicross/weeping/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_VERYODD, HERESYDESC_WEEPING_CROSS) //Cursed ass Psicross, you probably should be giving this thing suspicious looks.
 
 /obj/item/clothing/neck/roguetown/psicross/weeping/equipped(mob/living/user, slot)
 	. = ..()

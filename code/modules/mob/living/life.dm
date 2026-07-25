@@ -47,13 +47,24 @@
 		heal_wounds(1)
 
 	/// ENDVRE AS HE DOES.
-	if(!stat && HAS_TRAIT(src, TRAIT_PSYDONITE) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
+	if(!stat && (HAS_TRAIT(src, TRAIT_PSYDONITE) && !HAS_TRAIT(src, TRAIT_BLACKBLOOD) && !HAS_TRAIT(src, TRAIT_PARALYSIS)))
 		handle_wounds()
 		//passively heal wounds, when you're in trouble..
 		if(blood_volume > BLOOD_VOLUME_SURVIVE)
 			for(var/datum/wound/wound as anything in get_wounds())
 				if(wound?.severity <= WOUND_SEVERITY_MODERATE)
-					wound.heal_wound(0.4)
+					if(!istype(wound, /datum/wound/slash/incision))
+						wound.heal_wound(0.4)
+
+	if(!stat && HAS_TRAIT(src, TRAIT_BLACKBLOOD) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
+		if(src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder) || src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder/blessed))
+			return
+		handle_wounds()
+		if(blood_volume > BLOOD_VOLUME_SURVIVE && nutrition > NUTRITION_LEVEL_STARVING) // only hunger dictates here, thirst isn't relevant for regen but it is penalized too. Furthermore, after tests, lmfao, starving mid combat is a death sentence, holy shit.
+			for(var/datum/wound/wound as anything in get_wounds())
+				if(!istype(wound, /datum/wound/slash/incision))
+					wound.heal_wound(1.2)
+					nutrition = max(0, nutrition - (NUTRITION_LEVEL_FULL * 0.005)) // drains 0.5% of your hunger per tick of wound healed. After some testing, holy shit, this drains fast, for being percent-based. Thirst drain was too much to slap on top. Maybe it'll be back after the bite adjustments get polished a lil more.
 
 	if(!stat && HAS_TRAIT(src, TRAIT_LYCANRESILENCE) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
 		if(src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder) || src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder/blessed))
@@ -61,7 +72,8 @@
 		handle_wounds()
 		if(blood_volume > BLOOD_VOLUME_SURVIVE)
 			for(var/datum/wound/wound as anything in get_wounds())
-				wound.heal_wound(3)		
+				if(!istype(wound, /datum/wound/slash/incision))
+					wound.heal_wound(3)
 
 	if(!stat && HAS_TRAIT(src, TRAIT_DEADITE)) //Deadites are always regenerating unless under the effects of ANY KIND OF firestacks. Finish them off or restrain them.
 		if(src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder) || src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks) || src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder/blessed))
@@ -78,7 +90,7 @@
 		return
 
 	handle_environment()
-	
+
 	//Random events (vomiting etc)
 	handle_random_events()
 
@@ -93,19 +105,6 @@
 	check_drowning()
 
 	if(stat != DEAD)
-		//Caustic Edit - Adding in a basic implementation of the AFK system, minus the status indicator (for now?)
-		if(client)
-			var/idle_limit = 10 MINUTES //Caustic - Getting rid of the toggle auto-afk preference, since this is just going to mainly be used to mark people in examine and prevent AFK noms.
-			if(client.inactivity >= idle_limit && !away_from_keyboard /*&& client.prefs?.read_preference(/datum/preference/toggle/auto_afk)*/)	//if we're not already afk and we've been idle too long, and we have automarking enabled... then automark it
-				//add_status_indicator("afk")
-				to_chat(src, span_notice("You have been idle for too long, and automatically marked as AFK."))
-				away_from_keyboard = TRUE
-			else if(away_from_keyboard && client.inactivity < idle_limit && !manual_afk) //if we're afk but we do something AND we weren't manually flagged as afk, unmark it
-				//remove_status_indicator("afk")
-				to_chat(src, span_notice("You have been automatically un-marked as AFK."))
-				away_from_keyboard = FALSE
-		//Caustic Edit End
-
 		return 1
 
 /mob/living/proc/handle_passive_blood()
@@ -144,7 +143,7 @@
 				return
 			if(istype(drownrelay.loc, /turf/open/water))
 				handle_inwater(drownrelay.loc, extinguish = FALSE, force_drown = TRUE)
-			if(istype(loc, /turf/open/water)) // Extinguish ourselves if our body is in water.	
+			if(istype(loc, /turf/open/water)) // Extinguish ourselves if our body is in water.
 				extinguish_mob()
 			return
 	. =..()
@@ -183,7 +182,6 @@
 					drop_all_held_items()
 
 /mob/living/proc/handle_environment()
-	
 	return
 
 /mob/living/proc/handle_wounds()

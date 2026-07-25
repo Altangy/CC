@@ -645,6 +645,9 @@
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_HORDE, "DAGGER")
 
+/obj/item/rogueweapon/huntingknife/combat/graggar/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_GRAGGAR_WEAPON)
+
 /obj/item/rogueweapon/huntingknife/idagger/steel/matthios
 	name = "gilded knife"
 	desc = "<font color='ffd700'>Well, well, well; hello there, old sport!</font>"
