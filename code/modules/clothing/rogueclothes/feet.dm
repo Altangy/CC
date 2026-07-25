@@ -493,6 +493,9 @@
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_CABAL, "ARMOR")
 
+/obj/item/clothing/shoes/roguetown/boots/armor/zizo/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
+
 //Caustic Edit - Let us remove and drop armors again! For fun stuffs.
 /obj/item/clothing/shoes/roguetown/boots/armor/zizo/heavy/Initialize()
 	. = ..()
@@ -516,6 +519,9 @@
 	armor = ARMOR_PLATE_BSTEEL
 	armor_class = ARMOR_CLASS_MEDIUM
 	smeltresult = /obj/item/ingot/avantyne
+
+/obj/item/clothing/shoes/roguetown/boots/armor/avantyne/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
 
 /obj/item/clothing/shoes/roguetown/boots/armor/baotha
 	name = "saccharine heels"

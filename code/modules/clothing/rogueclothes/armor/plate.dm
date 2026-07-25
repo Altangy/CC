@@ -152,6 +152,9 @@
 	item_state = "ancientplate"
 	smeltresult = /obj/item/ingot/aaslag
 
+/obj/item/clothing/suit/roguetown/armor/plate/paalloy/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARTIFICE)
+
 /obj/item/clothing/suit/roguetown/armor/plate/paalloy/artificer
 	name = "artificed half-plate"
 	desc = "Forbidden knowledge, resurrected into a weightless vessel of gilbranze-and-magicka. It holds a slot for an arcyne meld to power it."
@@ -269,6 +272,9 @@
 		desc = "Forbidden knowledge, resurrected into a weightless vessel of gilbranze-and-magicka. It crackles with raw magicka; the mind, empowered."
 	else
 		desc = "Forbidden knowledge, resurrected into a weightless vessel of gilbranze-and-magicka. It crackles with arcyne vigor; the body, emboldened."
+
+/obj/item/clothing/suit/roguetown/armor/plate/paalloy/artificer/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ODD, HERESYDESC_ZIZO_ARTIFICE_RECLAIMED)
 
 /obj/item/clothing/suit/roguetown/armor/plate/fluted
 	name = "fluted half-plate"
@@ -508,6 +514,9 @@
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_CABAL, "ARMOR")
 
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/zizo/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
+
 /obj/item/clothing/suit/roguetown/armor/plate/fluted/zizo/dropped(mob/living/carbon/human/user)
 	return ..()
 
@@ -527,6 +536,9 @@
 	//ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 	AddComponent(/datum/component/cursed_item, TRAIT_CABAL, "ARMOR")
 
+/obj/item/clothing/suit/roguetown/armor/plate/full/zizo/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
+
 /obj/item/clothing/suit/roguetown/armor/plate/full/zizo/dropped(mob/living/carbon/human/user)
 	. = ..()
 	/*if(QDELETED(src))
@@ -543,6 +555,9 @@
 	icon_state = "zizoplatechest_med"
 	armor = ARMOR_PLATE_BSTEEL
 	smeltresult = /obj/item/ingot/avantyne //Made from 'inert avantyne wafers', meaning that anyone can feasibly wear it.
+
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/avantyne/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
 
 /obj/item/clothing/suit/roguetown/armor/plate/fluted/baotha
 	name = "saccharine plate armor"

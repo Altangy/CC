@@ -466,6 +466,9 @@
 	smeltresult = null
 	sellprice = 130
 
+/obj/item/ingot/avantyne/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_AVANTYNE)
+
 //Components!
 
 /obj/item/ingot/component //Root. Don't use under most circumstances.
@@ -531,6 +534,9 @@
 	desc = "Whispering fragments of an otherworldly alloy. </br>Power always comes at a price."
 	icon_state = "component_zizo"
 	dropshrink = 0.7
+
+/obj/item/ingot/component/zizo/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_AVANTYNE)
 
 /obj/item/ingot/component/graggar
 	name = "vicious fragment"

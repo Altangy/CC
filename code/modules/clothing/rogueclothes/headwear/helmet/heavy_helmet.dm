@@ -1391,6 +1391,9 @@
 	toggle_icon_state = TRUE
 	smeltresult = /obj/item/ingot/component/zizo
 
+/obj/item/clothing/head/roguetown/helmet/heavy/zizo/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
+
 /obj/item/clothing/head/roguetown/helmet/heavy/zizo/frogge
 	name = "avantyne froggemund"
 	desc = "A monolithic, suffocating cage of darksteel that narrows one's perspective to a single, hateful point. It grants the \
@@ -1441,6 +1444,9 @@
 	smeltresult = /obj/item/ingot/avantyne
 	armor = ARMOR_PLATE_BSTEEL
 	armor_class = ARMOR_CLASS_LIGHT
+
+/obj/item/clothing/head/roguetown/helmet/heavy/avantyne/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/iron
 	name = "iron bucket helm"

@@ -111,6 +111,9 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	smeltresult = /obj/item/ingot/component/zizo
 
+/obj/item/clothing/under/roguetown/platelegs/zizo/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
+
 /obj/item/clothing/under/roguetown/platelegs/zizo/heavy
 	name = "avantyne garments"
 	desc = "An unstemmable cognitovirus, laminated into thrice-parted leggings worn by only the truest - those, anointed by the Dame of Progress. In Her name."
@@ -138,13 +141,17 @@
 //Caustic Edit End
 
 /obj/item/clothing/under/roguetown/platelegs/avantyne
-	name = "avantyne fauldcoat"
-	desc = "Bolstered by threads of avantyne, padded by darksteel. It covers and protects - thought to be impossibly made."
+	name = "avantyne-threaded fauldcoat"
+	desc = "Tassets of threaded darksteel, worn atop a lesser waistcoat. The weightlessness of the alloy is born from its \
+	unholy imbuement; for lux invigorates metal far greater than even the purest ores."
 	icon_state = "zizoplatelegs_med"
 	max_integrity = ARMOR_INT_LEG_STEEL_PLATE
 	armor_class = ARMOR_CLASS_MEDIUM
 	smeltresult = /obj/item/ingot/avantyne
 	armor = ARMOR_PLATE_BSTEEL
+
+/obj/item/clothing/under/roguetown/platelegs/avantyne/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
 
 /obj/item/clothing/under/roguetown/platelegs/skirt
 	name = "steel plate tassets"

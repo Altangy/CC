@@ -659,6 +659,9 @@
 	material_category = ARMOR_MAT_PLATE
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
+
 /obj/item/clothing/neck/roguetown/psicross/inhumen/paalloy
 	name = "ancient zcross"
 	desc = "'Progress. Ascension. Destiny. A mandate, commanded by God, to be fufilled by Man. She called us forth from the edge of reality - and with Her dying breath, rasped out the final truth; the fire is gone, and the world will soon follow.'"
@@ -666,6 +669,9 @@
 	chunkcolor = "#532e25"
 	material_category = ARMOR_MAT_PLATE
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psicross/inhumen/paalloy/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/wood
 	name = "wooden inverted psycross"
@@ -676,11 +682,17 @@
 	salvage_result = /obj/item/grown/log/tree/stick
 	salvage_amount = 1
 
+/obj/item/clothing/neck/roguetown/psicross/inhumen/wood/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
+
 /obj/item/clothing/neck/roguetown/psicross/inhumen/iron
 	name = "inverted psycross"
 	desc = "A symbol of progress from an era that had reason to believe in it."
 	icon_state = "zcross_iron"
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/neck/roguetown/psicross/inhumen/iron/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/bronze
 	name = "bronze inverted psycross"
@@ -688,12 +700,18 @@
 	icon_state = "zcross_b"
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/neck/roguetown/psicross/inhumen/bronze/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
+
 /obj/item/clothing/neck/roguetown/psicross/inhumen/g
 	name = "golden inverted psycross"
 	desc = "'Doth thee wish to live deliciously? Mortality is but a shackle; and if you wish to break free from its steely grasp, all you need to do.. is put thine faith in me.'"
 	icon_state = "zcross_g"
 	resistance_flags = FIRE_PROOF
 	sellprice = 100
+
+/obj/item/clothing/neck/roguetown/psicross/inhumen/g/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_ZIZO_ICON)
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/matthios
 	name = "amulet of Matthios"
