@@ -1335,6 +1335,9 @@
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_FREEMAN, "ARMOR")
 
+/obj/item/clothing/head/roguetown/helmet/heavy/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_ARMOR)
+
 /obj/item/clothing/head/roguetown/helmet/heavy/graggar
 	name = "vicious helmet"
 	desc = "Snarled teeth gnash the unholy bascinet's visor, drenched in scarlet. Your beluxed invocation; the dinnerbell for a feast of blood and steel."

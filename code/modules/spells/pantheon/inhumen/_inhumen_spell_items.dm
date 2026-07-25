@@ -411,7 +411,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		return
 	if(HAS_TRAIT(target, TRAIT_DNR))
 		to_chat(user, span_danger("The Geald within the vial does not react to them at all. Strange."))
-		return	
+		return
 	if(HAS_TRAIT(target, TRAIT_NOBLE))
 		to_chat(user, span_notice("You have a feeling that Matthios would personally eviscerate you for trying this on them."))
 		return
@@ -501,8 +501,8 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		var/obj/item/roguegem/G = I
 		return G.sellprice
 
-	if(istype(I, /obj/item/riddleofsteel))	
-		var/obj/item/riddleofsteel/R = I	
+	if(istype(I, /obj/item/riddleofsteel))
+		var/obj/item/riddleofsteel/R = I
 		return R.sellprice
 
 	return 0
@@ -816,7 +816,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		funny_smoke(src)
 		qdel(src)
 		return
-	
+
 	if(!ishungry && prob(80 - miraclecheck)) // bread troll
 		to_chat(user, span_warning("The mixture shifts... simplifying itself into something more befitting your greed."))
 		new /obj/item/reagent_containers/food/snacks/rogue/bread(get_turf(src))
@@ -826,7 +826,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		qdel(src)
 		return
 
-	if(ishungry && prob(25)) 
+	if(ishungry && prob(25))
 		to_chat(user, span_notice("Matthios takes pity on your mortal limitations. You compulsively shout in gratitude!"))
 		user.say(pick("PRAISE YOU, O' GENEROUS MATTHIOS!!","AT LAST, THE TRUE GOLD OF CULINARY ALCHEMY!!","BLESSED BE THY HANDS WHICH GRANT ME SUSTENANCE, MATTHIOS!!","I SHALL GIVE ALL FOR THY SMILE, LORD OF FREEDOM!!"), language = /datum/language/common)
 
@@ -847,7 +847,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 /obj/item/matthios_canister/goodnite
 	name = "vial of goodnite base"
 	desc = "A dim, cloudy fluid rests inside, barely moving. Occasionally, something viscous streaks through it— like diluted brain matter. The glass feels warm, almost comforting. Staring at too long makes your eyelids heavy, and you get an odd compulsion to drink it."
-	
+
 	var/max_ingredients = 5
 
 	required_ingredients = list(
@@ -953,7 +953,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		return
 
 	if(target == user)
-		to_chat(user, span_notice("You begin administering the vial to [target.name]'s forehead..."))	
+		to_chat(user, span_notice("You begin administering the vial to [target.name]'s forehead..."))
 	else
 		to_chat(user, span_notice("You begin administering the vial to your own forehead..."))
 
@@ -1336,7 +1336,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 			return TRUE
 
 		var/amount = min(20, R.reagents.total_volume)
-		
+
 		if(do_after(user, 2 SECONDS))
 			if(has_blood)
 				path = "blood"
@@ -1735,7 +1735,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 /obj/item/clothing/neck/roguetown/psicross/inhumen/matthios/gilded/examine(mob/user)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_FREEMAN) && stolen_fyre)
-		. += span_notice("<i>As coin begets coin, so too does Her pride beget ruin. She believes Her will absolute, yet She stands as anything but. The theft of Her fyre was merely the first proof. The future belongs to the free. To humenkind. Not to the rule of a weak tyrant and their blood-bound puppets.</i>")	
+		. += span_notice("<i>As coin begets coin, so too does Her pride beget ruin. She believes Her will absolute, yet She stands as anything but. The theft of Her fyre was merely the first proof. The future belongs to the free. To humenkind. Not to the rule of a weak tyrant and their blood-bound puppets.</i>")
 	if(HAS_TRAIT(user, TRAIT_FREEMAN))
 		. += span_warning("This amulet can be swapped into another form by using it on your hand.")
 
@@ -1758,7 +1758,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		icon_state = "matthios"
 		to_chat(user, span_warning("The gilded amulet settles back into familiar weight. You feel a grin, as He commends you for your boldness."))
 		playsound(user.loc, 'sound/magic/swap.ogg', 25, TRUE, -2)
-	
+
 	update_icon()
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/matthios/gilded/equipped(mob/living/carbon/human/user, slot)
@@ -1802,6 +1802,9 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		to_chat(user, span_info("Like Him, my hands ready to grasp the impossible."))
 		ADD_TRAIT(user, TRAIT_SILENT_LOCKPICK, "matthiosboon")
 
+/obj/item/clothing/gloves/roguetown/fingerless_leather/muffle_matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_ARMOR)
+
 /obj/item/clothing/gloves/roguetown/fingerless_leather/muffle_matthios/dropped(mob/living/carbon/human/user)
 	. = ..()
 	if(!active_item)
@@ -1821,7 +1824,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 /obj/item/clothing/mask/rogue/spectacles/matthios/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(obj_broken || active_item)
-		return		
+		return
 	if(slot == SLOT_WEAR_MASK || slot == SLOT_HEAD)
 		if(HAS_TRAIT(user, TRAIT_FREEMAN))
 			active_item = TRUE
@@ -1914,6 +1917,9 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 		to_chat(user, span_info("Once again, I am under Her gaze."))
 		REMOVE_TRAIT(user, TRAIT_SILENT_FOOTSTEPS, "matthiosboon")
 		REMOVE_TRAIT(user, TRAIT_LIGHT_STEP, "matthiosboon")
+
+/obj/item/clothing/shoes/roguetown/boots/muffle_matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_ARMOR) //These were always meant to be valid I don't get why this was forgotten about
 
 //THROWABLES
 /obj/item/impact_grenade/truthsnuke/lesser
@@ -2194,7 +2200,7 @@ var/global/list/da_bubbles = list('sound/foley/bubb (1).ogg','sound/foley/bubb (
 
 /obj/item/rope/chain/matthios
 	name = "gilded chain"
-	desc = "A heavy, gilded chain that thrums with latent divine power. It resonates negatively with the essence of nobility, as if stirred by divine rebuke."	
+	desc = "A heavy, gilded chain that thrums with latent divine power. It resonates negatively with the essence of nobility, as if stirred by divine rebuke."
 	color = "#fdff86"
 	aura_color = "#fff385"
 	matthios_chains = TRUE

@@ -317,6 +317,9 @@
 	/*add_filter(FORCE_FILTER, 2, list("type" = "outline", "color" = "#fff385", "alpha" = 120, "size" = 1)) //IS THIS TRVE?
 */ // Combine with #ffc960 to make an easier, do-it-yourself version of Gilded items without the need for exotic sprites.
 
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/matthios/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_MATTHIOS_ARMOR)
+
 //
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo
