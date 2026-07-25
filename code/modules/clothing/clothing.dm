@@ -616,8 +616,15 @@ BLIND     // can't see anything
 	return examine_text
 
 /obj/item/clothing/generate_tooltip(examine_text)
+	var/examine_highlight_status = get_examine_highlight_status()
 	if(!armor)	// No armor
-		return examine_text
+		if(examine_highlight_status)
+			var/severity = examine_highlight_status[1]
+			var/labeled_string = get_examine_highlight_labeled_string(severity, examine_text)
+			var/tooltip_string = get_examine_highlight_tooltip_string(examine_highlight_status)
+			return SPAN_TOOLTIP_DANGEROUS_HTML(tooltip_string, labeled_string)
+		else
+			return examine_text
 
 	// Fake armor
 	if(armor.getRating("slash") == 0 && armor.getRating("stab") == 0 && armor.getRating("blunt") == 0 && armor.getRating("piercing") == 0)
