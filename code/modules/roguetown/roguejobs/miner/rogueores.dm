@@ -552,3 +552,6 @@
 	desc = "Aromatic fragments of an otherworldly alloy. </br>Despair is the gravest, most agonizing poison of them all."
 	icon_state = "component_baotha"
 	dropshrink = 0.7
+
+/obj/item/ingot/component/baotha/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_BAOTHA_MISC)

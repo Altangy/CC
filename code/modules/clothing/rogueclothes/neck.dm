@@ -752,6 +752,9 @@
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS|ITEM_SLOT_RING
 	smeltresult = null
 
+/obj/item/clothing/neck/roguetown/psicross/inhumen/baotha/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS, HERESYDESC_BAOTHA_ICON)
+
 /obj/item/clothing/neck/roguetown/psicross/inhumen/baotha/g
 	name = "golden amulet of Baotha"
 	desc = "A hollow promise, rendered in gold and glistening with value. It weighs heavy with the memory of sweet wine turned to poison, and the comfort of a sorrow that refuses to fade."
@@ -1467,6 +1470,9 @@
 	/*if(QDELETED(src))
 		return
 	qdel(src)*/ //Caustic Edit - Allow removal again!
+
+/obj/item/clothing/neck/roguetown/coif/baotha/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_BAOTHA_ARMOR)
 
 //
 

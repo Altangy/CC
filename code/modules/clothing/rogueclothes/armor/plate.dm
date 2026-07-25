@@ -567,6 +567,9 @@
 		return
 	qdel(src)
 
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/baotha/get_examine_highlight_status()
+	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_BAOTHA_ARMOR)
+
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini
 	name = "full-plate corset"
 	desc = "Breastplate, pauldrons, couters, cuisses.. did you forget something?"
