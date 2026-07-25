@@ -333,6 +333,7 @@
 		"Vocatio, a me discedere!",
 	)
 	fixed_spells = list(
+		/datum/action/cooldown/spell/projectile/basic_offensive,
 		/datum/action/cooldown/spell/minion_order/conjurer,
 		/datum/action/cooldown/spell/command_word/fray,
 		/datum/action/cooldown/spell/command_word/harry,
@@ -354,6 +355,7 @@
 		/datum/action/cooldown/spell/conjure_summon/peasant_swarm,
 	)
 	spell_order = list(
+		/datum/action/cooldown/spell/projectile/basic_offensive,
 		/datum/action/cooldown/spell/minion_order/conjurer,
 		/datum/action/cooldown/spell/command_word/fray,
 		/datum/action/cooldown/spell/command_word/harry,
