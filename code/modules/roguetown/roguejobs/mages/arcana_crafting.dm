@@ -215,3 +215,42 @@
 	reqs = list(/obj/item/rogueweapon/huntingknife/idagger/silver = 1,
 				/obj/item/rogueore/cinnabar = 1)
 
+// Melds - I plan to give the arcivist and court magician special recipes.
+/datum/crafting_recipe/roguetown/arcana/meldt1
+	name = "arcanic meld"
+	result = /obj/item/magic/melded/t1
+	reqs = list(/obj/item/magic/infernal/ash = 1,
+				/obj/item/magic/fae/fairydust = 1,
+				/obj/item/magic/elemental/mote = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/arcana/meldt2
+	name = "dense arcanic meld"
+	result = /obj/item/magic/melded/t2
+	reqs = list(/obj/item/magic/infernal/fang = 1,
+				/obj/item/magic/fae/iridescentscale = 1,
+				/obj/item/magic/elemental/shard = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/arcana/meldt3
+	name = "sorcerous weave"
+	result = /obj/item/magic/melded/t3
+	reqs = list(/obj/item/magic/infernal/core = 1,
+				/obj/item/magic/fae/heartwoodcore = 1,
+				/obj/item/magic/elemental/fragment = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/arcana/meldt4
+	name = "magical confluence"
+	result = /obj/item/magic/melded/t4
+	reqs = list(/obj/item/magic/infernal/flame = 1,
+				/obj/item/magic/fae/sylvanessence = 1,
+				/obj/item/magic/elemental/relic = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/arcana/meldt5
+	name = "arcanic abberation"
+	result = /obj/item/magic/melded/t5
+	reqs = list(/obj/item/magic/melded/t4 = 1,
+				/obj/item/magic/voidstone = 1)
+	craftdiff = 2
