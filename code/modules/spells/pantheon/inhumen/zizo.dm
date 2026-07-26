@@ -507,7 +507,7 @@
 		if("Progress") // support path, your mind is twisted in Her design
 			user.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 			if(user.mind)
-				user.mind.setup_mage_aspects(list("mastery" = FALSE, "major" = 0, "minor" = 2, "utilities" = 6))
+				user.mind.setup_mage_aspects(list("mastery" = FALSE, "major" = 0, "minor" = 2, "utilities" = 8))
 				ADD_TRAIT(user, TRAIT_STEELHEARTED, "[type]") // so you can commit atrocities with a smile
 				ADD_TRAIT(user, TRAIT_JACKOFALLTRADES, "[type]") // the progress palooza to let you grind more efficiently
 				ADD_TRAIT(user, TRAIT_SELF_SUSTENANCE, "[type]") // also fitting for the progress vibe, way more balanced than the specialist traits IMO
@@ -538,7 +538,7 @@
 			user.update_body_parts()
 			user.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 			if(user.mind)
-				user.mind.setup_mage_aspects(list("mastery" = FALSE, "major" = 0, "minor" = 2, "utilities" = 4))
+				user.mind.setup_mage_aspects(list("mastery" = FALSE, "major" = 0, "minor" = 2, "utilities" = 5))
 				user.mind.AddSpell(new /datum/action/cooldown/spell/bonechill)
 				user.mind.AddSpell(new /datum/action/cooldown/spell/bonemend)
 				grant_poke_spell(user)

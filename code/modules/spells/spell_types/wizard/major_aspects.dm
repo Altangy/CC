@@ -271,7 +271,7 @@
 		/datum/action/cooldown/spell/conjure_arcyne_ward/steelhide,
 		/datum/action/cooldown/spell/bind_armament,
 		/datum/action/cooldown/spell/arcyne_forge,
-		/datum/action/cooldown/spell/mending,
+		/datum/action/cooldown/spell/touch/conjure_repairkit,
 	)
 	variants = list(
 		"mastery" = list(
@@ -413,6 +413,7 @@
 		/datum/action/cooldown/spell/augment_buff/surge,
 		/datum/action/cooldown/spell/augment_buff/precognition,
 		/datum/action/cooldown/spell/augment_buff/grasp,
+		/datum/action/cooldown/spell/touch/conjure_repairkit,
 		/datum/action/cooldown/spell/forcewall,
 		/datum/action/cooldown/spell/featherfall,
 		/datum/action/cooldown/spell/augment_buff/enlarge,
