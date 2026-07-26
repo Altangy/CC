@@ -89,12 +89,12 @@
 		owner.playsound_local(owner, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 		playsound(spelltarget, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 		spelltarget.emote("pain")
-		return FALSE
 
 	if(HAS_TRAIT(spelltarget, TRAIT_IRONMAN))
 		spelltarget.visible_message(span_artery("[target] doesn't seem to be organic, the miracle dissipates."), span_artery("A dull warmth never meets your non-existent heart, it fades as quickly as it arrives."))
 		owner.playsound_local(owner, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 		playsound(spelltarget, 'sound/magic/PSY.ogg', 100, FALSE, -1)
+		return FALSE
 
 	//Caustic Edit - Re-add healing causing burns for the undead
 	if(H.patron?.undead_hater && (spelltarget.mob_biotypes & MOB_UNDEAD))
@@ -202,11 +202,9 @@
 		return FALSE
 
 	if(HAS_TRAIT(spelltarget, TRAIT_BLACKBLOOD))
-		spelltarget.visible_message(span_artery("[spelltarget] stirs in pain, the miracle dissipates."), span_artery("You feel a dull pain spreading through your body, only to fade as quickly as it arrived."))
 		owner.playsound_local(owner, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 		playsound(spelltarget, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 		spelltarget.emote("pain")
-		return FALSE
 
 	if(HAS_TRAIT(spelltarget, TRAIT_IRONMAN))
 		spelltarget.visible_message(span_artery("[target] doesn't seem to be organic, the miracle dissipates."), span_artery("A dull warmth never meets your non-existent heart, it fades as quickly as it arrives."))
