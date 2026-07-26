@@ -10,6 +10,7 @@
 	abstract_type = /datum/crafting_recipe/roguetown/arcana
 	skillcraft = /datum/skill/magic/arcane
 	subtype_reqs = TRUE
+	always_availible = TRUE
 	display_category = ITEM_CAT_ARCYNE_GEARS
 	xp_modifier = 0
 	craftdiff = SKILL_LEVEL_APPRENTICE
@@ -97,6 +98,47 @@
 	reqs = list(/obj/item/clothing/ring/gold = 1,
 				/obj/item/magic/voidstone = 1)
 	craftdiff = SKILL_LEVEL_EXPERT
+
+// ========== Spell Scrolls (Archivist and CM only) ==========
+
+/datum/crafting_recipe/roguetown/arcana/scrolls
+	tools = list(/obj/item/natural/feather)
+	always_availible = FALSE
+
+/datum/crafting_recipe/roguetown/arcana/scrolls/utility
+	name = "Scroll of Temporal Cantrip Enhancing"
+	result = /obj/item/book/granter/arcane_aspect/utility
+	reqs = list(/obj/item/alch/swampdust = 1,
+				/obj/item/alch/briar_essence = 2,
+				/obj/item/alch/manabloompowder = 3,
+				/obj/item/magic/melded/t1 = 1)
+	craftdiff = SKILL_LEVEL_APPRENTICE
+
+/datum/crafting_recipe/roguetown/arcana/scrolls/minor
+	name = "Scroll of Temporal Minor Arcyne Enhancing"
+	result = /obj/item/book/granter/arcane_aspect/minor
+	reqs = list(/obj/item/reagent_containers/food/snacks/zizo_bane = 1,
+				/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1,
+				/obj/item/alch/transisdust = 2,
+				/obj/item/magic/melded/t2 = 1)
+	craftdiff = SKILL_LEVEL_JOURNEYMAN
+
+/datum/crafting_recipe/roguetown/arcana/scrolls/major
+	name = "Scroll of Temporal Greater Arcyne Enhancing"
+	result = /obj/item/book/granter/arcane_aspect/major
+	reqs = list(/obj/item/alch/magicdust = 2,
+				/obj/item/alch/solardust = 1,
+				/obj/item/alch/infernaldust = 3,
+				/obj/item/magic/melded/t3 = 1)
+	craftdiff = SKILL_LEVEL_EXPERT
+
+/datum/crafting_recipe/roguetown/arcana/scrolls/mastery
+	name = "Scroll of Temporal Arcyne Mastery"
+	result = /obj/item/book/granter/arcane_aspect/major
+	reqs = list(/obj/item/alch/magicdust = 2,
+				/obj/item/alch/feaudust = 1,
+				/obj/item/magic/melded/t5 = 1)
+	craftdiff = SKILL_LEVEL_MASTER
 
 // ========== Fission (downgrade, same realm) ==========
 // Lesser: 1 T2 → 2 T1. Greater: 1 T3 → 2 T2. Grand: 1 T4 → 1 T3.

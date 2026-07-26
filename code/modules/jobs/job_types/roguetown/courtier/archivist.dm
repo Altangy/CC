@@ -119,3 +119,5 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/silence/archivist_silence)
 	if(H.mind)
 		SStreasury.grant_savings(ECONOMIC_UPPER_CLASS, H)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/roguetown/arcana/scrolls/utility)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/roguetown/arcana/scrolls/minor)
