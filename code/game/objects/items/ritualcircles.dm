@@ -423,7 +423,7 @@
 	name = "Rune of Forge"
 	desc = "A holy rune of <font color='ff9933'>Malum.</font> </br> <i>A hammer and heat, to fix any imperfections with.</i>"
 	icon_state = "malum_chalky"
-	var/forgerites = list("Bestow Blessing")
+	var/forgerites = list("Ritual of Blessed Reforgance", "Bestow Blessing")
 
 /obj/structure/ritualcircle/malum/attack_hand(mob/living/user)
 	if(!..())
@@ -439,6 +439,23 @@
 		return
 	var/riteselection = input(user, "Rituals of Creation", src) as null|anything in forgerites
 	switch(riteselection) // put ur rite selection here
+		if("Ritual of Blessed Reforgance")
+			if(do_after(user, 50))
+				user.say("God of craft and heat of the forge!!")
+				if(do_after(user, 50))
+					user.say("Take forth these metals and rebirth them in your furnaces!")
+					if(do_after(user, 50))
+						user.say("Grant unto me the metals in which to forge great works!")
+						to_chat(user,span_danger("You feel a sudden heat rising within you, burning within your chest.."))
+						if(do_after(user, 30))
+							icon_state = "malum_active"
+							user.say("From your forge, may these creations be remade!!")
+							loc.visible_message(span_warning("A wave of heat rushes out from the ritual circle before [user]. The metal is reforged in a flash of light!"))
+							playsound(loc, 'sound/magic/churn.ogg', 100, FALSE, -1)
+							holyreforge(src)
+							user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
+							spawn(120)
+								icon_state = "malum_chalky"
 		if("Bestow Blessing")
 			var/mob/living/target = null
 			var/turf/T = get_turf(src)
@@ -466,6 +483,18 @@
 
 /obj/structure/ritualcircle/malum/proc/malumblessing(mob/living/carbon/human/target)
 	target.apply_status_effect(/datum/status_effect/buff/malumritual)
+
+/obj/structure/ritualcircle/malum/proc/holyreforge(src)
+	var/ritualtargets = view(7, loc)
+	for(var/mob/living/carbon/human/target in ritualtargets)
+		target.flash_fullscreen("whiteflash") //Cool effect!
+	for (var/obj/item/ingot/silver/I in loc)
+		qdel(I)
+		new /obj/item/ingot/silverblessed(loc)
+	for (var/obj/item/ingot/steel/I in loc)
+		qdel(I)
+		new /obj/item/ingot/steelholy(loc)
+
 
 /obj/structure/ritualcircle/abyssor
 	name = "Rune of Storms"
