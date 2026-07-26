@@ -102,11 +102,11 @@
 		return FALSE
 
 	var/obj/item/reagent_containers/glass/target_container = held
-	for(var/reagent in reagent_blacklist)
+	/*for(var/reagent in reagent_blacklist) //Caustic Edit - Get rid of this limitation for the Bless Drink.
 		if(target_container.reagents.has_reagent(reagent))
 			revert_cast()
 			to_chat(user, span_info("The drink within is too potent."))
-			return FALSE
+			return FALSE*/
 
 	if(target_container.is_infinite)
 		revert_cast()
