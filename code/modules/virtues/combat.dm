@@ -263,7 +263,7 @@
 							to_chat(recipient, span_blue("<i>You recall your horrid experiences with the Inquisition... It is rather traumatic. Best to avoid them.</i>"))
 					else
 						to_chat(recipient, span_blue("<i>You recall your horrid experiences with the Inquisition... But through your newfound faith in HIM, you ENDURE. You were but one wrong righted, after all.</i>"))
-					to_chat(recipient, span_danger("DISCLAIMER: This Second Choice option exists to support roleplay and backstory continuity, not to diminish the threat or narrative weight of vampires, werewolves, or similar antagonistic entities. You are a tortured survivor of the Otavan Inquisition, and your very LUX fears them. Failure to roleplay this appropriately may result in this option's removal. Have fun and don't be cringe."))
+					to_chat(recipient, span_danger("This Vice has a mechanically enforced phobia of the inquisition. While it is not IMPOSSIBLE to work around them, be aware that this quirk does imply that you have been through some horrendous times with them. If you do not want to struggle to interact with the inquisition, we suggest paring this with steelhearted or going for psydonian grit... Or picking another Virtue."))
 
 #undef SC_ROTCURED
 #undef SC_BLACKBLOOD

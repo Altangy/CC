@@ -31,6 +31,9 @@
 	)
 
 /datum/virtue/utility/noble/apply_to_human(mob/living/carbon/human/recipient)
+	for(var/choice in picked_choices)
+		if(ispath(extra_choices[choice], /obj/item))
+			recipient.mind?.special_items[choice] = extra_choices[choice]
 	if(HAS_TRAIT(recipient, TRAIT_OUTLAW))
 		return
 	var/already_has_income = !isnull(SStreasury.noble_incomes[recipient])
