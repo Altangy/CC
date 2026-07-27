@@ -2591,6 +2591,10 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/outdoors/town/desertvilla)
+"aPL" = (
+/obj/structure/fermentation_keg/distiller,
+/turf/open/floor/rogue/dirt/desert,
+/area/rogue/outdoors/town/desert)
 "aQd" = (
 /obj/item/roguecoin/copper/pile,
 /turf/open/floor/rogue/darkpath,
@@ -12223,11 +12227,14 @@
 	},
 /area/rogue/indoors/town/church)
 "dFg" = (
-/obj/machinery/light/rogue/candle/blue,
 /obj/structure/mirror{
 	pixel_x = -28;
 	pixel_y = 0
 	},
+/mob/living/simple_animal/pet/cat/rogue/black{
+	name = "Bounty"
+	},
+/obj/machinery/light/rogue/candle,
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/shop/desert)
 "dFh" = (
@@ -15588,6 +15595,16 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/indoors/inq/basement)
+"eFi" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church";
+	name = "Library"
+	},
+/turf/open/floor/rogue/concrete{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/church)
 "eFn" = (
 /turf/open/water/ocean/deep/thermalwater,
 /area/rogue/under/cave/desertdeep)
@@ -23479,14 +23496,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/desert)
-"hgs" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
-	lockid = "church";
-	name = "Acolyte Beds"
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/church)
 "hgu" = (
 /obj/structure/bed/rogue/inn/hay{
 	dir = 1
@@ -24683,6 +24692,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/desert/dunepassage)
+"hBb" = (
+/obj/structure/roguemachine/scomm/receive_only/l,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/desert)
 "hBf" = (
 /turf/open/floor/rogue/metal,
 /area/rogue/under/desertcaldera/outlawsvillage)
@@ -46333,16 +46346,6 @@
 "ous" = (
 /turf/open/floor/rogue/ruinedwood/herringbone_clear,
 /area/rogue/indoors/inq)
-"ouB" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
-	lockid = "church";
-	name = "Library"
-	},
-/turf/open/floor/rogue/concrete{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
-/area/rogue/indoors/town/church)
 "ouC" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/sandbrick,
@@ -46850,6 +46853,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/steward)
+"oBW" = (
+/obj/structure/roguewindow/harem1,
+/turf/open/floor/rogue/tile/brownbrick{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/under/cave/deserthotsprings)
 "oBX" = (
 /obj/structure/stairs/desert,
 /turf/open/floor/rogue/tile/brownbrick{
@@ -48052,6 +48061,14 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/under/desertunderdark/undercity)
+"oSV" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church";
+	name = "Clergy Storage"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "oSW" = (
 /obj/structure/bed/rogue/inn/hay,
 /obj/machinery/light/rogue/candle/weak/r,
@@ -51434,7 +51451,7 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/obj/machinery/light/rogue/candle/red,
+/obj/machinery/light/rogue/candle,
 /turf/open/floor/carpet/stellar,
 /area/rogue/indoors/town/shop/desert)
 "pWl" = (
@@ -51870,12 +51887,6 @@
 "qdn" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert)
-"qdq" = (
-/obj/structure/roguewindow/harem1,
-/turf/open/floor/rogue/tile/brownbrick{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
-/area/rogue/under/cave/deserthotsprings)
 "qdu" = (
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/sandbrick,
@@ -53536,14 +53547,6 @@
 	},
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/town/garrison/desert/cell)
-"qEn" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
-	lockid = "church";
-	name = "Clergy Storage"
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/church)
 "qEp" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 4
@@ -58436,6 +58439,14 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/sandbrick,
 /area/rogue/indoors/town/garrison/desert/cell)
+"siJ" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church";
+	name = "Acolyte Beds"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "siL" = (
 /obj/structure/roguemachine/vendor/mobile,
 /turf/open/floor/rogue/concrete,
@@ -63363,6 +63374,10 @@
 	},
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/desertcavewet)
+"tHI" = (
+/obj/structure/roguemachine/scomm/receive_only/r,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town/desert)
 "tHP" = (
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/under/cave/licharena)
@@ -66565,6 +66580,16 @@
 /obj/effect/landmark/start/bathmaster,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath/desert)
+"uEr" = (
+/obj/machinery/light/rogue/candle/blue/r,
+/obj/structure/bed/rogue/shit,
+/mob/living/simple_animal/pet/cat/rogue/black/academy{
+	name = "Lexutrav, He Who Remains";
+	dir = 8;
+	desc = "Whispers around the Tower say that this cat was once an Associate that wished for immortality upon some great power. They were instead turned into a cat with infinite lives. (Or maybe it's just a cat)"
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/magician/desert)
 "uEu" = (
 /obj/machinery/light/rogue/candle/blue/r,
 /turf/open/floor/carpet/stellar,
@@ -67896,6 +67921,10 @@
 /area/rogue/indoors/town/bath/desert)
 "uXl" = (
 /obj/item/cushion/desert2,
+/mob/living/simple_animal/hostile/retaliate/rogue/fox/guildpet{
+	name = "Tai the Fox";
+	desc = "An adorable creechur adopted and imported by the Guild of Craft as their mascot here in this sandy place."
+	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin/desert)
 "uXo" = (
@@ -68061,8 +68090,12 @@
 	},
 /area/rogue/indoors/shelter/desertdeep)
 "vak" = (
-/obj/structure/bookcase/random/reference,
 /obj/machinery/light/rogue/candle,
+/obj/structure/bed/rogue/shit,
+/mob/living/simple_animal/hostile/retaliate/rogue/cat{
+	name = "Woozy";
+	desc = "The stewards beloved cat."
+	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/steward)
 "vam" = (
@@ -76395,10 +76428,6 @@
 	},
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/desertunderdark/undercity)
-"xES" = (
-/obj/structure/fermentation_keg/distiller,
-/turf/open/floor/rogue/dirt/desert,
-/area/rogue/outdoors/town/desert)
 "xEW" = (
 /obj/structure/fermentation_keg/sandpot,
 /turf/open/floor/rogue/deserttile,
@@ -351092,7 +351121,7 @@ xGI
 bHs
 bHs
 iVE
-qdq
+oBW
 pvH
 xns
 xns
@@ -351404,7 +351433,7 @@ bHs
 mKt
 iVE
 iVE
-qdq
+oBW
 qgn
 wlQ
 wlQ
@@ -351716,7 +351745,7 @@ cJD
 fRX
 iVE
 lzE
-qdq
+oBW
 tjc
 wPP
 wlQ
@@ -352028,7 +352057,7 @@ wat
 bXY
 iVE
 fnG
-qdq
+oBW
 weV
 jFF
 wPP
@@ -352340,7 +352369,7 @@ wat
 bXY
 bzH
 iVE
-qdq
+oBW
 iqI
 inX
 jFF
@@ -390041,13 +390070,13 @@ pAl
 isJ
 bom
 xPK
-qEn
+oSV
 xPK
 gMc
 pAl
 sjd
 isJ
-hgs
+siJ
 pAl
 tDJ
 tDJ
@@ -393446,7 +393475,7 @@ vTa
 vTa
 vTa
 vTa
-xES
+aPL
 vxu
 vxu
 tTl
@@ -480258,7 +480287,7 @@ mMe
 nXa
 nXa
 gwG
-gwG
+hBb
 gwG
 gwG
 atX
@@ -512964,7 +512993,7 @@ vLm
 btw
 btw
 btw
-ouB
+eFi
 tHr
 tHr
 tHr
@@ -513277,7 +513306,7 @@ jXC
 vLm
 vWK
 xPK
-ouB
+eFi
 koR
 tHr
 tHr
@@ -600689,7 +600718,7 @@ kFh
 atX
 kee
 nXa
-gwG
+tHI
 gWD
 nUb
 kTk
@@ -633753,7 +633782,7 @@ ijZ
 ijZ
 ijZ
 ijZ
-ijZ
+eMj
 tyc
 vBS
 vBS
@@ -642154,7 +642183,7 @@ tyc
 tyc
 tyc
 tyc
-ijZ
+hbi
 ijZ
 vBS
 vBS
@@ -651209,7 +651238,7 @@ vBS
 vBS
 vBS
 vBS
-vBS
+mFH
 ijZ
 tyc
 tyc
@@ -654901,7 +654930,7 @@ kTS
 kTS
 isl
 jvb
-uiS
+uEr
 enW
 uEu
 enW
