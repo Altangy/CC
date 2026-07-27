@@ -23479,6 +23479,14 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/desert)
+"hgs" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church";
+	name = "Acolyte Beds"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "hgu" = (
 /obj/structure/bed/rogue/inn/hay{
 	dir = 1
@@ -46325,6 +46333,16 @@
 "ous" = (
 /turf/open/floor/rogue/ruinedwood/herringbone_clear,
 /area/rogue/indoors/inq)
+"ouB" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church";
+	name = "Library"
+	},
+/turf/open/floor/rogue/concrete{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/town/church)
 "ouC" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/sandbrick,
@@ -51852,6 +51870,12 @@
 "qdn" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert)
+"qdq" = (
+/obj/structure/roguewindow/harem1,
+/turf/open/floor/rogue/tile/brownbrick{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/under/cave/deserthotsprings)
 "qdu" = (
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/sandbrick,
@@ -53512,6 +53536,14 @@
 	},
 /turf/open/floor/rogue/darkpath,
 /area/rogue/indoors/town/garrison/desert/cell)
+"qEn" = (
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church";
+	name = "Clergy Storage"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/church)
 "qEp" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 4
@@ -76363,6 +76395,10 @@
 	},
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/desertunderdark/undercity)
+"xES" = (
+/obj/structure/fermentation_keg/distiller,
+/turf/open/floor/rogue/dirt/desert,
+/area/rogue/outdoors/town/desert)
 "xEW" = (
 /obj/structure/fermentation_keg/sandpot,
 /turf/open/floor/rogue/deserttile,
@@ -351056,7 +351092,7 @@ xGI
 bHs
 bHs
 iVE
-rlj
+qdq
 pvH
 xns
 xns
@@ -351368,7 +351404,7 @@ bHs
 mKt
 iVE
 iVE
-rlj
+qdq
 qgn
 wlQ
 wlQ
@@ -351680,7 +351716,7 @@ cJD
 fRX
 iVE
 lzE
-rlj
+qdq
 tjc
 wPP
 wlQ
@@ -351992,7 +352028,7 @@ wat
 bXY
 iVE
 fnG
-rlj
+qdq
 weV
 jFF
 wPP
@@ -352304,7 +352340,7 @@ wat
 bXY
 bzH
 iVE
-rlj
+qdq
 iqI
 inX
 jFF
@@ -390005,13 +390041,13 @@ pAl
 isJ
 bom
 xPK
-fMi
+qEn
 xPK
 gMc
 pAl
 sjd
 isJ
-fMi
+hgs
 pAl
 tDJ
 tDJ
@@ -393410,7 +393446,7 @@ vTa
 vTa
 vTa
 vTa
-ugq
+xES
 vxu
 vxu
 tTl
@@ -512928,7 +512964,7 @@ vLm
 btw
 btw
 btw
-wHm
+ouB
 tHr
 tHr
 tHr
@@ -513241,7 +513277,7 @@ jXC
 vLm
 vWK
 xPK
-wHm
+ouB
 koR
 tHr
 tHr
