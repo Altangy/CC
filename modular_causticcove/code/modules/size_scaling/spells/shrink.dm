@@ -19,21 +19,16 @@
 
 	spell_requirements = SPELL_REQUIRES_NO_ANTIMAGIC | SPELL_REQUIRES_HUMAN | SPELL_REQUIRES_SAME_Z
 
-	charge_required = TRUE
-	charge_time = 2 SECONDS
-	hold_drain = 1
-	charge_slowdown = CHARGING_SLOWDOWN_MEDIUM
-	charge_sound = 'sound/magic/charging.ogg'
 	cooldown_time = 2 MINUTES
 
 /datum/action/cooldown/spell/touch/sizespell/cast_on_hand_hit(obj/item/melee/new_touch_attack/hand, atom/victim, mob/living/carbon/caster, list/modifiers)
-	if(!isliving(victim))
-		return
+	var/obj/item/melee/new_touch_attack/sizespell/sizehand = hand
+	if(!istype(sizehand) || !isliving(victim))
+		return FALSE
 
 	var/mob/living/victim_live = victim
-	var/obj/item/melee/new_touch_attack/sizespell/sizehand = hand
 	if(sizehand.target_scale == victim_live.size_multiplier)
-		return
+		return FALSE
 	if(sizehand.target_scale < victim_live.size_multiplier) //Reduce
 		shrink_target(victim, caster)
 	else //Grow
@@ -69,6 +64,7 @@
 	icon_state = "grabbing_greyscale"
 	color = "#33ff00" // this produces green because the icon base is yellow but someone else can fix that if they want
 	var/target_scale = 1
+	var/cast_range = 1
 
 /obj/item/melee/new_touch_attack/sizespell/attack_self(mob/user)
 	var/new_target_scale = tgui_input_number(user, "What desired size scale? (Between [RESIZE_MINIMUM * 100] and [RESIZE_MAXIMUM * 100], 100 is normal)", "Target Size", (RESIZE_STANDARD * 100), (RESIZE_MAXIMUM * 100), (RESIZE_MINIMUM * 100), round_value = FALSE)
@@ -77,6 +73,13 @@
 			to_chat(user, "<font color='red'>Value must be between [RESIZE_MINIMUM * 100] and [RESIZE_MAXIMUM * 100].</font>")
 			return
 		target_scale = (new_target_scale / 100)
+
+/obj/item/melee/new_touch_attack/sizespell/afterattack(atom/target, mob/living/carbon/user, proximity)
+	if(!proximity && get_dist(user, target) > cast_range)
+		return
+	var/datum/action/cooldown/spell/touch/sizespell/spell = spell_which_made_us?.resolve()
+	if(spell)
+		spell.do_hand_hit(src, target, user)
 
 /datum/status_effect/buff/sizechanged
 	var/removable = FALSE
