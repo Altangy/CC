@@ -216,7 +216,7 @@
 
 				//Worn items flag
 				if(mode_flags & DM_FLAG_AFFECTWORN && H.contaminate_pref)
-					
+
 					for(var/Iuncast in H.get_equipped_items(include_pockets = TRUE))
 						var/obj/item/I = Iuncast
 						if(I)
@@ -327,6 +327,9 @@
 
 	var/personal_nutrition_modifier = M.get_digestion_nutrition_modifier()
 	var/pred_digestion_efficiency = owner.get_digestion_efficiency_modifier()
+
+	if((mode_flags & DM_FLAG_LEAVEREMAINS) && M.digest_leave_remains)
+		new /obj/effect/decal/remains/human(src)
 
 	digestion_death(M)
 	if(show_liquids && reagent_mode_flags & DM_FLAG_REAGENTSDIGEST && reagents.total_volume < reagents.maximum_volume) // digestion producing reagents
