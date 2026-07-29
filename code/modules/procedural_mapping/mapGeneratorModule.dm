@@ -28,6 +28,7 @@
 	excluded_turfs = typecacheof(excluded_turfs)
 	allowed_turfs = typecacheof(allowed_turfs)
 	allowed_areas = typecacheof(allowed_areas, only_root_path = !include_subtypes)
+	excluded_areas = typecacheof(excluded_areas, only_root_path = !include_subtypes) //Caustic Edit - Adding in Excluded Areas to mapgenmodules
 	var/list/map = mother.map
 	for(var/turf/T in map)
 		place(T)
@@ -51,7 +52,7 @@
 		var/area/A = get_area(T)
 		if(!allowed_areas[A.type])
 			return
-	
+
 	//Caustic Edit - Add excluded areas option!
 	if(excluded_areas.len)
 		var/area/A = get_area(T)
