@@ -1008,8 +1008,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.Jitter(5)
 			hunger_rate = 10 * HUNGER_FACTOR*/
 //		hunger_rate *= H.physiology.hunger_mod
+		//Caustic Edit - Add in adjustments to Bottomless, and also the 10-minute grace timer for nutrition is added here!
+		if(H.has_flaw(/datum/charflaw/bottomless))
+			hunger_rate = (hunger_rate * 1.5) //Bottomless Flaw players just drain their nutrition faster instead of that constantly increasing max.
 		if(!H.mind || world.time < H.time_of_last_move + 10 MINUTES)
 			H.adjust_nutrition(-hunger_rate)
+		//Caustic Edit End
 
 		var/obj/item/organ/breasts/breasts = H.has_breasts()
 		if(breasts)
