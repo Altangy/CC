@@ -29,8 +29,8 @@
 				return
 			if(L.m_intent == MOVE_INTENT_SNEAK)
 				return
-			if(!L.badluck()) // only the unlucky (FOR < 10) misstep hard enough to set it off
-				return
+			/*if(!L.badluck()) // only the unlucky (FOR < 10) misstep hard enough to set it off
+				return*/ // CC Edit
 			var/oldx = pixel_x
 			animate(src, pixel_x = oldx + 1, time = 0.5)
 			animate(src, pixel_x = oldx - 1, time = 0.5)
