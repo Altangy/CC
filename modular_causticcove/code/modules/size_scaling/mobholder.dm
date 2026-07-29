@@ -3,7 +3,7 @@
 	desc = "You shouldn't ever see this."
 	icon = 'icons/obj/objects.dmi'
 	flags_1 = HEAR_1
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP|ITEM_SLOT_SHOES
 	var/mob/living/held_mob
 	var/matrix/original_transform
 	var/original_vis_flags = NONE
@@ -235,13 +235,13 @@
 
 /obj/item/holder/proc/sync(var/mob/living/M)
 	dir = 2
-	overlays.Cut()
+	//overlays.Cut()
 	/*if(M.item_state)
 		item_state = M.item_state*/
 	color = M.color
 	name = M.name
 	desc = M.desc
-	overlays |= M.overlays
+	//overlays |= M.overlays
 
 /obj/item/holder/dropped(mob/user)
 	// CHOMPEdit Start

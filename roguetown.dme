@@ -3806,6 +3806,7 @@
 #include "modular_causticcove\code\modules\size_scaling\resizing\holder_micro_vr.dm"
 #include "modular_causticcove\code\modules\size_scaling\resizing\resize_organs.dm"
 #include "modular_causticcove\code\modules\size_scaling\resizing\resize_vr.dm"
+#include "modular_causticcove\code\modules\size_scaling\resizing\shoes_helpers.dm"
 #include "modular_causticcove\code\modules\size_scaling\size_verbs\standardized_sprite_verb.dm"
 #include "modular_causticcove\code\modules\size_scaling\spells\shrink.dm"
 #include "modular_causticcove\code\modules\soilson_update\liquid_fertilizer.dm"
