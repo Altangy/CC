@@ -180,7 +180,7 @@
 				if(istype(T, /turf/open/floor/rogue/dirt))
 					var/turf/open/floor/rogue/dirt/D = T
 
-					if(!heldclod && user && istype(user.rmb_intent, /datum/rmb_intent/strong) && HAS_TRAIT(user, TRAIT_GRAVEROBBER))
+					if(!heldclod && user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 						if(D.holie && D.holie.stage >= 3)
 							return
 
