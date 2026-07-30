@@ -898,7 +898,7 @@
 // Indigestable items are removed, and M is deleted.
 /obj/belly/proc/digestion_death(mob/living/M)
 	digested_prey_count++
-	log_attack(owner, M, "Digested in [lowertext(name)]")
+	owner.log_message("Digested [key_name(M)] in [lowertext(name)]", LOG_ATTACK)
 
 	// If digested prey is also a pred... anyone inside their bellies gets moved up.
 	if(is_vore_predator(M))
@@ -977,7 +977,8 @@
 		M.enabled = FALSE
 		M.forceMove(G)
 	else
-		qdel(M) //This bit right here keeps doing a "bad del" on carbon mobs that people eat? I don't know why. I've seen a lot of goblins so far...
+		if(!M.key && !M.ckey) //Just another protection so we don't accidentally delete someone still in-body. And then probably this can all just loop again?
+			qdel(M) //This bit right here keeps doing a "bad del" on carbon mobs that people eat? I don't know why. I've seen a lot of goblins so far...
 
 	owner.handle_belly_update()
 
