@@ -121,6 +121,14 @@
 					/obj/item/reagent_containers/food/snacks/rogue/honey/spider,
 					/obj/item/reagent_containers/food/snacks/rogue/honey/spider,
 					/obj/item/reagent_containers/food/snacks/rogue/honey/spider,
+				)
+
+/datum/supply_pack/rogue/food/sugar
+	name = "Sugar"
+	cost = 45
+	contains = list(
+					/obj/item/reagent_containers/food/snacks/sugar,
+					/obj/item/reagent_containers/food/snacks/sugar,
 					/obj/item/reagent_containers/food/snacks/sugar,
 					/obj/item/reagent_containers/food/snacks/sugar,
 					/obj/item/reagent_containers/food/snacks/sugar,
@@ -131,14 +139,6 @@
 	cost = 50 //about double the price of its crafting ingredients
 	contains = list(
 					/obj/item/reagent_containers/food/snacks/allspice,
-				)
-
-/datum/supply_pack/rogue/food/sugar
-	name = "Sugar"
-	cost = 45
-	contains = list(
-					/obj/item/reagent_containers/food/snacks/sugar,
-					/obj/item/reagent_containers/food/snacks/sugar,
 				)
 
 /datum/supply_pack/rogue/food/chocolate
