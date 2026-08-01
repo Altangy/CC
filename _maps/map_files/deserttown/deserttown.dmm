@@ -17198,7 +17198,6 @@
 /turf/open/floor/rogue/dirt/road/desert,
 /area/rogue/under/town/basement/desert)
 "fdK" = (
-/obj/structure/table/wood,
 /obj/item/rogueweapon/hammer/wood{
 	pixel_x = 4
 	},
@@ -17222,6 +17221,7 @@
 	pixel_y = 7;
 	pixel_x = -6
 	},
+/obj/structure/artificer_table,
 /turf/open/floor/rogue/hexstone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
@@ -21392,8 +21392,11 @@
 /obj/structure/lever/wall{
 	dir = 4;
 	redstone_id = "art_shutter2";
-	name = "Window shutter"
+	name = "Window shutter";
+	pixel_y = 22;
+	pixel_x = 3
 	},
+/obj/structure/artificer_table,
 /turf/open/floor/rogue/hexstone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
