@@ -970,7 +970,7 @@
 		M.enabled = FALSE
 		M.forceMove(hasMMI)
 	else*/
-	var/mob/dead/observer/G = M.ghostize(FALSE) // Make sure they're out, so we can copy attack logs and such.
+	var/mob/dead/observer/G = M.ghostize(FALSE, ignore_zombie = TRUE) // Make sure they're out, so we can copy attack logs and such.
 	if(G)
 		G.forceMove(src)
 		G.body_backup = M
