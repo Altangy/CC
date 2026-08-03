@@ -42,7 +42,7 @@
 
 /datum/outfit/job/roguetown/adventurer/thug/goon/pre_equip(mob/living/carbon/human/H)
 	..()
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
@@ -93,7 +93,7 @@
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 	subclass_stats = list(
 		STATKEY_WIL = -2,
-		STATKEY_CON = -2,	
+		STATKEY_CON = -2,
 		STATKEY_STR = -1,
 		STATKEY_SPD = 2,
 		STATKEY_INT = 2,

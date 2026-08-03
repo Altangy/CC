@@ -2,7 +2,7 @@
 	name = "Berserker"
 	tutorial = "You are a warrior feared for your brutality, dedicated to using your might for your own gain. Might equals right, and you are the reminder of such a saying."
 	allowed_sexes = list(MALE, FEMALE)
-	
+
 	outfit = /datum/outfit/job/roguetown/wretch/berserker
 	cmode_music = 'sound/music/cmode/antag/combat_darkstar.ogg'
 	class_select_category = CLASS_CAT_WARRIOR
@@ -47,7 +47,7 @@
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	backr = /obj/item/storage/backpack/rogue/satchel
-	belt = /obj/item/storage/belt/rogue/leather/rope // more wild look + aura
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded/dark // more wild look + aura
 	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding //Used to be a reinforced leather coif, but crit resist kinda leaves your head open to shit
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/combat = 1, //Steel variant of the hunting knife. Pseudoantagonist-tier, plus an avenue to hack limbs with.
@@ -96,7 +96,7 @@
 						gloves = /obj/item/clothing/gloves/roguetown/knuckles
 					if("Punch Dagger")
 						beltr = /obj/item/rogueweapon/katar/punchdagger
-			if("Martial Expert") // designed to compete with unarmed by giving you alternatives to approaching fights- only expert 
+			if("Martial Expert") // designed to compete with unarmed by giving you alternatives to approaching fights- only expert
 				var/list/martial_options = list("Discipline - Bodybuilder", "Battle Axe", "Grand Mace", "Longsword")
 				var/weapon_choice = input(H, "Choose your WEAPONS of WAR!", "SPILL THEIR ENTRAILS.") as anything in martial_options
 				switch(weapon_choice)
