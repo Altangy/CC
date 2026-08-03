@@ -843,7 +843,7 @@
 #undef EQUALIZED_GLOW
 
 ////////////////////////
-// T4 - Churn Wealthy //
+// T3 - Churn Wealthy //
 ////////////////////////
 
 /datum/action/cooldown/spell/matthios/churn
