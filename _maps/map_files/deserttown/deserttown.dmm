@@ -7388,9 +7388,9 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/machinery/light/rogue/candle/r,
-/obj/item/restraints/legcuffs/beartrap,
-/turf/open/floor/rogue/wood/nosmooth,
+/obj/item/storage/belt/rogue/surgery_bag/full,
+/obj/item/natural/stone,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert/cell)
 "chB" = (
 /obj/machinery/light/rogue/torchholder/c,
@@ -16460,8 +16460,8 @@
 	},
 /area/rogue/under/desertunderdark/undercity)
 "eRY" = (
-/obj/item/reagent_containers/food/snacks/smallrat,
-/turf/open/floor/rogue/darkpath,
+/obj/structure/chair/wood/rogue/chair3,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert/cell)
 "eSa" = (
 /obj/structure/flora/roguetree/burnt,
@@ -21447,6 +21447,20 @@
 /obj/structure/flora/roguegrass/herb/random,
 /turf/open/floor/rogue/dunes,
 /area/rogue/outdoors/town/desertvilla)
+"gxd" = (
+/obj/structure/closet/crate/chest{
+	name = "Prisoner Clothes"
+	},
+/obj/item/clothing/suit/roguetown/shirt/rags,
+/obj/item/clothing/suit/roguetown/shirt/rags,
+/obj/item/clothing/suit/roguetown/shirt/rags,
+/obj/item/clothing/suit/roguetown/shirt/rags,
+/obj/item/clothing/under/roguetown/loincloth/brown,
+/obj/item/clothing/under/roguetown/loincloth/brown,
+/obj/item/clothing/under/roguetown/loincloth/brown,
+/obj/item/clothing/under/roguetown/loincloth/brown,
+/turf/open/floor/rogue/sandbrick,
+/area/rogue/indoors/town/garrison/desert/cell)
 "gxe" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/ingot/tin,
@@ -23430,7 +23444,10 @@
 	icon_state = "longtable"
 	},
 /obj/item/book/rogue/law,
-/turf/open/floor/rogue/wood/nosmooth,
+/obj/machinery/light/rogue/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert/cell)
 "hdk" = (
 /obj/structure/rack/rogue/shelf/big,
@@ -30972,18 +30989,18 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cave/desertminomaze)
 "jAw" = (
-/obj/structure/closet/crate/roguecloset{
-	keylock = 1;
-	lockid = "garrison"
-	},
 /obj/item/rope/chain,
-/obj/item/clothing/suit/roguetown/shirt/rags,
-/obj/item/clothing/suit/roguetown/shirt/rags,
-/obj/item/clothing/suit/roguetown/shirt/rags,
-/obj/item/clothing/suit/roguetown/shirt/rags,
-/turf/open/floor/rogue/tile/brownbrick{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
+/obj/structure/closet/crate/chest/neu,
+/obj/item/natural/bundle/cloth/bandage/full,
+/obj/item/natural/bundle/cloth/bandage/full,
+/obj/item/natural/bundle/cloth/bandage/full,
+/obj/item/needle/thorn,
+/obj/item/needle/thorn,
+/obj/item/needle/thorn,
+/obj/item/roguekey/dungeon,
+/obj/item/roguekey/dungeon,
+/obj/item/flashlight/flare/torch/lantern,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert/cell)
 "jAz" = (
 /obj/structure/fluff/railing/corner,
@@ -36921,7 +36938,8 @@
 	dir = 1;
 	locked = 1;
 	lockid = "dungeon";
-	lockdifficulty = 3
+	lockdifficulty = 3;
+	name = "Pit Secure Exit"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement/desert/arenapit)
@@ -37679,6 +37697,10 @@
 "lEA" = (
 /turf/closed/wall/mineral/rogue/sandstone,
 /area/rogue/indoors/town/church/basement)
+"lEB" = (
+/obj/structure/roguemachine/bounty,
+/turf/closed/wall/mineral/rogue/sandstone,
+/area/rogue/indoors/town/garrison/desert/cell)
 "lEE" = (
 /obj/structure/closet/dirthole/grave,
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf_undead,
@@ -42666,6 +42688,12 @@
 /obj/structure/mineral_door/wood/fancywood,
 /turf/open/floor/rogue/darkpath,
 /area/rogue/under/cave/dunelord)
+"njl" = (
+/obj/structure/roguemachine/scomm{
+	scom_tag = "Dungeoneer's Room"
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/garrison/desert/cell)
 "njn" = (
 /obj/structure/flora/roguegrass/herb/wild/jackberry,
 /turf/open/floor/rogue/dirt/road/desert,
@@ -42868,11 +42896,11 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/under/cave/rhgoblinencampment)
 "nlN" = (
-/obj/structure/mineral_door/wood/donjon{
-	dir = 3;
+/obj/structure/mineral_door/wood{
+	icon_state = "wcr";
 	locked = 1;
 	lockid = "dungeon";
-	name = "Dungeon Supplies"
+	name = "Dungeoneer's Room"
 	},
 /turf/open/floor/rogue/tile/brownbrick{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
@@ -44926,6 +44954,12 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/desertcaldera/lower)
+"nTV" = (
+/obj/structure/table/wood/poor,
+/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
+/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
+/turf/open/floor/rogue/darkpath,
+/area/rogue/indoors/town/garrison/desert/cell)
 "nTY" = (
 /obj/structure/table/wood{
 	icon_state = "largetable"
@@ -47054,10 +47088,8 @@
 /turf/open/floor/rogue/dunes,
 /area/rogue/outdoors/town/grove)
 "ozE" = (
-/obj/structure/fermentation_keg/sandpot/water,
-/turf/open/floor/rogue/tile/brownbrick{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
+/obj/structure/mirror,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert/cell)
 "ozF" = (
 /obj/structure/rack/rogue,
@@ -51562,18 +51594,10 @@
 /turf/closed/mineral/rogue/bedrock/sandstone,
 /area/rogue/outdoors/mountains)
 "pSO" = (
-/obj/structure/closet/crate/chest{
-	locked = 1;
-	lockid = "dungeon";
-	name = "prisoner food"
-	},
-/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
-/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
-/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
-/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
-/turf/open/floor/rogue/tile/brownbrick{
-	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
-	},
+/obj/structure/bed/rogue,
+/obj/item/bedsheet/rogue/cloth,
+/obj/machinery/light/rogue/candle/r,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/garrison/desert/cell)
 "pSU" = (
 /obj/item/rogueweapon/sword/short/messer/copper{
@@ -55351,6 +55375,10 @@
 /obj/effect/spawner/lootdrop/roguetown/sewers,
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/under/desertunderdark/undercity)
+"rdP" = (
+/obj/machinery/light/rogue/campfire/fireplace/desert,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/garrison/desert/cell)
 "rdT" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood{
@@ -63314,6 +63342,12 @@
 /obj/item/reagent_containers/glass/bucket/pot/stone,
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/under/desertcaldera/lower)
+"tAu" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 1
+	},
+/turf/open/floor/rogue/darkpath,
+/area/rogue/indoors/town/garrison/desert/cell)
 "tAB" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/fabric_double,
@@ -66126,9 +66160,12 @@
 "uqE" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "garrison"
+	lockid = "garrison";
+	name = "Garrison Bunks"
 	},
-/turf/open/floor/rogue/darkpath,
+/turf/open/floor/rogue/tile/brownbrick{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
 /area/rogue/indoors/town/garrison/desert)
 "uqF" = (
 /obj/machinery/light/rogue/candle/blue/r,
@@ -68751,6 +68788,16 @@
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
 	},
 /area/rogue/under/desertunderdark/undercity)
+"vea" = (
+/obj/structure/mineral_door/wood/donjon{
+	dir = 1;
+	locked = 1;
+	lockid = "dungeon";
+	lockdifficulty = 3;
+	name = "Garrison"
+	},
+/turf/open/floor/rogue/darkpath,
+/area/rogue/indoors/town/garrison/desert/cell)
 "vej" = (
 /obj/structure/roguewindow/harem3,
 /obj/structure/spider/stickyweb,
@@ -69543,6 +69590,10 @@
 /obj/machinery/light/rogue/candle/blue,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/desert)
+"vsi" = (
+/obj/machinery/light/rogue/firebowl,
+/turf/open/floor/rogue/sandbrick,
+/area/rogue/under/desertcavewet)
 "vsn" = (
 /obj/structure/table/wood/poor,
 /obj/item/rogueweapon/pick,
@@ -70174,6 +70225,12 @@
 "vDo" = (
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/grove)
+"vDt" = (
+/obj/structure/closet/crate/chest{
+	name = "Evidence Storage"
+	},
+/turf/open/floor/rogue/sandbrick,
+/area/rogue/indoors/town/garrison/desert/cell)
 "vDv" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -306631,7 +306688,7 @@ und
 und
 und
 und
-ptM
+vsi
 hvH
 hvH
 hvH
@@ -307869,7 +307926,7 @@ wLm
 hVU
 wLm
 wLm
-ioY
+lEB
 ioY
 ioY
 ioY
@@ -308181,7 +308238,7 @@ jxT
 ioY
 prN
 wLm
-wLm
+nTV
 gHd
 ioY
 uXH
@@ -308489,7 +308546,7 @@ wLm
 oiR
 cpV
 wLm
-eRY
+wLm
 ihf
 wLm
 wLm
@@ -308499,7 +308556,7 @@ ecp
 glW
 glW
 glW
-nFt
+vea
 glW
 wLm
 hvH
@@ -308806,14 +308863,14 @@ ihf
 wLm
 wLm
 prN
-wLm
+tAu
 ioY
-ioY
+nlN
 ioY
 ioY
 ioY
 eNe
-ioY
+prN
 ptM
 ptM
 und
@@ -309117,16 +309174,16 @@ yex
 ioY
 wLm
 wLm
-prN
-prN
-nlN
-glW
-glW
+gxd
+vDt
+ioY
+qQZ
+mMd
 jAw
 ioY
 ioY
 ioY
-und
+pVD
 und
 und
 rRb
@@ -309432,8 +309489,8 @@ wLm
 ioY
 ioY
 ioY
-glW
-glW
+rdP
+eRY
 hdf
 ioY
 kvr
@@ -309744,8 +309801,8 @@ yex
 ioY
 rxI
 ioY
-glW
-glW
+njl
+qQZ
 chw
 ioY
 kvr
