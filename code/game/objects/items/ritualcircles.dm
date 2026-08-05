@@ -1091,7 +1091,7 @@
 	if(!..())
 		return
 	if((user.patron?.type) != /datum/patron/divine/necra)
-		to_chat(user,span_warning("I hear angered whispering...I probably shouldn't touch this."))
+		to_chat(user,span_warning("I hear faint whispering... It tells me it's not my time yet to meet her."))
 		return
 	if(!HAS_TRAIT(user, TRAIT_RITUALIST))
 		to_chat(user,span_warning("I don't know the proper rites for this..."))
@@ -1120,18 +1120,18 @@
 			playsound(user, 'sound/vo/mobs/ghost/whisper (3).ogg', 100, FALSE, -1)
 			if(!do_after(user, 6 SECONDS))
 				return
-			loc.visible_message(span_warning("[user] silently weeps, yet their tears do not flow..."))
+			loc.visible_message(span_warning("[user] silently whispers, a sincere plea being asked..."))
 			playsound(user, 'sound/vo/mobs/ghost/whisper (1).ogg', 100, FALSE, -1)
 			if(!do_after(user, 6 SECONDS))
 				return
-			loc.visible_message(span_warning("[user] locks up, as though someone had just grabbed them..."))
-			to_chat(user,span_danger("You feel cold breath on the back of your neck..."))
+			loc.visible_message(span_warning("[user] glances upwards, as though someone was addressing them..."))
+			to_chat(user,span_danger("You feel her gaze upon you as she ponders your request..."))
 			playsound(user, 'sound/vo/mobs/ghost/death.ogg', 100, FALSE, -1)
 			if(!do_after(user, 2 SECONDS))
 				return
 			icon_state = "necra_active"
-			user.say("Forgive me, the bargain is intoned!!")
-			to_chat(user,span_cultsmall("My devotion to the Undermaiden has allowed me to strike a bargain for these souls...."))
+			user.say("Thank you, Undermaiden. She looks after us all...")
+			to_chat(user,span_cultsmall("Because of my devotion to the Undermaiden, she is willing to grant us each a boon. It is not our time, yet."))
 			playsound(loc, 'sound/vo/mobs/ghost/moan (1).ogg', 100, FALSE, -1)
 			undermaidenbargain(src)
 			user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
@@ -1148,18 +1148,20 @@
 					folksonrune += persononrune
 			var/target = input(user, "Choose a supplicant") as null|anything in folksonrune
 			if(target)
-				loc.visible_message(span_warning("[user] draws spectral strands of Lux up through the air, tearing the veil between lyfe and death!"))
+				loc.visible_message(span_warning("[user] draws spectral strands of Lux out from the fragments of coin, bringing it together in an offering they raise to the heavens!"))
 				playsound(user, 'sound/vo/mobs/ghost/whisper (3).ogg', 100, FALSE, -1)
 				if(do_after(user, 60))
 					playsound(user, 'sound/vo/mobs/ghost/whisper (1).ogg', 100, FALSE, -1)
 					if(do_after(user, 60))
-						loc.visible_message(span_warning("[user] moves their lips but no words can be heard, speaking to a massive spectral figure on the other side!"))
+						loc.visible_message(span_warning("[user] moves their lips but no words can be heard, speaking to a massive spectral figure only they can see!"))
 						playsound(user, 'sound/vo/mobs/ghost/death.ogg', 100, FALSE, -1)
 						if(do_after(user, 20))
 							icon_state = "necra_active"
-							user.say("For this toll, a soul!!")
-							to_chat(user,span_cultsmall("[user] grasps the strands of Lux and attempts to pull a soul through the rift!"))
-							thetoll(target, user)
+							user.say("For this toll, please return this one's soul!")
+							loc.visible_message(span_warning("[user] starts to smile. An unseen force grasps at the offered strands of Lux and from them seems to try to pull a solid mass of glowing white! Is that really...?"))
+							if(!thetoll(target, user))
+								loc.visible_message(span_warning("The strands of Lux stretch, then ease up as the bright light returns to them, then they too return to the shards of coin once more."))
+
 							spawn(120)
 								icon_state = "necra_chalky"
 
@@ -1169,32 +1171,32 @@
 	var/revive_pq = PQ_GAIN_REVIVE
 	if(!target.mind) // run the revive, but in ritual form!
 		to_chat(user, "This one is inert.")
-		return
+		return FALSE
 	if(!target.mind.active)
-		to_chat(user, "Necra is not done with [target], yet.")
-		return
+		to_chat(user, "Necra is still searching for [target].")
+		return FALSE
 	if(HAS_TRAIT(target, TRAIT_DNR))
 		to_chat(user, span_danger("None of the divine have them. Their only chance is spent. Where did they go?"))
-		return
+		return FALSE
 	if(HAS_TRAIT(target, TRAIT_NECRAS_VOW))
-		to_chat(user, span_warning("This one has pledged themselves whole to Necra. They are Hers."))
-		return
+		to_chat(user, span_warning("This one has pledged themselves whole to Necra. They reside with her, now."))
+		return FALSE
 	if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
 		if(alert(user, "[target]'s body rattles and seizes under the divine force. This will likely unmake them permanently. Continue?", "Divine Revival", "PURGE THE UNCLEAN!", "Stop") != "PURGE THE UNCLEAN!")
 			to_chat(user, span_notice("You halt the rite before the divine force can fully take hold."))
 			return FALSE
-		target.visible_message(span_danger("[target] is unmade by divine magic!"), span_userdanger("Holy power tears my undead form apart!"))
+		target.visible_message(span_danger("[target] is unmade as the pure Lux attempts to touch them!"), span_userdanger("Holy power tears my undead form apart!"))
 		playsound(target.loc, 'sound/magic/churn.ogg', 100, TRUE)
 		target.dust()
 		return TRUE
 
-	if(alert(target, "A Toll is being offered for your soul, BREAK FREE?", "Revival", "I need to wake up", "Don't let me go") != "I need to wake up")
-		target.visible_message(span_notice("Nothing happens. They are not being let go."))
-		return
+	if(alert(target, "A Toll is being offered for your soul and Necra smiles at you gently, is it not your time yet?", "Revival", "I will return to the living", "Stay here with the Undermaiden") != "I will return to the living")
+		target.visible_message(span_notice("The strands do not give up their grasp on that light. This one appears content to stay with her."))
+		return FALSE
 	target.adjustOxyLoss(-target.getOxyLoss()) //Ye Olde CPR
 	if(!target.revive(full_heal = FALSE))
-		to_chat(user, span_warning("Nothing happens."))
-		return
+		to_chat(user, span_warning("The Lux does not give."))
+		return FALSE
 	var/mob/living/carbon/spirit/underworld_spirit = target.get_spirit()
 	if(underworld_spirit)
 		var/mob/dead/observer/ghost = underworld_spirit.ghostize()
@@ -1204,7 +1206,7 @@
 	target.emote("breathgasp")
 	target.Jitter(100)
 	target.update_body()
-	target.visible_message(span_notice("[target] JUMPS AWAKE! Spirits nearly break free from their shackles as they look for a exit in [target]!"), span_green("I BARELY MANAGED TO GET PAST OTHER DESPERATE SPIRITS TO MY EMPTY BODY... IT IS SO COLD"))
+	target.visible_message(span_notice("The Lux relents it's grasp on that light, and it is gently lowered to the body below. As soon as it touches [target], [target.p_they()] take a deep and sudden gasp!"), span_green("While I leave Necra's grasp, she just smiles down at me. She will be there when my time comes."))
 	if(revive_pq && !HAS_TRAIT(target, TRAIT_IWASREVIVED) && user?.ckey)
 		adjust_playerquality(revive_pq, user.ckey)
 		ADD_TRAIT(target, TRAIT_IWASREVIVED, "[type]")
@@ -1215,6 +1217,7 @@
 	target.add_stress(/datum/stressevent/necrarevive)
 	src.coinslot -= 1 // -1 coin, please insert more coins.
 	user.apply_status_effect(/datum/status_effect/debuff/ritesexpended) // only after a succesful revive
+	return TRUE
 
 /obj/structure/ritualcircle/necra/proc/undermaidenbargain(src)
 	var/ritualtargets = view(7, loc)
@@ -1320,6 +1323,7 @@
 	icon_state = "eora_chalky"
 	var/peacerites = list("Rite of Pacification", "Rite of the Open Hearth")
 
+//Caustic Edit - These rituals have had their texts changed from Upstream! They don't really make sense for our view of the gods? Clearly marked the end of it below!
 /obj/structure/ritualcircle/eora/attack_hand(mob/living/user)
 	if((user.patron?.type) != /datum/patron/divine/eora)
 		to_chat(user,span_warning("I don't have the heart for this..."))
@@ -1380,16 +1384,16 @@
 	var/ritualtargets = view(0, loc)
 	for(var/mob/living/carbon/human/target in ritualtargets)
 		loc.visible_message(span_warning("[target] sways like windchimes in the wind..."))
-		target.visible_message(span_green("I feel the burdens of my heart lifting. Something feels very wrong... I don't mind at all..."))
+		target.visible_message(span_green("I feel the burdens of my heart lifting. Suddenly I feel less angry and aggressive... I don't mind at all..."))
 		target.apply_status_effect(/datum/status_effect/buff/pacify)
 
 /obj/structure/ritualcircle/eora/proc/eoranaura(mob/living/carbon/human/target)
 	if(!HAS_TRAIT(target, TRAIT_EXTEROCEPTION))
-		loc.visible_message(span_cult("THE RITE REJECTS ONE WITHOUT PURE HEART!!"))
+		loc.visible_message(span_cult("Eora only grants her boon to her own followers."))
 		return FALSE
 	target.Stun(120)
-	to_chat(target, span_userdanger("UNIMAGINABLE PAIN!"))
-	target.emote("superagony")
+	to_chat(target, span_userdanger("Her love is upon thee!"))
+	target.emote("sigh")
 	playsound(loc, 'sound/magic/undivided_bless.ogg', 70)
 	loc.visible_message(span_good("[target]'s form becomes enveloped in calming aura."))
 	spawn(20)
@@ -1399,6 +1403,7 @@
 		ADD_TRAIT(target, TRAIT_PACIFISM, TRAIT_RITUAL)
 		to_chat(target, span_boldred("My body is susceptible to CRITICAL STRIKES."))
 		ADD_TRAIT(target, TRAIT_CRITICAL_WEAKNESS, TRAIT_RITUAL)
+//Caustic Edit End - Eoran Ritual Edits end here for now
 
 //UNDIVIDED
 /obj/structure/ritualcircle/undivided
