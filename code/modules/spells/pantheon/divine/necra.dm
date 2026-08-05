@@ -689,7 +689,7 @@ var/global/mob/_corpse_sort_ref = null
 
 					var/list/tox_reactions = list( //Caustic Edit - Changing the fluff texts to make Necra more of a Compassionate Death God!
 						"I CAN TASTE IT - UNFILTERED ESSENSE!",
-						"IT'S IN MY BLOOD!",
+						"IT'S SO COLD!",
 						"WHO IS THAT - THAT'S NOT HER!",
 						"IS SOMETHING WITHERING ME?"
 					)
@@ -718,22 +718,22 @@ var/global/mob/_corpse_sort_ref = null
 							var/obj/item/bodypart/BP = pick(valid_parts)
 							BP.manage_dynamic_wound(BCLASS_LASHING, rand(10, 20), 0)
 
-							var/list/wound_reactions = list(
-								"SOMETHING JUST TORE OPEN!",
-								"I'M BLEEDING- AM I BLEEDING?!",
-								"SHE CUT ME WITHOUT TOUCHING ME!",
-								"I'M SORRY, UNDERMAIDEN, I'M SORRY!"
+							var/list/wound_reactions = list( //Caustic Edit - Changing the fluff texts to make Necra more of a Compassionate Death God!
+								"SOMETHING JUST CUT ME?!",
+								"AM I BLEEDING?! I'M BLEEDING!",
+								"A VENGEFUL SPIRIT! IT LASHED AT ME!",
+								"THEY ARE GRIPPING AT ME, NECRA!"
 							)
 							to_chat(src, span_red(pick(wound_reactions)))
 							src.emote("agony")
 					else
 						src.adjustBruteLoss(rand(15, 25))
 
-						var/list/fallback_reactions = list(
-							"MY BODY'S BREAKING APART!",
-							"SOMETHING IS WRONG- DEEPLY WRONG!",
-							"I CAN'T HOLD MYSELF TOGETHER!",
-							"IT HURTS- EVERYWHERE!"
+						var/list/fallback_reactions = list( //Caustic Edit - Changing the fluff texts to make Necra more of a Compassionate Death God!
+							"MY BODY'S BREAKING UNDER THE STRAIN!",
+							"SOMETHING IS WRONG - DEEPLY WRONG!",
+							"I CAN'T HOLD ON FOR TOO MUCH LONGER!",
+							"IT HURTS - EVERYWHERE!"
 						)
 						to_chat(src, span_red(pick(fallback_reactions)))
 						src.emote("painscream")
@@ -741,11 +741,11 @@ var/global/mob/_corpse_sort_ref = null
 					src.adjustBruteLoss(10)
 					src.adjustToxLoss(10)
 
-					var/list/mixed_reactions = list(
-						"IT'S EVERYWHERE—IT HURTS EVERYWHERE!",
-						"I CAN'T TELL WHERE IT'S COMING FROM!",
-						"MAKE IT STOP- PLEASE!",
-						"I'M FALLING APART!"
+					var/list/mixed_reactions = list( //Caustic Edit - Changing the fluff texts to make Necra more of a Compassionate Death God!
+						"THEY ARE EVERYWHERE — IT HURTS EVERYWHERE!",
+						"I CAN'T TELL WHERE THEY ARE COMING FROM!",
+						"NECRA, IT'S TOO MUCH! PULL BACK!",
+						"I ALMOST SLIPPED IN!"
 					)
 					src.emote("painscream")
 					to_chat(src, span_red(pick(mixed_reactions)))
@@ -858,7 +858,7 @@ var/global/mob/_corpse_sort_ref = null
 			to_chat(user, span_notice("They declined."))
 			return TRUE
 		user.visible_message(span_warning("[user] grants [H] the blessing of their promise."))
-		to_chat(H, span_warning("I have committed. There is no going back."))
+		to_chat(H, span_warning("I have committed. I will be at Her side when things are done.")) //Caustic Edit - Changing the fluff texts to make Necra more of a Compassionate Death God!
 		H.apply_status_effect(/datum/status_effect/buff/necras_vow)
 		H.apply_status_effect(/datum/status_effect/buff/healing/necras_vow)
 
