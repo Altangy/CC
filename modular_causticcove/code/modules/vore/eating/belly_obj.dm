@@ -800,8 +800,8 @@
 			ML.stop_sound_channel(CHANNEL_PREYLOOP) //Stop the internal loop, it'll restart if the isbelly check on next tick anyway
 		if(ML.muffled)
 			ML.muffled = FALSE
-		/*if(ML.forced_psay)
-			ML.forced_psay = FALSE*/
+		if(ML.forced_psay)
+			ML.forced_psay = FALSE
 		if(ML.absorbed)
 			ML.absorbed = FALSE
 			//handle_absorb_langs(ML, owner)
