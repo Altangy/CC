@@ -339,8 +339,8 @@
 		return FALSE
 	if(istype(I, /obj/item/reagent_containers/powder/moondust))
 		catalyst = "Moondust"
-	else if(istype(I, /obj/item/reagent_containers/food/snacks/grown/coffee) || \
-			istype(I, /obj/item/reagent_containers/food/snacks/grown/coffeebeans) || \
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_ground) || \
+			istype(I, /obj/item/reagent_containers/food/snacks/sugar) || \
 			istype(I, /obj/item/reagent_containers/food/snacks/grown/coffeebeansroasted))
 		catalyst = "Coffee"
 	else if(istype(I, /obj/item/reagent_containers/powder/ozium))

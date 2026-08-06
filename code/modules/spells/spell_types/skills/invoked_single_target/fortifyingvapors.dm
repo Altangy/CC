@@ -130,7 +130,7 @@
 /datum/status_effect/buff/fortifyingvapors
 	id = "fortifyingvapors"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/fortifyingvapors
-	duration = 20 SECONDS
+	duration = 30 SECONDS // Let's try making it actually last for a minute?
 	examine_text = "<font color='#00ff6a'>SUBJECTPRONOUN is surrounded by subtle, heady vapors.</font>"
 	var/healing_on_tick = 0.5
 	var/outline_colour = "#9ebb5b"
