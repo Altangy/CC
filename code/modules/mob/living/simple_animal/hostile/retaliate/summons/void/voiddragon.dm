@@ -282,6 +282,13 @@ F
 		continue
 
 /mob/living/simple_animal/hostile/retaliate/rogue/voiddragon/MeleeAction(patience = TRUE)
+	//Caustic Cove Edit
+	if (melee_cooled_down > world.time)
+		return
+
+	melee_cooled_down = world.time + melee_cooldown
+	//Caustic Cove Edit End
+
 	if(rapid_melee > 1)
 		var/datum/callback/cb = CALLBACK(src, PROC_REF(CheckAndAttack))
 		var/delay = SSnpcpool.wait / rapid_melee
