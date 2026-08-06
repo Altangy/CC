@@ -191,6 +191,14 @@
 	required_atoms = list(/obj/item/rogueore/cinnabar = 1, /obj/item/paper/scroll = 1, /obj/item/magic/leyline = 1, /obj/item/magic/infernal/core = 1)
 	result_atoms = list(/obj/item/enchantmentscroll/greater/archery)
 
+/datum/runeritual/enchanting/woundclosing
+	name = "Wound Closing"
+	desc = "Heals Wounds."
+	blacklisted = FALSE
+	tier = 3
+	required_atoms = list(/obj/item/rogueore/cinnabar = 1, /obj/item/paper/scroll = 1, /obj/item/magic/leyline = 1, /obj/item/magic/fae/heartwoodcore = 1)
+	result_atoms = list(/obj/item/enchantmentscroll/greater/woundclosing)
+
 // ----- T4 Enchantments (1x T4 realm mat + cinnabar + scroll + leyline shard) -----
 
 /datum/runeritual/enchanting/briars
@@ -208,6 +216,14 @@
 	tier = 4
 	required_atoms = list(/obj/item/rogueore/cinnabar = 1, /obj/item/paper/scroll = 1, /obj/item/magic/leyline = 1, /obj/item/magic/infernal/flame = 1)
 	result_atoms = list(/obj/item/enchantmentscroll/mythic/infernalflame)
+
+/datum/runeritual/enchanting/phoenixguard
+	name = "Pheonix Guard"
+	desc = "Attackers set aflame."
+	blacklisted = FALSE
+	tier = 4
+	required_atoms = list(/obj/item/rogueore/cinnabar = 1, /obj/item/paper/scroll = 1, /obj/item/magic/leyline = 1, /obj/item/magic/infernal/flame = 1)
+	result_atoms = list(/obj/item/enchantmentscroll/greater/phoenixguard)
 
 /datum/runeritual/enchanting/freeze
 	name = "Greater Freezing"
