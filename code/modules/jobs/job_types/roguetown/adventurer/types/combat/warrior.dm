@@ -2,7 +2,7 @@
 	name = "Battlemaster"
 	tutorial = "You are a seasoned weapon specialist, clad in maille, with years of experience in warfare and battle under your belt."
 	allowed_sexes = list(MALE, FEMALE)
-	
+
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
 	cmode_music = 'sound/music/cmode/adventurer/combat_outlander2.ogg'
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR)
@@ -252,7 +252,7 @@
 	to_chat(H, span_warning("You are a brutal warrior, who has foregone armor in favor of pure strength. Crush your enemies, see them driven before you, and hear the lamentations of their women! Oh, and you can specialize in unarmed combat and wrestling."))
 	H.dna.species.soundpack_m = GLOB.voice_packs[/datum/voicepack/male/warrior]
 	H.set_blindness(0)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/ragebad)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rage)
 	if(!H.mind)
 		return
 
@@ -558,7 +558,7 @@
 				backr = /obj/item/rogueweapon/scabbard/gwstrap
 			if("Silver Katar (+1 Athletics)")  //For these 2 unarmed weapon options, get a level of athletics as a consolation prize, since this class gets jman unarmed already, and expert would be OP.
 				if(H.age != AGE_OLD)  //BUT ONLY IF THE CHARACTER IS NOT OLD, because old exorcists get expert EVERYTHING anyway, no need for compensation.
-					H.adjust_skillrank_up_to(/datum/skill/misc/athletics, SKILL_LEVEL_EXPERT, TRUE)  
+					H.adjust_skillrank_up_to(/datum/skill/misc/athletics, SKILL_LEVEL_EXPERT, TRUE)
 				r_hand = /obj/item/rogueweapon/katar/silver
 			if("Silver Claws (+1 Athletics)")
 				if(H.age != AGE_OLD)
@@ -684,7 +684,7 @@
 		if(/datum/patron/divine/necra)
 			wrists = /obj/item/clothing/neck/roguetown/psicross/silver/necra
 		if(/datum/patron/divine/noc)
-			wrists = /obj/item/clothing/neck/roguetown/psicross/silver/noc 
+			wrists = /obj/item/clothing/neck/roguetown/psicross/silver/noc
 		else
 			wrists = /obj/item/clothing/neck/roguetown/psicross/silver/undivided
 
