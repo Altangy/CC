@@ -260,3 +260,5 @@
 		if(possible_turfs.len)
 			L.forceMove(pick(possible_turfs))
 		last_used[source] = world.time
+
+#undef PHOENIX_GUARD_COOLDOWN
