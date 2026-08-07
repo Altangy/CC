@@ -13,7 +13,7 @@
 	glow_intensity = GLOW_INTENSITY_LOW
 
 	click_to_activate = TRUE
-	cast_range = 2
+	cast_range = 5
 	self_cast_possible = TRUE
 	aim_assist = TRUE
 
