@@ -329,7 +329,9 @@
 	var/pred_digestion_efficiency = owner.get_digestion_efficiency_modifier()
 
 	if((mode_flags & DM_FLAG_LEAVEREMAINS) && M.digest_leave_remains)
-		new /obj/effect/decal/remains/human(src)
+		new /obj/item/natural/bone(src)
+		new /obj/item/natural/bone(src)
+		new /obj/item/natural/bone(src)
 
 	digestion_death(M)
 	if(show_liquids && reagent_mode_flags & DM_FLAG_REAGENTSDIGEST && reagents.total_volume < reagents.maximum_volume) // digestion producing reagents
