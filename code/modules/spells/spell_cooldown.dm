@@ -1,7 +1,7 @@
 // /datum/action/cooldown/spell - Ported from Vanderlin
 // This is the new spell system built on top of /datum/action/cooldown.
 // We'll gradually move spells over to this new system to complete the job of nuking proc holder from our codebase
-// Adapted for AP. No Mana or Attunement system because imo, 
+// Adapted for AP. No Mana or Attunement system because imo,
 // Attunement causes balance issues by varying effectiveness of spell dramatically based on caster's attunement
 // And Mana is not necessary because we are going to stick with using blue / green bar to balance instead of a third bar and forcing long out of combat rest time that stacks on top of sleep based rest time. Just one system to KISS.
 
@@ -659,7 +659,7 @@
 			owner.balloon_alert(owner, "Too exposed to focus!")
 		return FALSE
 
-	if(!(spell_requirements & SPELL_CASTABLE_WHILE_MOUNTED) && owner.client && owner.buckled && isliving(owner.buckled))
+	if((spell_requirements & SPELL_NOT_CASTABLE_WHILE_MOUNTED) && owner.client && owner.buckled && isliving(owner.buckled))
 		if(feedback)
 			owner.balloon_alert(owner, "Too distracted riding to cast!")
 		return FALSE
