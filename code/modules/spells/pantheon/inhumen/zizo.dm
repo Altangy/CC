@@ -494,7 +494,7 @@
 		if(path_choice == "Progress")
 			user.emote(pick("whimper", "painmoan", "gag", "choke"))
 		else
-			user.emote(pick("painscream", "agony", "paincrit", "choke"))
+			user.emote(pick("painscream", "superagony", "agony", "paincrit", "choke"))
 		if(i > 1)
 			shake_camera(user, i * 2, i)
 		if(!do_after(user, 3 SECONDS, target = user))

@@ -524,7 +524,7 @@ var/global/mob/_corpse_sort_ref = null
 		src.necra_tracked_corpse = null
 		STOP_PROCESSING(SSprocessing, src)
 		return
-	
+
 	if(necra_tracked_corpse?.mind && !necra_tracked_corpse.mind.has_antag_datum(/datum/antagonist/zombie) && necra_tracked_corpse.stat != DEAD)
 		to_chat(src, span_purple("<i>The Undermaiden's interest grows discontent, you briefly sense your bounty back from undeath, alive once more.</i>")) //CCedit
 		src.necra_tracked_corpse = null
@@ -551,7 +551,7 @@ var/global/mob/_corpse_sort_ref = null
 
 	src.necra_score = score
 	src.necra_judgement = judgement
-	
+
 	// --- Devotion cost ---
 	var/devotion_cost = 2
 	switch(judgement)
@@ -667,7 +667,7 @@ var/global/mob/_corpse_sort_ref = null
 		to_chat(src, span_warning(msg))
 		src.adjustOxyLoss(20)
 		if(src.hallucination < 200)
-			src.hallucination += 50	
+			src.hallucination += 50
 		if(prob(20))
 			switch(rand(1,5))
 				if(1) // CRITICAL HIIIIT!!!
@@ -681,7 +681,7 @@ var/global/mob/_corpse_sort_ref = null
 						"I CAN'T PUT IT OUT!"
 					)
 					to_chat(src, span_red(pick(fire_reactions)))
-					src.emote("agony")
+					src.emote("superagony")
 				if(2)
 					src.adjustToxLoss(rand(1, 20))
 
@@ -723,7 +723,7 @@ var/global/mob/_corpse_sort_ref = null
 								"I'M SORRY, UNDERMAIDEN, I'M SORRY!"
 							)
 							to_chat(src, span_red(pick(wound_reactions)))
-							src.emote("agony")
+							src.emote("superagony")
 					else
 						src.adjustBruteLoss(rand(15, 25))
 
@@ -765,14 +765,14 @@ var/global/mob/_corpse_sort_ref = null
 			"are they alone?","what was that?","did you see that?","are you afraid?",
 			"why is it hard to find them?","is that them?","what if they aren't?","do you feel it?",
 			"why are you hesitating?","what's behind you?","who's there?","are you listening?",
-			"do I remember?","have I forgotten?","why keep going this way?","what are We chasing?", 
+			"do I remember?","have I forgotten?","why keep going this way?","what are We chasing?",
 			"who is holding My hand?","what if it's a trap?","are you sure about that?","do you doubt Me?",
 			"why this path?","why not another way?","what are you missing?","can you feel her?",
 			"does she approve?","are they being judged?","what does she see?","why are you still here?",
 			"do you see them?","should We stop?","are you going the wrong way?","what lies ahead?",
 			"what lies behind?","are We too late?","are We too early?","are they watching you?",
 			"do you hear the whispers?","are they getting louder?","can you ignore them?",
-			"what do they want?","what do you want?","who are they?","who are you?", 
+			"what do they want?","what do you want?","who are they?","who are you?",
 			"are you close?","are you far?","does it matter?","are you sure it's not here?",
 			"why not turn around?","what if We're mistaken?","is this your choice?",
 			"are you being guided?","or misled?","do you understand?","are you certain you do?",
@@ -812,7 +812,7 @@ var/global/mob/_corpse_sort_ref = null
 
 	if(judgement == NECRA_APPROVES)
 		msg += " - <b>[dist]</b> meters"
-	
+
 	msg += "."
 
 	to_chat(src, span_warning(msg))
@@ -1032,7 +1032,7 @@ var/global/mob/_corpse_sort_ref = null
 	no_early_release = TRUE
 	charging_slowdown = 1
 	chargedloop = /datum/looping_sound/invokeholy
-	gesture_required = TRUE 
+	gesture_required = TRUE
 	associated_skill = /datum/skill/magic/holy
 	recharge_time = 90 SECONDS
 	hide_charge_effect = TRUE
@@ -1066,7 +1066,7 @@ var/global/mob/_corpse_sort_ref = null
 			new /mob/living/simple_animal/hostile/rogue/spirit_vengeance(get_step(user, NORTH),user)
 			new /mob/living/simple_animal/hostile/rogue/spirit_vengeance(get_step(user, SOUTH),user)
 		for(var/mob/living/simple_animal/hostile/rogue/spirit_vengeance/swarm in view(2, user))
-			swarm.ai_controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target) 
+			swarm.ai_controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET, target)
 		return TRUE
 	revert_cast()
 	return FALSE
