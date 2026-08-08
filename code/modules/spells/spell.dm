@@ -362,7 +362,7 @@ GLOBAL_LIST_INIT(action_spells, typesof(/datum/action/cooldown/spell)) //Caustic
 		return FALSE
 
 	var/mob/living/living_user = user
-	if(istype(living_user) && living_user.has_status_effect(/datum/status_effect/debuff/exposed))
+	if(istype(living_user) && living_user.has_status_effect(/datum/status_effect/debuff/cast_disrupted))
 		to_chat(user, span_warning("I'm too exposed to focus on casting!"))
 		return FALSE
 
