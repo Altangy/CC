@@ -827,6 +827,9 @@ GLOBAL_LIST_EMPTY(arenafolks) // we're just going to use a list and add to it. S
 		if(istype(target.patron, /datum/patron/old_god))
 			to_chat(target, span_danger("You feel a hot-wave wash over you, leaving as quickly as it came.."))	//No effect on Psydonians!
 			continue
+		if(istype(target.patron, /datum/patron/vheslyn))
+			to_chat(target, span_danger("You feel... nothing..")) //No effect on Vheslynites, fear them.
+			continue
 		if(!owner.faction_check_mob(target))
 			continue
 		if(target.mob_biotypes & MOB_UNDEAD)
@@ -973,7 +976,7 @@ GLOBAL_LIST_INIT(ravox_aggro, world.file2list("strings/rt/ravoxspiritlines.txt")
 	job = "Ravoxian Spirit"
 	patron = /datum/patron/divine/ravox
 	gender = MALE
-	
+
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
@@ -1028,7 +1031,7 @@ GLOBAL_LIST_INIT(ravox_aggro, world.file2list("strings/rt/ravoxspiritlines.txt")
 	. = ..()
 	l_hand = /obj/item/rogueweapon/sword/long/ravox_spirit
 	r_hand = /obj/item/rogueweapon/sword/long/ravox_spirit
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/ravoxhelm 
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/ravoxhelm
 	mask = /obj/item/clothing/head/roguetown/roguehood/ravoxgorget
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	cloak = /obj/item/clothing/cloak/templar/ravox

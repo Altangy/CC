@@ -226,6 +226,8 @@
 #include "code\__DEFINES\mobs\simplemob_attack_speed.dm"
 #include "code\__DEFINES\mobs\simplemob_health.dm"
 #include "code\__DEFINES\mobs\simplemob_movement_speed.dm"
+#include "code\datums\gods\faiths\accelerationism.dm"
+#include "code\datums\gods\patrons\archdevil\archdevil.dm"
 
 //Caustic Modular Defines
 #include "modular_causticcove\code\__DEFINES\appearance_changer.dm"
