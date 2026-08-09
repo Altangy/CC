@@ -77,7 +77,7 @@
 					new /obj/effect/temp_visual/origin_restoration_burst(user_turf, NORTHWEST)
 					new /obj/effect/temp_visual/origin_restoration_burst(user_turf, SOUTHEAST)
 					new /obj/effect/temp_visual/origin_restoration_burst(user_turf, SOUTHWEST)
-					playsound(target.loc, 'sound/magic/regression1.ogg')
+					playsound(target.loc, 'sound/magic/regression1.ogg')			
 					H.apply_status_effect(/datum/status_effect/debuff/devitalised/lesser)
 					target.say("Telos!")
 					target.setOxyLoss(0)
