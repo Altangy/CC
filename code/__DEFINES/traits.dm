@@ -296,6 +296,8 @@
 #define TRAIT_REGROW_LIMBS "Regrow Limbs"
 #define TRAIT_LEVY "Azurean Militia"
 #define TRAIT_SUNLIGHT_SENSITIVE "Sunlight Sensitivity"
+#define TRAIT_MOON_AVERSE "Night Averse"
+#define TRAIT_SUN_AVERSE "Day Averse"
 // ARMOR / CLOTHING GIVEN TRAITS (GIVEN BY WEARING CLOTHES/ARMOR PIECES)
 #define TRAIT_MONK_ROBE	"Holy Vestatures"
 #define TRAIT_BLACKOAK "Heritage Vision"
@@ -385,8 +387,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_SEEPRICES_SHITTY = "I can tell the prices of things... <i>Kind of</i>.",
-	TRAIT_STRONGBITE = span_info("Stronger bites, critical bite attacks."),
-	TRAIT_VAMPBITE = span_info("Victims of your bite will feel immense pleasure."),
+	TRAIT_STRONGBITE = span_info("Your bite is unnaturally powerful, dealing twice the damage of an ordinary bite."),
+	TRAIT_VAMPBITE = span_info("Your bite floods the victim with an overwhelming, paralyzing pleasure, leaving them helpless to resist if they are sufficiently weak of will."),
 	TRAIT_STRONGKICK = span_info("My kicks knock people down and back a step, consistently. There's no need for obstacles."),
 	TRAIT_IGNORESLOWDOWN = span_info("Nothing stops this carriage!"),
 	TRAIT_IGNOREDAMAGESLOWDOWN = span_info("Hits slow me down no longer."),
@@ -633,6 +635,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NOREGEN = span_artery("I cannot be healed by natural means. Rest and potions have no effect."),
 	TRAIT_HALFHEAL = span_artery("I have some spiritual oddity to my Lux. Healing magic effectiveness is halved."),
 	TRAIT_SUNLIGHT_SENSITIVE = span_danger("Put on those shades and wave to yesterday, 'cause the sunlight hurts my eyes!"),
+	TRAIT_SUN_AVERSE = span_danger("The sunlight still burns at something deep within me. I may be cured, but I was not made whole."),
+	TRAIT_MOON_AVERSE = span_danger("The moonlight stirs something deep within me. Whatever I was, some part of it still remembers."),
 	TRAIT_OUTLANDER = span_info("The locals see me as not of their land."),
 	TRAIT_PARRYEXPERT = span_info("I am much better at parrying incoming strikes, having a more high probability of deflecting a blow with my weapon."),
 ))
