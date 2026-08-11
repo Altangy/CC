@@ -370,19 +370,18 @@
 		//Blackblood Inquisition trauma
 		if(HAS_TRAIT(src, TRAIT_INQUISITION) && HAS_TRAIT(user, TRAIT_BLACKBLOOD))
 			var/mob/living/carbon/carbs = user
-			if(HAS_TRAIT(user, TRAIT_PSYDONIAN_GRIT) || HAS_TRAIT(user, TRAIT_NOMOOD))
-				return
-			if(!carbs.has_stress_event(/datum/stressevent/inq_trauma))
-				carbs.add_stress(/datum/stressevent/inq_trauma)
-				if(prob(20))
-					carbs.stress_freakout()
-				else if(prob(40))
-					carbs.freak_out()
-				else
-					carbs.emote("gulp")
-			if(!HAS_TRAIT(user, TRAIT_STEELHEARTED))
-				carbs.Jitter(10)
-				carbs.stuttering += 25
+			if(!HAS_TRAIT(user, TRAIT_PSYDONIAN_GRIT) && !HAS_TRAIT(user, TRAIT_NOMOOD))
+				if(!carbs.has_stress_event(/datum/stressevent/inq_trauma))
+					carbs.add_stress(/datum/stressevent/inq_trauma)
+					if(prob(20))
+						carbs.stress_freakout()
+					else if(prob(40))
+						carbs.freak_out()
+					else
+						carbs.emote("gulp")
+				if(!HAS_TRAIT(user, TRAIT_STEELHEARTED))
+					carbs.Jitter(10)
+					carbs.stuttering += 25
 
 		// Shouldn't be able to tell they are unrevivable through a mask as a Necran
 		if(HAS_TRAIT(src, TRAIT_DNR) && src != user)
