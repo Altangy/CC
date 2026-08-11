@@ -106,7 +106,7 @@
 	always_availible = FALSE
 
 /datum/crafting_recipe/roguetown/arcana/scrolls/arcyne_potential
-	name = "Scroll of Temporal Cantrip Enhancing"
+	name = "Scroll of Mental Tempering"
 	result = /obj/item/book/granter/arcane_aspect/arcyne_potential
 	reqs = list(/obj/item/rogueore/cinnabar = 2, // A tiny bit of cost
 				/obj/item/alch/manabloompowder = 1,
