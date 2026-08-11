@@ -124,6 +124,6 @@
 	desc = "summons a long forgotten creature"
 	blacklisted = FALSE
 	tier = 4
-	required_atoms = list(/obj/item/magic/voidstone =3)
+	required_atoms = list(/obj/item/magic/artifact = 5, /obj/item/magic/voidstone = 3, /obj/item/magic/leyline = 3)
 	mob_to_summon = /mob/living/simple_animal/hostile/retaliate/rogue/voiddragon
 

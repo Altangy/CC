@@ -1357,10 +1357,10 @@
 	to_chat(owner,span_userdanger("It's finally over..."))
 
 
-
+//Caustic Edit - Completely redid the flavor behind these buffs and effects. No more angry hating Necra, now compassionate and loving.
 /atom/movable/screen/alert/status_effect/buff/undermaidenbargain
 	name = "Undermaiden's Bargain"
-	desc = "A horrible deal was struck in my name..."
+	desc = "Necra has promised me extra time in the event something bad should happen to me..."
 	icon_state = "buff"
 
 /datum/status_effect/buff/undermaidenbargain
@@ -1370,7 +1370,7 @@
 
 /datum/status_effect/buff/undermaidenbargain/on_apply()
 	. = ..()
-	to_chat(owner, span_danger("You feel as though some horrible deal has been prepared in your name. May you never see it fulfilled..."))
+	to_chat(owner, span_danger("You feel Necra's gaze upon you, her hand adding extra grains of sand to your hourglass... She watches over you for now."))
 	playsound(owner, 'sound/misc/bell.ogg', 100, FALSE, -1)
 	ADD_TRAIT(owner, TRAIT_DEATHBARGAIN, id)
 
@@ -1382,28 +1382,15 @@
 /datum/status_effect/buff/undermaidenbargainheal/on_apply()
 	. = ..()
 	owner.remove_status_effect(/datum/status_effect/buff/undermaidenbargain)
-	to_chat(owner, span_warning("You feel the deal struck in your name is being fulfilled..."))
+	to_chat(owner, span_warning("True to her word, you feel Necra's gaze landing on you as she reaches for you... Not yet is it your time."))
 	playsound(owner, 'sound/misc/deadbell.ogg', 100, FALSE, -1)
 	ADD_TRAIT(owner, TRAIT_NODEATH, id)
-	var/dirgeline = rand(1,6)
 	spawn(15)
-		switch(dirgeline)
-			if(1)
-				to_chat(owner, span_cultsmall("She watches the city skyline as her crimson pours into the drain."))
-			if(2)
-				to_chat(owner, span_cultsmall("He only wanted more for his family. He feels comfort on the pavement, the Watchman's blade having met its mark."))
-			if(3)
-				to_chat(owner, span_cultsmall("A sailor's leg is caught in naval rope. Their last thoughts are of home."))
-			if(4)
-				to_chat(owner, span_cultsmall("She sobbed over the Venardine's corpse. The Brigand's mace stemmed her tears."))
-			if(5)
-				to_chat(owner, span_cultsmall("A farm son chokes up his last. At his bedside, a sister and mother weep."))
-			if(6)
-				to_chat(owner, span_cultsmall("A woman begs at a Headstone. It is your fault."))
+		to_chat(owner, span_warning("After giving you an embrace, you feel her touch lingering even as she turns her gaze to another. It is turning back the clock..."))
 
 /datum/status_effect/buff/undermaidenbargainheal/on_remove()
 	. = ..()
-	to_chat(owner, span_warning("The Bargain struck in my name has been fulfilled... I am thrown from Necra's embrace, another in my place..."))
+	to_chat(owner, span_warning("The last of her embrace fades as the healing energies dissipate. You know she will be there for you when your time does come."))
 	playsound(owner, 'sound/misc/deadbell.ogg', 100, FALSE, -1)
 	REMOVE_TRAIT(owner, TRAIT_NODEATH, id)
 
@@ -1428,10 +1415,10 @@
 	owner.adjustCloneLoss(-healing_on_tick, 0)
 
 /atom/movable/screen/alert/status_effect/buff/undermaidenbargainheal
-	name = "The Fulfillment"
-	desc = "My bargain is being fulfilled..."
+	name = "Her Embrace"
+	desc = "I still feel Necra's touch upon me... The clock ticks backwards."
 	icon_state = "buff"
-
+//Caustic Edit End
 
 
 /atom/movable/screen/alert/status_effect/buff/lesserwolf

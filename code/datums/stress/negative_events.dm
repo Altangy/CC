@@ -381,7 +381,7 @@
 
 /datum/stressevent/necrarevive
 	stressadd = 15
-	desc = span_boldred("SO CLOSE TO BEING GRASPED, SO COLD!")
+	desc = span_boldred("Despite Necra bringing me back, it was still quite a harrowing experience to recall bits of...")
 	timer = 15 MINUTES
 
 /datum/stressevent/blessed_weapon

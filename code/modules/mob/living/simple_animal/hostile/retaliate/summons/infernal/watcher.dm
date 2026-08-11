@@ -60,6 +60,13 @@
 	return
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/watcher/MeleeAction(patience = TRUE)
+	//Caustic Cove Edit
+	if (melee_cooled_down > world.time)
+		return
+
+	melee_cooled_down = world.time + melee_cooldown
+	//Caustic Cove Edit End
+
 	for(var/t in RANGE_TURFS(1, src))
 		new /obj/effect/hotspot(t)
 		src.visible_message(span_danger("[src] emits a burst of flames from its core!"))
