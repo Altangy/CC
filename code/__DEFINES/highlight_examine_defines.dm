@@ -41,7 +41,7 @@
 
 // Vampire Lord Items - General theme is mysterious but a bad omen
 #define HERESYDESC_VAMPIRE "An unnatural enchanted armor piece of solid gilbranze that crackles with strange energies"
-#define HERESYDESC_VAMPIRE_CROWN "An unnatural enchanted crown that crackles with strange energies" 
+#define HERESYDESC_VAMPIRE_CROWN "An unnatural enchanted crown that crackles with strange energies"
 #define HERESYDESC_VAMPIRE_SWORD "An unnatural sword of some unknown alloy that crackles with strange energies"
 
 // Inquisitional gear
@@ -63,13 +63,13 @@
 /** For items that are both blatantly heretical AND actively dangerous.
 * Items should be marked with this if the expected response to seeing someone
 * carrying them is to quickly escalate to violence.
-* 
+*
 * i.e. heretic armor, avantyne weapons
 */
 #define EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING 1
 /** For items that are heretical and will get you in trouble if you're caught with them,
 * but not enough for people to jump straight to violence on sight without probable cause.
-* 
+*
 * i.e. Ascendant amulets
 */
 #define EXAMINEHIGHLIGHT_HERESYSEVERITY_SUSPICIOUS 2
@@ -115,7 +115,7 @@
 #define EXAMINEHIGHLIGHT_TOOLTIP_VIBE_FRIEND "<font color=[COLOR_VIBE_FRIEND]><b>A loyal bearing.</b></font><br>This carries the look of one who stands with the Crown and its laws. Many subjects may view its bearer as a friend, servant, or ally of the realm."
 #define EXAMINEHIGHLIGHT_TOOLTIP_VIBE_FOE "<font color=[COLOR_VIBE_FOE]><b>A disloyal bearing.</b></font><br>This carries the look of one who stands apart from the Crown and its laws. Many subjects may view its bearer with suspicion, seeing a potential rebel, outlaw, or enemy of the realm."
 #define EXAMINEHIGHLIGHT_TOOLTIP_VIBE_CROWN "<font color=[COLOR_VIBE_CROWN]><b>Heavy the Crown is, and ever shall it be.</b></font><br>Such symbols are not lightly bestowed, for they signify authority exercised beneath Astrata's eternal light. This is a recognized mark of divine sovereignty, symbolizing the sacred right to rule granted by the Sun-Tyrant to a chosen bloodline. Most subjects should regard its bearer with reverence, recognizing a station and authority very few can claim."
-#define EXAMINEHIGHLIGHT_TOOLTIP_VIBE_GOLGATHA "<font color=[COLOR_VIBE_GOLGATHA]><b>`Oh, how graceful His power was! And His sacrifice, ever so noble!`</b></font><br>It is said to contain a volatile fragment of the <font color=[COLOR_VIBE_GOLGATHA]><b>Comet Syon</b></font>, a sacred artifact to those of Psydonite Faith, such a relic is only entrusted within the capable hands of the Otavian Orthodoxy, Those who serve the Orthodoxy or others of Psydonite Faith are <b>very likely respond with violence</b> if I am not supposed to have it."
+#define EXAMINEHIGHLIGHT_TOOLTIP_VIBE_GOLGATHA "<font color=[COLOR_VIBE_GOLGATHA]><b>`Oh, how graceful His power was! And His sacrifice, ever so noble!`</b></font><br>This relic is said to contain a volatile fragment of the <font color=[COLOR_VIBE_GOLGATHA]><b>Comet Syon</b></font>. This is a sacred relic of the Psydonite Faith entrusted only to the Absolvers of the Holy Otavan Inquisition as proof that His power (and existence) still endures. Should the faithful of PSYDON ever find it in unworthy hands, they are <b>very likely to respond with <font color='#ff0000'>EXTREME VIOLENCE</font>.</b>"
 
 // Heresy severity symbols
 #define EXAMINEHIGHLIGHT_SYMBOL_HERESYSEVERITY_SUSPICIOUS "!"

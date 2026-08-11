@@ -444,22 +444,31 @@ Inquisitorial armory down here
 					new /obj/effect/temp_visual/censer_dust(get_turf(A))
 			else
 				to_chat(user, span_info("It has already been blessed."))
+
 	if(ishuman(A) && on && (user.used_intent.type == /datum/intent/bless))
 		var/mob/living/carbon/human/H = A
-		if(H.patron?.type == /datum/patron/old_god)
-			if(!H.has_status_effect(/datum/status_effect/buff/censerbuff))
-				playsound(user, 'sound/magic/censercharging.ogg', 100)
-				user.visible_message(span_info("[user] holds \the [src] over \the [A].."))
-				if(do_after(user, 50, target = A))
-					H.apply_status_effect(/datum/status_effect/buff/censerbuff)
+		if(!user.mind?.assigned_role == "Absolver")
+			to_chat(user, span_warning("The Golgatha feels... heavier than it should. Why? Why would I do this? Did He not suffer enough?"))
+			user.emote("cry")
+			return
+		if(!H.has_status_effect(/datum/status_effect/buff/psycenserbuff) || !H.has_stress_event(/datum/stressevent/psycenser))
+			playsound(user, 'sound/magic/censercharging.ogg', 100)
+			user.visible_message(span_info("[user] holds \the [src] over \the [A].."))
+			if(do_after(user, 50, target = A))
+				if((H.patron?.type in OLD_GOD_PATRON))
 					to_chat(H, span_hypnophrase("The fragrance of SYON's shard invigorates you!"))
-					playsound(H, 'sound/magic/holyshield.ogg', 100)
-					new /obj/effect/temp_visual/censer_dust(get_turf(H))
-			else
-				to_chat(span_warning("They've already been blessed."))
-
+					H.apply_status_effect(/datum/status_effect/buff/psycenserbuff)
+					H.add_stress(/datum/stressevent/psycenser)
+				else if((H.patron?.type in ALL_DIVINE_PATRONS))
+					to_chat(H, span_hypnophrase("The fragrance of SYON's shard comforts you, providing a moment of clarity..."))
+					H.add_stress(/datum/stressevent/psycenser_neutral)
+				else
+					to_chat(H, span_hypnophrase("The fragrance of SYON's shard provokes a moment of clarity..."))
+					H.add_stress(/datum/stressevent/psycenser_evil)
+				playsound(H, 'sound/magic/holyshield.ogg', 100)
+				new /obj/effect/temp_visual/censer_dust(get_turf(H))
 		else
-			to_chat(user, span_warning("They do not share our faith."))
+			to_chat(span_warning("They've already been blessed."))
 
 /mob/living/carbon/human/proc/has_active_golgatha()
 	for(var/obj/item/flashlight/flare/torch/lantern/psycenser/G in contents)
@@ -479,8 +488,9 @@ Inquisitorial armory down here
 	new /obj/effect/temp_visual/frozen_mist_tile(get_turf(attacker))
 	if(issimple(attacker) || !attacker.mind)
 		attacker.apply_status_effect(/datum/status_effect/syonchurn, src)
-
-	attacker.adjustFireLoss(10)
+	attacker.adjustFireLoss(5)
+	var/zone = pick(BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	arcyne_strike(src, attacker, null, 15, zone, BCLASS_BURN, PEN_NONE, "grief", TRUE, TRUE, FALSE, BURN, null, null, null, null)
 
 #define SYONCHURN_FILTER "syonchurn glow"
 
@@ -496,12 +506,12 @@ Inquisitorial armory down here
 	tick_interval = 2 SECONDS
 	examine_text = "<font color='#00fff2'><b>SUBJECTPRONOUN is seared in body and soul by motes of lingering comet dust!</b></font>"
 	status_type = STATUS_EFFECT_REFRESH
-	effectedstats = list(STATKEY_LCK = -2, STATKEY_SPD = -2)
+	effectedstats = list(STATKEY_LCK = -2, STATKEY_SPD = -3)
 	var/datum/weakref/debuffer
 	var/outline_colour = "#70d1e2"
 	var/intensity = 1
 	var/range = 4
-	var/damage_per_tick = 0.5
+	var/damage_per_tick = 0.25
 	var/agony = 0
 
 /datum/status_effect/syonchurn/on_creation(mob/living/new_owner, mob/living/caster, potency)
@@ -543,7 +553,11 @@ Inquisitorial armory down here
 		qdel(src)
 		return
 
-	owner.adjustFireLoss(damage_per_tick * intensity)
+	owner.adjustFireLoss(damage_per_tick * intensity) // the 'damaging armor over time' noises were infuriating for me
+	if(owner.getFireLoss() >= 300 && !owner.mind)
+		owner.apply_status_effect(/datum/status_effect/syonforgive,	source)
+		qdel(src)
+		return
 
 	if(world.time >= agony)
 		agony = world.time + rand(5,15) SECONDS
@@ -556,6 +570,76 @@ Inquisitorial armory down here
 	owner.remove_filter(SYONCHURN_FILTER)
 
 #undef SYONCHURN_FILTER
+
+/datum/status_effect/syonforgive
+	id = "syon_forgive"
+	duration = 6 SECONDS
+	tick_interval = -1
+	status_type = STATUS_EFFECT_UNIQUE
+	var/forgiving = FALSE
+	var/datum/weakref/redeemer
+
+/datum/status_effect/syonforgive/on_creation(mob/living/new_owner, mob/living/caster)
+	if(caster)
+		redeemer = WEAKREF(caster)
+	return ..()
+
+/datum/status_effect/syonforgive/process()
+	if(forgiving)
+		return
+	forgiving = TRUE
+	var/mob/living/L = owner
+	if(!L)
+		return FALSE
+	if(L.mob_biotypes & MOB_UNDEAD)
+		L.Stun(5 SECONDS)
+		L.revive(full_heal = TRUE)
+		L.set_resting(FALSE, FALSE)
+		L.visible_message(span_blue("<i>[L] falls still as the dark forces keeping it together wane. Their body crumbles into ash.</i>"))
+		addtimer(CALLBACK(src, PROC_REF(exorcise)), 2 SECONDS)
+		return TRUE
+	var/list/guilt_messages = list(
+		"[L]'s guilt becomes too much to bear. They flee, weeping.",
+		"[L] breaks beneath the weight of their sins and staggers away in tears.",
+		"[L]'s resolve crumbles. They turn away, unable to face what they have done.",
+		"[L] is overcome by remorse, fleeing with tears in their eyes.",
+		"[L] lowers their head in shame and retreats, sobbing.",
+		"[L] trembles as their regrets consume them. They flee from sight.",
+		"[L]'s heart sinks beneath their guilt. They escape in sorrow.",
+		"[L] cannot bear the burden of their actions any longer and runs away.",
+		"[L] is haunted by their own conscience and flees in despair.",
+		"[L]'s soul cries out beneath the weight of their guilt. They retreat, weeping."
+	)
+	L.visible_message(span_blue(pick(guilt_messages)))
+	L.revive(full_heal = TRUE)
+	L.set_resting(FALSE, FALSE)
+	L.emote("cry")
+	L.Stun(5 SECONDS)
+	sleep(15)
+	if(L.ai_controller)
+		QDEL_NULL(L.ai_controller)
+	var/mob/living/source = redeemer?.resolve()
+	if(source)
+		walk_away(L, source, 100, 2)
+	addtimer(CALLBACK(src, PROC_REF(fade)), 5 SECONDS)
+	return TRUE
+
+/datum/status_effect/syonforgive/proc/exorcise()
+	if(QDELETED(owner))
+		return
+	var/mob/living/L = owner
+	L.dust()
+	qdel(src)
+/datum/status_effect/syonforgive/proc/fade()
+	if(QDELETED(owner))
+		return
+	animate(owner, alpha = 0, time = 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(delete_owner)), 4 SECONDS)
+/datum/status_effect/syonforgive/proc/delete_owner()
+	if(QDELETED(owner))
+		return
+	qdel(owner)
+	qdel(src)
 
 /obj/effect/temp_visual/censer_dust
 	icon = 'icons/effects/effects.dmi'
@@ -1697,6 +1781,8 @@ GLOBAL_LIST_INIT(inquisition_used_ids, list())
 	var/list/d = H.get_mob_descriptors()
 	report_html += "Height: [build_coalesce_description_nofluff(d, H, list(MOB_DESCRIPTOR_SLOT_HEIGHT), "%DESC1%")]<br>"
 	report_html += "Build: [build_coalesce_description_nofluff(d, H, list(MOB_DESCRIPTOR_SLOT_BODY), "%DESC1%")]<br>"
+	if(HAS_TRAIT(H, TRAIT_BLACKBLOOD))
+		report_html += "<i>By decree of the Holy Otavan Inquisition, the subject is judged CURED and restored to the flock of commonfolk. Should they ever stray from the Allfather's Light and back to evil against humenkind, let His 'Final Mercy' be carried out in due diligence. <b>They shall NOT be granted another second chance</b>.</i><br>"
 	report_html += "<hr>"
 
 	report_html += "<b>LYFEBLOOD-LUX RESONATOR RESULTS</b><br><br>"
@@ -1709,9 +1795,12 @@ GLOBAL_LIST_INIT(inquisition_used_ids, list())
 	else if(H.patron?.type in ALL_INHUMEN_PATRONS)
 		report_html += "<font color='#8B1E1E'><b><u>Tainted Lux</b></u></font><br><br>"
 		report_html += "<i>The Lux has suffered measurable spiritual degradation. The sample carries contamination consistent with apostate worship and prolonged participation in rites associated with the <b>Inhumen</b>.</i><br><br>"
-	else
+	else if(H.patron?.type in OLD_GOD_PATRON)
 		report_html += "<font color='#00b7ff'><b><u>Pure Lux</b></u></font><br><br>"
 		report_html += "<i>No measurable corruption or hallowed overresonance could be detected through our devices. The subject's Lux is devoid of external influence.</i><br><br>"
+	else
+		report_html += "<font color='#1e8b61'><b><u>Anomalous Lux</b></u></font><br><br>"
+		report_html += "<i>No measurable corruption or hallowed overresonance could be detected through our devices, the nature of this sample cannot be traced to anything within our Grand Archives. It does not seem to be neither Divine nor Inhumen, yet it is not Pure either.</i><br><br>"
 
 	report_html += "<b>CROSS-REFERENCED PUBLIC RECORDS</b><br><br>"
 	var/list/crimes = list()
@@ -1777,7 +1866,7 @@ GLOBAL_LIST_INIT(inquisition_used_ids, list())
 
 /obj/item/inqarticles/litany
 	name = "litany"
-	desc = "A writ of religious anointment, printed on Otavan parchment. It bares the Absolver's 'rite of armaments' - a psalm dating back to the first crusades, recited \
+	desc = "A writ of religious anointment, printed on Otavan parchment. It bears the Absolver's 'rite of armaments' - a psalm dating back to the first crusades, recited \
 	to bless the faithful upon the eve of battle. Traditionally, these litanies are burned after recitement, and their ashes are smeared across a chosen weapon to consecrate \
 	them. </br>Unused litanies can be refunded through the HERMES."
 	icon = 'icons/roguetown/items/misc.dmi'
