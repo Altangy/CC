@@ -56,23 +56,45 @@
 					if(!istype(wound, /datum/wound/slash/incision))
 						wound.heal_wound(0.4)
 
-	/// Should not stack with the above, hopefully.
+	/// Blackblood regeneration. Being in combat and being under aversion halve all passive effects to a min of 25% the normal amount.
 	if(!stat && HAS_TRAIT(src, TRAIT_BLACKBLOOD) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
-		if(src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder) || src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder/blessed)) // silver fire stops the regen completely
+		if(has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder) || has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder/blessed))
 			return
-		handle_wounds()
-		if(blood_volume > BLOOD_VOLUME_SURVIVE && nutrition > NUTRITION_LEVEL_STARVING && hydration > HYDRATION_LEVEL_DEHYDRATED) // starving is the minimal here, thirst also stops the regen now
+		if(!getBruteLoss() && !get_wounds() && blood_volume >= BLOOD_VOLUME_NORMAL) // so we don't starve 2 death 4 no reisins
+			return
+
+		var/sun_averse = HAS_TRAIT(src, TRAIT_SUN_AVERSE) && has_stress_event(/datum/stressevent/sun_sensitivity)
+		var/moon_averse = HAS_TRAIT(src, TRAIT_MOON_AVERSE) && has_stress_event(/datum/stressevent/moon_sensitivity)
+		// Each active penalty halves regeneration, with a minimum of 15% effectiveness, square roots baybee
+		var/healing_multiplier = max(0.5 ** ((in_combat_until > world.time) + cmode + (sun_averse || moon_averse) + has_stress_event(/datum/stressevent/inq_trauma)), 0.15)
+
+		for(var/datum/wound/wound as anything in get_wounds())
+			if(wound.bleed_rate > 0)
+				var/bleed_heal = max(wound.bleed_rate * 0.2, 0.1) * healing_multiplier
+				wound.set_bleed_rate(max(wound.bleed_rate - bleed_heal, 0.025))
+				if(wound.bleed_rate <= 0 && wound.sew_threshold)
+					wound.sew_progress = wound.sew_threshold
+					wound.sew_wound()
+		// drains both, but only needs one to be filled in particular to let me regen
+		var/can_regen = FALSE
+		if(sun_averse)
+			can_regen = hydration > HYDRATION_LEVEL_DEHYDRATED
+			if(can_regen)
+				hydration = max(0, hydration - (NUTRITION_LEVEL_FULL * 0.00375 * healing_multiplier))
+				nutrition = max(0, nutrition - (NUTRITION_LEVEL_FULL * 0.00125 * healing_multiplier))
+		else if(moon_averse)
+			can_regen = nutrition > NUTRITION_LEVEL_STARVING
+			if(can_regen)
+				nutrition = max(0, nutrition - (NUTRITION_LEVEL_FULL * 0.00375 * healing_multiplier))
+				hydration = max(0, hydration - (NUTRITION_LEVEL_FULL * 0.00125 * healing_multiplier))
+
+		if(can_regen)
+			heal_overall_damage(2 * healing_multiplier, 0, 0)
+			blood_volume = min(blood_volume + (2 * healing_multiplier), BLOOD_VOLUME_MAXIMUM)
+			handle_wounds()
 			for(var/datum/wound/wound as anything in get_wounds())
 				if(!istype(wound, /datum/wound/slash/incision))
-					wound.heal_wound(0.5) // roughly half of what psydonite can heal up, after some tests (the above is 0.4, because 0.6 is in life() and death())
-					if(wound.bleed_rate > 0) // but we also slowly recover from bleeding now
-						var/bleed_heal = max(wound.bleed_rate * 0.1, 0.2)
-						wound.set_bleed_rate(max(wound.bleed_rate - bleed_heal, 0))
-						if(wound.bleed_rate <= 0)
-							if(wound.sew_threshold)
-								wound.sew_progress = wound.sew_threshold
-								wound.sew_wound() // it does not heal the wound, however! another nick and you're back to bleeding like a pig.
-					nutrition = max(0, nutrition - (NUTRITION_LEVEL_FULL * 0.0025)) // drains 0.25% of your hunger to restore all of above, still
+					wound.heal_wound(healing_multiplier)
 
 	if(!stat && HAS_TRAIT(src, TRAIT_LYCANRESILENCE) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
 		if(src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder) || src.has_status_effect(/datum/status_effect/fire_handler/fire_stacks/sunder/blessed))

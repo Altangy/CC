@@ -683,7 +683,7 @@ var/global/mob/_corpse_sort_ref = null
 						"I CAN'T PUT IT OUT!"
 					)
 					to_chat(src, span_red(pick(fire_reactions)))
-					src.emote("agony")
+					src.emote("superagony")
 				if(2)
 					src.adjustToxLoss(rand(1, 20))
 
@@ -725,7 +725,7 @@ var/global/mob/_corpse_sort_ref = null
 								"THEY ARE GRIPPING AT ME, NECRA!"
 							)
 							to_chat(src, span_red(pick(wound_reactions)))
-							src.emote("agony")
+							src.emote("superagony")
 					else
 						src.adjustBruteLoss(rand(15, 25))
 
