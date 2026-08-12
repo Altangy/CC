@@ -39,7 +39,7 @@
 		H.set_species(/datum/species/gnoll)
 		H.skin_armor = new /obj/item/clothing/suit/roguetown/armor/regenerating/skin/gnoll_armor/knight(H)
 		neck = /obj/item/storage/belt/rogue/pouch/healing
-		backr = /obj/item/storage/backpack/rogue/satchel
+		backr = /obj/item/storage/backpack/rogue/satchel/gnoll
 		don_pelt(H)
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/gnoll_armor/knight
