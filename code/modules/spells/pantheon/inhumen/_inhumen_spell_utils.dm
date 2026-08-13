@@ -1,9 +1,57 @@
+#define MAMMON_FILTER "mammon_glow"
+
 ////////////
 //MATTHIOS//
 ////////////
 
 //Mammonite Utils
-#define MAMMON_FILTER "mammon_glow"
+
+/datum/action/cooldown/spell/matthios/mammonite/proc/get_investment_range(mob/living/carbon/human/H)
+	var/min_invest = min_mammon
+	var/max_invest = min_mammon
+	switch(H.rmb_intent.type)
+		if(/datum/rmb_intent/swift)
+			max_invest = 20
+		if(/datum/rmb_intent/riposte) // "defend"
+			min_invest = 20
+			max_invest = 40
+		if(/datum/rmb_intent/feint)
+			min_invest = 40
+			max_invest = 60
+		if(/datum/rmb_intent/aimed)
+			min_invest = 60
+			max_invest = 80
+		if(/datum/rmb_intent/strong)
+			min_invest = 80
+			max_invest = max_mammon
+	return list(min_invest, max_invest)
+
+/datum/action/cooldown/spell/matthios/mammonite/can_cast_spell(feedback = TRUE)
+	. = ..()
+	if(!.)
+		return FALSE
+
+	if(!ishuman(owner))
+		return FALSE
+
+	var/mob/living/carbon/human/H = owner
+
+	var/bank = 0
+	if(SStreasury.has_account(H))
+		bank = SStreasury.get_balance(H)
+
+	var/onhand = get_mammons_in_atom(H)
+	var/total = bank + onhand
+	var/list/range = get_investment_range(H)
+	var/min_invest = range[1]
+
+	if(total < min_invest)
+		if(feedback)
+			to_chat(H, span_warning("I lack the wealth to invoke Matthios' favor... ([min_invest] mammon needed for [H.rmb_intent.name] stance.)"))
+		return FALSE
+
+	return TRUE
+
 /proc/remove_mammons_from_atom(atom/A, amount)
 	if(!A || amount <= 0)
 		return 0
@@ -12,7 +60,6 @@
 	var/list/coins = list()
 
 	collect_coins_recursive(A, coins)
-
 	coins = sortTim(coins, /proc/cmp_coin_value_desc)
 
 	for(var/obj/item/roguecoin/C in coins)
@@ -27,19 +74,15 @@
 			continue
 
 		var/max_value = value_per * C.quantity
-
 		if(max_value <= remaining)
 			remaining -= max_value
 			qdel(C)
 		else
 			var/coins_to_remove = ceil(remaining / value_per)
 			coins_to_remove = min(coins_to_remove, C.quantity)
-
 			C.set_quantity(C.quantity - coins_to_remove)
-
 			if(C.quantity <= 0)
 				qdel(C)
-
 			remaining = 0
 
 	return amount - remaining
@@ -54,6 +97,28 @@
 /proc/cmp_coin_value_desc(obj/item/roguecoin/A, obj/item/roguecoin/B)
 	return B.sellprice - A.sellprice
 
+/atom/movable/screen/alert/status_effect/debuff/doomed
+	name = "Doom"
+	desc = "You have precisely 3 seconds to live. See you on the other side."
+	icon_state = "permadeath"
+
+/datum/status_effect/debuff/doom
+	id = "doom"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/doomed
+	duration = 3 SECONDS
+	status_type = STATUS_EFFECT_UNIQUE
+
+/datum/status_effect/debuff/doom/on_apply()
+	. = ..()
+	owner.add_filter(MAMMON_FILTER, 2, list("type" = "outline", "color" = "#911096ff", "alpha" = 175, "size" = 2))
+
+/datum/status_effect/debuff/doom/on_remove()
+	. = ..()
+	var/mob/living/L = owner
+	if(!istype(L))
+		return
+	L.gib()
+
 /atom/movable/screen/alert/status_effect/buff/mammonite
 	name = "Mammonite Strike"
 	desc = "My next strike is empowered by wealth."
@@ -64,20 +129,14 @@
 	alert_type = /atom/movable/screen/alert/status_effect/buff/mammonite
 	duration = 20 SECONDS
 	status_type = STATUS_EFFECT_UNIQUE
-	var/bonus_damage = 0
+	var/bonus_damage
+	var/cap
 
 /datum/status_effect/buff/mammonite/on_apply()
 	. = ..()
-
 	RegisterSignal(owner, COMSIG_MOB_ITEM_ATTACK, PROC_REF(on_attack))
 	RegisterSignal(owner, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, PROC_REF(on_unarmed_attack))
-
-	owner.add_filter(MAMMON_FILTER, 2, list(
-		"type" = "outline",
-		"color" = "#d4af37",
-		"alpha" = 175,
-		"size" = 2
-	))
+	owner.add_filter(MAMMON_FILTER, 2, list("type" = "outline", "color" = "#d4af37", "alpha" = 175, "size" = 2))
 
 /datum/status_effect/buff/mammonite/on_remove()
 	UnregisterSignal(owner, list(COMSIG_MOB_ITEM_ATTACK, COMSIG_HUMAN_MELEE_UNARMED_ATTACK))
@@ -91,12 +150,12 @@
 	INVOKE_ASYNC(src, PROC_REF(resolve_attack), target, weapon)
 	return COMPONENT_ITEM_NO_ATTACK
 
-/datum/status_effect/buff/mammonite/proc/on_unarmed_attack(mob/living/source, atom/target, proximity) 
-	SIGNAL_HANDLER 
-	if(!isliving(target) || target == owner) 
-		return 
-	var/mob/living/L = target 
-	if(L.stat == DEAD) 
+/datum/status_effect/buff/mammonite/proc/on_unarmed_attack(mob/living/source, atom/target, proximity)
+	SIGNAL_HANDLER
+	if(!isliving(target) || target == owner)
+		return
+	var/mob/living/L = target
+	if(L.stat == DEAD)
 		return
 	INVOKE_ASYNC(src, PROC_REF(resolve_attack), L, null)
 	return COMPONENT_HAND_NO_ATTACK
@@ -105,37 +164,49 @@
 /datum/status_effect/buff/mammonite/proc/resolve_attack(mob/living/target, obj/item/weapon)
 	if(QDELETED(src) || QDELETED(owner) || QDELETED(target))
 		return
-	var/damage = calculate_damage()
-	var/npc_mult = (!target.mind) ? 2 : 1
-	var/apen = damage * 0.75
-
-	arcyne_strike(
-		owner,
-		target,
-		weapon,
-		damage,
-		owner.zone_selected,
-		BCLASS_SMASH,
-		apen,
-		"Mammonite",
-		FALSE,
-		FALSE,
-		FALSE,
-		BRUTE,
-		npc_mult,
-		1
-	)
-	owner.visible_message(
-		span_danger("[owner]'s strike crashes down with the weight of greed!"),
-		span_notice("My investment pays off in full!")
-	)
-	mammon_coin_burst(get_turf(target))
-	playsound(get_turf(target), 'sound/combat/hits/burn (2).ogg', 60, TRUE)
-
+	if(should_mammon_gib(target))
+		do_mammon_execution(target) // only works vs NPCs! Knocks them back and chance to gib them if you spent over 80 mammon on this (guaranteed if over half the max_cap).
+	else
+		do_mammon_strike(target, weapon)
 	consume()
 
-/datum/status_effect/buff/mammonite/proc/calculate_damage()
-	return bonus_damage
+/datum/status_effect/buff/mammonite/proc/should_mammon_gib(mob/living/target)
+	if(target.mind)
+		return FALSE
+	var/mammon_spent = round(bonus_damage / 3)
+	if(mammon_spent <= 79)
+		return FALSE
+	var/mid_cap = cap * 0.5
+	var/gib_chance
+	if(mammon_spent >= mid_cap)
+		gib_chance = 100
+	else
+		gib_chance = 20 + (mammon_spent - 80) * (80 / (mid_cap - 80))
+	gib_chance = clamp(gib_chance, 20, 100)
+	return prob(gib_chance)
+
+/datum/status_effect/buff/mammonite/proc/do_mammon_execution(mob/living/target)
+	if(QDELETED(owner) || QDELETED(target))
+		return
+	owner.visible_message(span_boldwarning("[target] suddenly contorts, twists and lets out a blood-curling screech--!"), span_notice("Their life was worth less than the investment."))
+	target.emote("superagony")
+	mammon_coin_burst(get_turf(target))
+	playsound(get_turf(target), 'sound/combat/hits/burn (2).ogg', 60, TRUE)
+	target.apply_status_effect(/datum/status_effect/debuff/doom)
+	target.safe_throw_at(target, 3, 1, owner, force = MOVE_FORCE_EXTREMELY_STRONG)
+
+/datum/status_effect/buff/mammonite/proc/do_mammon_strike(mob/living/target, obj/item/weapon)
+	if(QDELETED(owner) || QDELETED(target))
+		return
+
+	var/damage = bonus_damage
+	var/npc_mult = target.mind ? 1 : 2
+	var/apen = damage * 0.75
+
+	arcyne_strike(owner, target, weapon, damage, owner.zone_selected, BCLASS_SMASH, apen, "Mammonite", FALSE, FALSE, FALSE, BRUTE, npc_mult, 1)
+	owner.visible_message(span_danger("[owner]'s strike crashes down with the weight of greed!"), span_notice("My investment pays off in full!"))
+	mammon_coin_burst(get_turf(target))
+	playsound(get_turf(target), 'sound/combat/hits/burn (2).ogg', 60, TRUE)
 
 /datum/status_effect/buff/mammonite/proc/consume()
 	if(owner)
@@ -160,27 +231,18 @@
 
 /obj/effect/temp_visual/coinburst/Initialize()
 	. = ..()
-
 	var/matrix/M = matrix()
 	M.Scale(0.25, 0.25) // 25% size
-
 	transform = M
+	animate(src, pixel_x = pixel_x + rand(-16,16), pixel_y = pixel_y + rand(8,20), alpha = 0, time = duration, easing = EASE_OUT)
 
-	animate(src,
-		pixel_x = pixel_x + rand(-16,16),
-		pixel_y = pixel_y + rand(8,20),
-		alpha = 0,
-		time = duration,
-		easing = EASE_OUT
-	)
-
-#undef MAMMON_FILTER 
+#undef MAMMON_FILTER
 
 //Skulduggery Utils
 
-/atom/movable/screen/alert/status_effect/buff/skulduggery 
-	name = "Skulduggery" 
-	desc = span_notice("I prepare to slip inside attacks and punish aggressors, like a true Free Man would.") 
+/atom/movable/screen/alert/status_effect/buff/skulduggery
+	name = "Skulduggery"
+	desc = span_notice("I prepare to slip inside attacks and punish aggressors, like a true Free Man would.")
 	icon_state = "clash"
 
 /datum/status_effect/buff/skulduggery
@@ -227,12 +289,12 @@
 			qdel(A)
 
 /datum/status_effect/buff/skulduggery/proc/on_incapacitate()
-	SIGNAL_HANDLER 
-	if(!owner) 
-		return 
-	if(!owner.IsKnockdown() && !owner.IsStun()) 
-		return 
-	to_chat(owner, span_warning("My footing falters! Carkin'--!")) 
+	SIGNAL_HANDLER
+	if(!owner)
+		return
+	if(!owner.IsKnockdown() && !owner.IsStun())
+		return
+	to_chat(owner, span_warning("My footing falters! Carkin'--!"))
 	qdel(src)
 
 /datum/status_effect/buff/skulduggery/tick()
@@ -247,7 +309,7 @@
 		if(owner.pulling != grappled)
 			waiting_followup = FALSE
 			grappled = null
-			
+
 	if((H.highest_ac_worn() <= ARMOR_CLASS_LIGHT)&&(owner.has_status_effect(/datum/status_effect/buff/tempo_one) || owner.has_status_effect(/datum/status_effect/buff/tempo_two) || owner.has_status_effect(/datum/status_effect/buff/tempo_three) || owner.has_status_effect(/datum/status_effect/buff/equalizebuff)))
 		owner.apply_status_effect(/datum/status_effect/buff/skulduggery)
 		return
@@ -354,13 +416,13 @@
 			span_notice("Gah, I can't keep up!")
 		)
 		parries_left--
-		to_chat(owner, span_warning("Failed, [parries_left] left. ([success_chance]%)")) 
+		to_chat(owner, span_warning("Failed, [parries_left] left. ([success_chance]%)"))
 		return FALSE
 	// Success
 	if(parries_left > 0)
 		parries_left--
 
-	to_chat(owner, span_warning("Success, [parries_left] left. ([success_chance]%)")) 
+	to_chat(owner, span_warning("Success, [parries_left] left. ([success_chance]%)"))
 	auto_flank_move(H, A)
 	return TRUE
 
@@ -403,8 +465,8 @@
 			trigger_afterimage(3)
 			H.forceMove(side)
 
-			sleep(1) 
-			
+			sleep(1)
+
 			trigger_afterimage(3)
 			H.forceMove(behind)
 	else
@@ -412,7 +474,7 @@
 		H.forceMove(side)
 
 		sleep(1) // 1 tick, enough to render
-	
+
 		H.forceMove(behind)
 		trigger_afterimage(3)
 
@@ -454,7 +516,7 @@
 
 	addtimer(CALLBACK(T, /mob/proc/slamdunked), 1)
 	return TRUE
-	
+
 // SKD - GROUND SLAM
 /datum/status_effect/buff/skulduggery/proc/slam_target(mob/living/carbon/human/T)
 	if(!T) return
