@@ -7062,6 +7062,12 @@
 "cbk" = (
 /turf/closed/wall/mineral/rogue/sandbrick,
 /area/rogue/under/desertbog)
+"cbx" = (
+/obj/machinery/gear_painter,
+/turf/open/floor/rogue/tile/harem2{
+	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
+	},
+/area/rogue/indoors/inq)
 "cby" = (
 /obj/structure/flora/roguegrass/herb/manabloom,
 /turf/open/floor/rogue/dirt/road,
@@ -7353,6 +7359,10 @@
 /obj/machinery/light/rogue/candle,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/manor/desert)
+"cfT" = (
+/obj/effect/landmark/start/orthodoxist,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/inq)
 "cga" = (
 /obj/machinery/light/rogue/candle/r,
 /obj/structure/rack/rogue,
@@ -30856,6 +30866,10 @@
 "juC" = (
 /turf/open/floor/rogue/naturalstone/sandstone,
 /area/rogue/under/cave/dunelord)
+"juM" = (
+/obj/effect/landmark/start/inquisitor,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/inq/office)
 "juP" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/effect/spawner/lootdrop/roguegem/random,
@@ -62992,6 +63006,10 @@
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/lightpath,
 /area/rogue/indoors/town/desert/warden)
+"tmD" = (
+/obj/effect/landmark/start/absolver,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/indoors/inq)
 "tmK" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -77927,6 +77945,7 @@
 /obj/structure/chair/wood/zybantine{
 	dir = 8
 	},
+/obj/effect/landmark/start/inquisitor,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/inq)
 "xKh" = (
@@ -545717,7 +545736,7 @@ hAE
 hAE
 hAE
 hAE
-hAE
+cbx
 ftL
 kWZ
 ftL
@@ -663337,7 +663356,7 @@ kHE
 wkm
 ksH
 qtR
-uWO
+juM
 uWO
 arW
 usP
@@ -664582,7 +664601,7 @@ vTa
 ftL
 rOb
 kiA
-kiA
+cfT
 ftL
 ous
 ous
@@ -666142,7 +666161,7 @@ vTa
 ftL
 oLh
 nVj
-kiA
+cfT
 ftL
 ous
 ldr
@@ -667390,7 +667409,7 @@ vTa
 ftL
 oLh
 nVj
-kiA
+cfT
 ftL
 ous
 ous
@@ -668333,7 +668352,7 @@ kiA
 ftL
 aUC
 kiA
-kiA
+tmD
 kiA
 jrH
 jrH
