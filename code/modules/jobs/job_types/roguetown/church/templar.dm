@@ -284,7 +284,7 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	H.equip_to_slot_or_del(new /obj/item/clothing/suit/roguetown/armor/plate/silver, SLOT_ARMOR, TRUE) //Halfplate, not fullplate. CC Repair
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/holysee //CC Repair
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk //CC Repair
 	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	belt = /obj/item/storage/belt/rogue/leather/black
